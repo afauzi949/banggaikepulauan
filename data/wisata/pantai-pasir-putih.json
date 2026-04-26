@@ -1,0 +1,18 @@
+{
+  "slug": "pantai-pasir-putih",
+  "title": "Pantai Pasir Putih",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Pantai", "Snorkeling"],
+  "excerpt": "Pantai berpasir putih halus dengan air laut bening dan terumbu karang yang masih terjaga.",
+  "description": "Pantai Pasir Putih adalah surga tersembunyi di pesisir Banggai Kepulauan. Pasir putihnya halus seperti tepung, dan airnya begitu jernih hingga terumbu karang dapat terlihat dari permukaan. Lokasi ini ideal untuk snorkeling dan berkemah di malam hari.",
+  "location": {
+    "village": "Desa Bone Baru",
+    "subdistrict": "Banggai Utara",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.5023, 123.4762]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": true,
+  "published": true,
+  "publishedAt": "2026-04-15T09:00:00+08:00"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "tata-guna-lahan-2015",
+    "title": "Peta Tata Guna Lahan (2015)",
+    "year": 2015,
+    "preview": "/images/peta-tematik/preview-tata-guna-lahan.svg",
+    "format": "SHP_ZIP",
+    "sizeBytes": 47185920,
+    "downloadUrl": "/downloads/peta-tata-guna-lahan-2015.zip",
+    "featured": true,
+    "publishedAt": "2025-09-01"
+  },
+  {
+    "slug": "rawan-bencana-2024",
+    "title": "Peta Rawan Bencana (2024)",
+    "year": 2024,
+    "preview": "/images/peta-tematik/preview-tata-guna-lahan.svg",
+    "format": "GeoJSON",
+    "sizeBytes": 12582912,
+    "downloadUrl": "/downloads/peta-rawan-bencana-2024.geojson",
+    "featured": true,
+    "publishedAt": "2025-08-12"
+  },
+  {
+    "slug": "potensi-pertanian-2024",
+    "title": "Peta Potensi Pertanian (2024)",
+    "year": 2024,
+    "preview": "/images/peta-tematik/preview-tata-guna-lahan.svg",
+    "format": "PDF",
+    "sizeBytes": 8388608,
+    "downloadUrl": "/downloads/peta-potensi-pertanian-2024.pdf",
+    "featured": true,
+    "publishedAt": "2025-07-20"
+  }
+]

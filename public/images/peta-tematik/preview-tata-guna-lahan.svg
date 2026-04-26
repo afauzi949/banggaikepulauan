@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 152" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pratinjau peta tata guna lahan">
+  <defs>
+    <linearGradient id="ptl-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfe9f5" />
+      <stop offset="100%" stop-color="#9ec9e1" />
+    </linearGradient>
+  </defs>
+  <rect width="384" height="152" fill="url(#ptl-water)" />
+  <g stroke="#ffffff" stroke-opacity="0.2" stroke-width="0.5">
+    <path d="M0 38 L384 38" />
+    <path d="M0 76 L384 76" />
+    <path d="M0 114 L384 114" />
+    <path d="M96 0 L96 152" />
+    <path d="M192 0 L192 152" />
+    <path d="M288 0 L288 152" />
+  </g>
+  <g>
+    <path d="M30 30 q24 -22 56 -8 q30 12 38 36 q10 26 -22 32 q-40 8 -64 -10 q-24 -18 -8 -50 z" fill="#9ac46e" stroke="#688c44" stroke-width="0.6" />
+    <path d="M132 56 q22 -16 50 -4 q24 12 22 36 q-2 26 -32 26 q-36 0 -48 -22 q-10 -22 8 -36 z" fill="#e0c674" stroke="#a48d3e" stroke-width="0.6" />
+    <path d="M210 18 q34 -8 56 16 q22 26 8 50 q-16 26 -54 22 q-36 -4 -42 -28 q-6 -34 32 -60 z" fill="#cf9b6a" stroke="#94673e" stroke-width="0.6" />
+    <path d="M300 70 q26 -16 56 -2 q24 12 22 38 q-2 26 -32 28 q-38 4 -54 -16 q-16 -22 8 -48 z" fill="#7fb1a5" stroke="#4f7a72" stroke-width="0.6" />
+  </g>
+  <g fill="#a08163" stroke="#65503e" stroke-width="0.4">
+    <circle cx="86" cy="74" r="3" />
+    <circle cx="172" cy="100" r="3" />
+    <circle cx="252" cy="62" r="3" />
+    <circle cx="330" cy="108" r="3" />
+  </g>
+</svg>

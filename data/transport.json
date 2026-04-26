@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "luwuk-salakan-ferry",
+    "type": "ferry",
+    "operator": "KMP Lemuru",
+    "origin": "Luwuk",
+    "destination": "Salakan",
+    "price": 60000,
+    "currency": "IDR",
+    "schedule": {
+      "days": "Setiap Hari",
+      "departureTime": "14:00 WITA",
+      "durationLabel": "Est. 3-4 Jam"
+    }
+  },
+  {
+    "slug": "luwuk-salakan-speedboat",
+    "type": "speedboat",
+    "operator": "Express Bahari",
+    "origin": "Luwuk",
+    "destination": "Salakan",
+    "price": 150000,
+    "currency": "IDR",
+    "schedule": {
+      "days": "Senin, Rabu, Jumat",
+      "departureTime": "08:00 WITA",
+      "durationLabel": "Est. 1.5 Jam"
+    }
+  }
+]

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 582 192" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pratinjau peta wilayah Banggai Kepulauan">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfe9f5" />
+      <stop offset="100%" stop-color="#a9d4ea" />
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="0.5" />
+    </pattern>
+  </defs>
+  <rect width="582" height="192" fill="url(#water)" />
+  <rect width="582" height="192" fill="url(#grid)" />
+  <g fill="#f1e5c4" stroke="#cdb992" stroke-width="0.75">
+    <path d="M40 40 q30 -25 70 -10 q35 12 50 38 q15 30 -22 42 q-44 14 -78 -8 q-30 -20 -20 -62 z" />
+    <path d="M180 70 q22 -20 56 -8 q40 12 38 50 q-2 32 -38 36 q-44 6 -64 -22 q-12 -30 8 -56 z" />
+    <path d="M320 25 q40 -10 64 18 q22 30 4 56 q-22 30 -64 28 q-44 -2 -54 -34 q-8 -38 50 -68 z" />
+    <path d="M450 90 q35 -22 78 -2 q30 14 32 50 q2 32 -34 42 q-46 12 -70 -16 q-22 -30 -6 -74 z" />
+  </g>
+  <g fill="#e3cf9c" stroke="#bfa470" stroke-width="0.5">
+    <path d="M120 130 q20 -8 36 4 q14 12 4 28 q-12 18 -34 12 q-22 -8 -6 -44 z" />
+    <path d="M260 30 q22 -4 32 14 q10 18 -4 30 q-18 14 -34 -2 q-12 -16 6 -42 z" />
+  </g>
+</svg>

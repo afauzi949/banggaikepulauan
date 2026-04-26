@@ -1,0 +1,18 @@
+{
+  "slug": "air-terjun-baulu",
+  "title": "Air Terjun Baulu",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Air Terjun", "Hiking"],
+  "excerpt": "Air terjun bertingkat di tengah hutan tropis yang sejuk, cocok untuk pencinta petualangan alam.",
+  "description": "Air Terjun Baulu memiliki tiga tingkatan dengan kolam alami di setiap levelnya. Untuk mencapainya pengunjung perlu trekking sekitar satu jam melewati hutan tropis, namun pemandangan dan kesegaran airnya membayar lunas perjalanan tersebut.",
+  "location": {
+    "village": "Desa Baulu",
+    "subdistrict": "Tinangkung Selatan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.6580, 123.5310]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": true,
+  "published": true,
+  "publishedAt": "2026-04-10T09:00:00+08:00"
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "paisu-batango",
+  "title": "Paisu Batango",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Budaya", "Mata Air"],
+  "excerpt": "Mata air alami yang jernih di Desa Lukpanenteng dengan suasana asri dan kesejukan khas pegunungan.",
+  "description": "Paisu Batango adalah mata air jernih yang menjadi salah satu destinasi favorit di Banggai Kepulauan. Air yang berasal dari celah bebatuan ini dipercaya warga sebagai sumber kehidupan dan tempat ritual budaya. Bupati Banggai Kepulauan Rusli Moidady meresmikan Fun Trip ke lokasi ini sebagai bagian dari promosi pariwisata daerah.",
+  "location": {
+    "village": "Desa Lukpanenteng",
+    "subdistrict": "Bulagi",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.5847, 123.4521]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": true,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}
