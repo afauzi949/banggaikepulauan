@@ -1,0 +1,18 @@
+{
+  "slug": "danau-bundala-alani",
+  "title": "Danau Bundala Alani",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Legenda", "Danau"],
+  "excerpt": "Danau tersembunyi di Desa Buko yang dikelilingi hutan lebat dan menyimpan legenda masyarakat setempat.",
+  "description": "Danau Bundala Alani adalah danau alami yang terletak di Desa Buko, Kecamatan Buko Selatan. Danau ini dikelilingi oleh hutan lebat dan menyimpan berbagai legenda dari masyarakat setempat. Airnya yang jernih dan suasana yang tenang menjadikan tempat ini sebagai salah satu destinasi wisata alam yang menarik di Banggai Kepulauan.",
+  "location": {
+    "village": "Desa Buko, Kec. Buko Selatan",
+    "subdistrict": "Buko Selatan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.58, 123.45]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

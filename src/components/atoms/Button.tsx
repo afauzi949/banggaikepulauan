@@ -15,8 +15,7 @@ interface ButtonProps {
 const variantMap: Record<ButtonVariant, string> = {
   primary:
     "bg-[#004d71] text-white drop-shadow-[0px_10px_10px_rgba(0,0,0,0.25)] hover:bg-[#003d5a]",
-  secondary:
-    "bg-white text-[#004d71] border border-[#004d71] hover:bg-[#f0f9ff]",
+  secondary: "bg-white text-[#004d71] border border-[#004d71] hover:bg-[#f0f9ff]",
   ghost: "bg-transparent text-white hover:bg-white/10",
 };
 

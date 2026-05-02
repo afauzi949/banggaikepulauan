@@ -16,7 +16,10 @@ export default function HomePage() {
       <HeroSection />
       <DestinasiPilihanSection />
       <PetaInteraktifSection />
-      <Container as="section" className="grid items-start gap-12 py-16 lg:grid-cols-2">
+      <Container
+        as="section"
+        className="grid items-start gap-10 py-16 md:gap-12 md:py-20 lg:grid-cols-2"
+      >
         <AksesSection />
         <JelajahTeaserSection />
       </Container>

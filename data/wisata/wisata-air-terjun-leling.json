@@ -1,0 +1,18 @@
+{
+  "slug": "wisata-air-terjun-leling",
+  "title": "Wisata Air Terjun Leling",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Air Terjun"],
+  "excerpt": "Air terjun yang indah di Desa Lumbi Lumbia dengan suasana hutan tropis yang menyegarkan.",
+  "description": "Wisata Air Terjun Leling terletak di Desa Lumbi Lumbia, menawarkan keindahan air terjun alami yang dikelilingi hutan tropis. Suara gemericik air dan udara segar menjadikan tempat ini ideal untuk melepas penat.",
+  "location": {
+    "village": "Desa Lumbi Lumbia",
+    "subdistrict": "Bulagi",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.59, 123.49]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

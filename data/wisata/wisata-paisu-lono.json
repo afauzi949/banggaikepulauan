@@ -1,0 +1,18 @@
+{
+  "slug": "wisata-paisu-lono",
+  "title": "Wisata Paisu Lono",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Teluk"],
+  "excerpt": "Teluk alami di Desa Lumbi Lumbia yang dikelilingi tebing karst dan menyimpan keindahan bawah laut.",
+  "description": "Wisata Paisu Lono merupakan teluk alami yang terletak di Desa Lumbi Lumbia. Dikelilingi oleh tebing karst yang menjulang, teluk ini menawarkan pemandangan yang spektakuler dan menjadi spot favorit untuk snorkeling.",
+  "location": {
+    "village": "Desa Lumbi Lumbia",
+    "subdistrict": "Bulagi",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.60, 123.47]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

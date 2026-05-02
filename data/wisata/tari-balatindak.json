@@ -1,0 +1,18 @@
+{
+  "slug": "tari-balatindak",
+  "title": "Tari Balatindak",
+  "category": "budaya",
+  "tags": ["Budaya", "Seni Tari"],
+  "excerpt": "Tarian tradisional dari Desa Buko yang menjadi simbol semangat dan keberanian masyarakat Banggai Kepulauan.",
+  "description": "Tari Balatindak adalah tarian tradisional yang berasal dari Desa Buko, Kabupaten Banggai Kepulauan. Tarian ini sering ditampilkan pada acara-acara adat dan perayaan budaya sebagai wujud pelestarian warisan leluhur.",
+  "location": {
+    "village": "Desa Buko",
+    "subdistrict": "Buko",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.58, 123.45]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

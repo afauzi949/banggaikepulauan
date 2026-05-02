@@ -1,0 +1,18 @@
+{
+  "slug": "pantai-matatas",
+  "title": "Pantai Matatas",
+  "category": "wisata-alam",
+  "tags": ["Wisata Bahari", "Budaya Lokal"],
+  "excerpt": "Pantai di Desa Bungin yang memadukan keindahan bahari dengan kekayaan budaya lokal masyarakat pesisir.",
+  "description": "Pantai Matatas terletak di Desa Bungin, Kabupaten Banggai Kepulauan. Selain menawarkan keindahan pantai yang memukau, tempat ini juga menjadi pusat aktivitas budaya lokal masyarakat pesisir.",
+  "location": {
+    "village": "Desa Bungin",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.64, 123.55]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

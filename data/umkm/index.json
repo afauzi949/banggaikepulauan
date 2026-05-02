@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "soto-siti-situ",
+    "name": "Soto Siti Situ",
+    "category": "kuliner",
+    "tags": ["Sehari-hari", "Restaurant"],
+    "description": "Soto khas Banggai Kepulauan yang sudah terkenal sejak lama. Menggunakan resep turun-temurun dengan bumbu rempah pilihan yang membuat rasanya khas dan tak terlupakan.",
+    "location": {
+      "village": "Desa Lumbi-Lumbia",
+      "subdistrict": "Kec. Liang",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5281, 123.4836]
+    },
+    "cover": "/images/umkm/soto-siti-situ.svg",
+    "operatingHours": "08.00 - 17.00",
+    "contact": {
+      "whatsapp": "6281234567890",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  },
+  {
+    "slug": "septo-bengkel",
+    "name": "Septo Bengkel",
+    "category": "jasa",
+    "tags": ["Sehari-hari", "Kendaraan"],
+    "description": "Bengkel motor dan mobil yang menyediakan layanan tambal ban tubeless, ganti oli, dan servis ringan. Berpengalaman melayani warga Salakan dan sekitarnya.",
+    "location": {
+      "village": "Desa Salakan",
+      "subdistrict": "Kec. Tinangkung",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5195, 123.5218]
+    },
+    "cover": "/images/umkm/septo-bengkel.svg",
+    "operatingHours": "07.00 - 18.00",
+    "contact": {
+      "whatsapp": "6289876543210",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  },
+  {
+    "slug": "warung-makan-ibu-ani",
+    "name": "Warung Makan Ibu Ani",
+    "category": "kuliner",
+    "tags": ["Sehari-hari", "Restaurant"],
+    "description": "Warung makan sederhana yang menyajikan masakan rumahan khas Sulawesi Tengah. Menu favorit termasuk ikan bakar, sayur kangkung, dan sambal dabu-dabu.",
+    "location": {
+      "village": "Desa Paisumbaon",
+      "subdistrict": "Kec. Tinangkung",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5142, 123.5301]
+    },
+    "cover": "/images/umkm/warung-ibu-ani.svg",
+    "operatingHours": "06.00 - 21.00",
+    "contact": {
+      "whatsapp": "6281345678901",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  },
+  {
+    "slug": "toko-bangunan-jaya",
+    "name": "Toko Bangunan Jaya",
+    "category": "toko",
+    "tags": ["Sehari-hari", "Bangunan"],
+    "description": "Menyediakan berbagai kebutuhan bahan bangunan seperti semen, besi, cat, dan perlengkapan rumah tangga lainnya dengan harga bersaing.",
+    "location": {
+      "village": "Desa Salakan",
+      "subdistrict": "Kec. Tinangkung",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5210, 123.5185]
+    },
+    "cover": "/images/umkm/toko-bangunan-jaya.svg",
+    "operatingHours": "07.00 - 17.00",
+    "contact": {
+      "whatsapp": "6282345678901",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  },
+  {
+    "slug": "kedai-kopi-bangkep",
+    "name": "Kedai Kopi Bangkep",
+    "category": "kuliner",
+    "tags": ["Kuliner", "Minuman"],
+    "description": "Kedai kopi modern yang menyajikan kopi lokal khas Banggai Kepulauan. Tersedia berbagai varian mulai dari espresso, kopi susu, hingga kopi tradisional.",
+    "location": {
+      "village": "Desa Salakan",
+      "subdistrict": "Kec. Tinangkung",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5200, 123.5200]
+    },
+    "cover": "/images/umkm/kedai-kopi-bangkep.svg",
+    "operatingHours": "08.00 - 22.00",
+    "contact": {
+      "whatsapp": "6283456789012",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  },
+  {
+    "slug": "laundry-bersih-selalu",
+    "name": "Laundry Bersih Selalu",
+    "category": "jasa",
+    "tags": ["Sehari-hari", "Laundry"],
+    "description": "Jasa laundry kiloan dan satuan dengan hasil bersih dan wangi. Melayani antar-jemput pakaian di wilayah Salakan dan sekitarnya.",
+    "location": {
+      "village": "Desa Salakan",
+      "subdistrict": "Kec. Tinangkung",
+      "regency": "Banggai Kepulauan",
+      "coordinates": [-1.5220, 123.5160]
+    },
+    "cover": "/images/umkm/laundry-bersih-selalu.svg",
+    "operatingHours": "07.00 - 20.00",
+    "contact": {
+      "whatsapp": "6284567890123",
+      "googleMapsUrl": "https://maps.google.com"
+    },
+    "published": true
+  }
+]

@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
-import { Button } from "@/components/atoms/Button";
 import { Tag } from "@/components/atoms/Tag";
 import { formatFileSize, formatLabel } from "@/lib/peta-tematik";
 import type { PetaTematik } from "@/lib/schemas/peta-tematik";
-import { cn } from "@/lib/utils";
+import { cardElevation, cn } from "@/lib/utils";
 
 interface MapDocumentCardProps {
   document: PetaTematik;
@@ -20,10 +20,13 @@ export function MapDocumentCard({
   const { title, preview, format, sizeBytes, downloadUrl } = document;
 
   return (
-    <article
+    <Link
+      href={downloadUrl}
+      aria-label={`${title}, unduh ${formatLabel(format)} ${formatFileSize(sizeBytes)}`}
       className={cn(
-        "flex w-full max-w-[384px] flex-col overflow-hidden rounded-2xl border border-[#e5e5e5] bg-white pb-6",
-        "shadow-[0px_8px_4px_rgba(0,0,0,0.1)]",
+        "group flex w-full max-w-[384px] flex-col overflow-hidden rounded-2xl bg-white pb-6",
+        cardElevation,
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004d71] focus-visible:ring-offset-2",
         className,
       )}
     >
@@ -52,15 +55,17 @@ export function MapDocumentCard({
           </div>
         </div>
 
-        <Button
-          href={downloadUrl}
-          variant="primary"
-          size="md"
-          className="w-full justify-center rounded-[7px] py-[11px] text-base"
+        <span
+          className={cn(
+            "inline-flex w-full items-center justify-center rounded-[7px] bg-[#004d71] px-6 py-[11px]",
+            "font-[family-name:var(--font-dm-sans)] text-base font-bold text-white",
+            "drop-shadow-[0px_10px_10px_rgba(0,0,0,0.25)]",
+            "transition-colors group-hover:bg-[#003d5a]",
+          )}
         >
           {ctaLabel}
-        </Button>
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }

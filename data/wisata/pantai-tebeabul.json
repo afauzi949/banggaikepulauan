@@ -1,0 +1,18 @@
+{
+  "slug": "pantai-tebeabul",
+  "title": "Pantai Tebeabul",
+  "category": "wisata-alam",
+  "tags": ["Wisata Bahari"],
+  "excerpt": "Pantai eksotis di Desa Bakalan dengan hamparan pasir dan pemandangan laut yang mempesona.",
+  "description": "Pantai Tebeabul terletak di Desa Bakalan, Kabupaten Banggai Kepulauan. Pantai ini menawarkan hamparan pasir yang luas, air laut yang jernih, dan pemandangan sunset yang mempesona.",
+  "location": {
+    "village": "Desa Bakalan",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.66, 123.58]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

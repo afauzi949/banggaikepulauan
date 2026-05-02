@@ -1,0 +1,18 @@
+{
+  "slug": "batu-ampa-ampakon",
+  "title": "Batu Ampa-Ampakon",
+  "category": "budaya",
+  "tags": ["Wisata Budaya", "Misteri Alam"],
+  "excerpt": "Formasi batu misterius di Desa Bungin yang menyimpan cerita rakyat dan menjadi situs budaya masyarakat.",
+  "description": "Batu Ampa-Ampakon adalah formasi batu unik yang terletak di Desa Bungin, Kecamatan Tinangkung. Batu-batu ini menyimpan cerita rakyat dan menjadi bagian dari warisan budaya masyarakat setempat.",
+  "location": {
+    "village": "Desa Bungin, Kec. Tinangkung",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.63, 123.54]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

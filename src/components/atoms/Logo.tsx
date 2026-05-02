@@ -8,11 +8,7 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({
-  href = "/",
-  withWordmark = true,
-  className,
-}: LogoProps) {
+export function Logo({ href = "/", withWordmark = true, className }: LogoProps) {
   const content = (
     <span
       className={cn(

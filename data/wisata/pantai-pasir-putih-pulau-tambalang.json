@@ -1,0 +1,18 @@
+{
+  "slug": "pantai-pasir-putih-pulau-tambalang",
+  "title": "Pantai Pasir Putih Pulau Tambalang",
+  "category": "wisata-alam",
+  "tags": ["Wisata Bahari"],
+  "excerpt": "Pantai berpasir putih di Pulau Tambalang dengan air laut yang jernih dan panorama bawah laut yang memukau.",
+  "description": "Pantai Pasir Putih Pulau Tambalang adalah destinasi pantai yang terletak di Pulau Tambalang, Desa Sambulangan. Pasir putihnya yang halus dan air laut yang jernih menjadikan pantai ini sebagai surga bagi pecinta wisata bahari.",
+  "location": {
+    "village": "Pulau Tambalang, Desa Sambulangan, Kec. Bulagi Utara",
+    "subdistrict": "Bulagi Utara",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.54, 123.53]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

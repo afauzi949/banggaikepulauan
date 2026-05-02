@@ -21,7 +21,7 @@ export function KolaborasiSection({
   eyebrow = "Kolaborasi Eksklusif",
   title = "Rahasia Geologis di Balik 'Perahu Melayang' Danau Paisu Pok",
   description = "Pernah ngelihat perahu kayu yang seolah-olah melayang bebas di udara? Di pedalaman Banggai Kepulauan, ilusi optik ini nyata terjadi. Airnya yang berwarna biru kehitaman punya tingkat kejernihan yang nggak masuk akal, sampai dasar danau terlihat jelas. Sebenarnya, fenomena alam apa yang bikin air di danau karst ini bisa terus sebening kaca?",
-  imageSrc = "/images/wisata/sample.jpg",
+  imageSrc = "/images/wisata/paisu-batango.jpg",
   imageAlt = "Pemandangan udara Danau Paisu Pok",
   linkLabel = "Baca penelusuran lengkap di Sainreka",
   linkHref = "https://sainreka.com/banggai-kepulauan/paisu-pok",
@@ -30,7 +30,7 @@ export function KolaborasiSection({
   const isExternal = /^https?:\/\//.test(linkHref);
 
   return (
-    <Container as="section" className={cn("py-12", className)}>
+    <Container as="section" className={cn("py-16 md:py-20", className)}>
       <article
         className={cn(
           "flex flex-col items-stretch gap-8 overflow-hidden rounded-3xl p-8 lg:flex-row lg:items-center lg:gap-[34px] lg:p-8",
@@ -51,12 +51,7 @@ export function KolaborasiSection({
           <Tag variant="accent" size="lg">
             {eyebrow}
           </Tag>
-          <Heading
-            as="h2"
-            size="md"
-            weight="extrabold"
-            className="text-[#111827]"
-          >
+          <Heading as="h2" size="md" weight="extrabold" className="text-[#111827]">
             {title}
           </Heading>
           <p className="font-[family-name:var(--font-dm-sans)] text-[18px] leading-[29px] text-[#4b5563]">

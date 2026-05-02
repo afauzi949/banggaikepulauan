@@ -1,0 +1,18 @@
+{
+  "slug": "sumur-oang",
+  "title": "Sumur O'ang",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Wisata Geologi"],
+  "excerpt": "Fenomena geologi unik berupa sumur alam di Desa Sambulangan dengan formasi batuan yang menakjubkan.",
+  "description": "Sumur O'ang adalah fenomena geologi unik yang terletak di Desa Sambulangan, Kecamatan Bulagi Utara. Sumur alam ini memiliki formasi batuan yang menarik dan menjadi salah satu daya tarik wisata geologi di Banggai Kepulauan.",
+  "location": {
+    "village": "Desa Sambulangan, Kec. Bulagi Utara",
+    "subdistrict": "Bulagi Utara",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.55, 123.52]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

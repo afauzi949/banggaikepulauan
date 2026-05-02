@@ -1,0 +1,18 @@
+{
+  "slug": "tari-basalendeng",
+  "title": "Tari Basalendeng",
+  "category": "budaya",
+  "tags": ["Budaya", "Seni Tari"],
+  "excerpt": "Tarian tradisional khas Desa Buko yang menggambarkan kekuatan dan keindahan budaya Banggai Kepulauan.",
+  "description": "Tari Basalendeng adalah tarian tradisional yang berasal dari Desa Buko, Kabupaten Banggai Kepulauan. Tarian ini merupakan warisan budaya yang dijaga dan dilestarikan oleh masyarakat setempat sebagai bagian dari identitas budaya mereka.",
+  "location": {
+    "village": "Desa Buko",
+    "subdistrict": "Buko",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.58, 123.45]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

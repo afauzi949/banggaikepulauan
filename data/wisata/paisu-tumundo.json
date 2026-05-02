@@ -1,0 +1,18 @@
+{
+  "slug": "paisu-tumundo",
+  "title": "Paisu Tumundo",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Budaya", "Spiritual"],
+  "excerpt": "Mata air spiritual di Desa Lukpanenteng yang menjadi tempat ritual dan memiliki nilai budaya tinggi.",
+  "description": "Paisu Tumundo adalah sumber mata air yang memiliki nilai spiritual dan budaya bagi masyarakat Desa Lukpanenteng. Tempat ini sering dijadikan lokasi ritual adat dan menjadi bagian penting dari identitas budaya lokal.",
+  "location": {
+    "village": "Desa Lukpanenteng",
+    "subdistrict": "Bulagi",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.58, 123.46]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

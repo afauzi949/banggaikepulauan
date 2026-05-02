@@ -39,13 +39,7 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={cn("flex flex-col gap-3", alignMap[align], className)}>
-      <Heading
-        as="h2"
-        size={size}
-        weight={weight}
-        className="text-[#111827]"
-        id={id}
-      >
+      <Heading as="h2" size={size} weight={weight} className="text-[#111827]" id={id}>
         {title}
       </Heading>
       {subtitle && (

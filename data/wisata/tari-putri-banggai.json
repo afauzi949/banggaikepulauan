@@ -1,0 +1,18 @@
+{
+  "slug": "tari-putri-banggai",
+  "title": "Tari Putri Banggai",
+  "category": "budaya",
+  "tags": ["Budaya", "Seni Tari"],
+  "excerpt": "Tarian anggun dari Desa Bakalan yang menampilkan keindahan dan kelembutan budaya perempuan Banggai.",
+  "description": "Tari Putri Banggai adalah tarian tradisional yang berasal dari Desa Bakalan, Kabupaten Banggai Kepulauan. Tarian ini menampilkan keanggunan dan kelembutan budaya perempuan Banggai yang dilestarikan dari generasi ke generasi.",
+  "location": {
+    "village": "Desa Bakalan",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.65, 123.57]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

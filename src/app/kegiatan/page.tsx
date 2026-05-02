@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
 
+import { Container } from "@/components/atoms/Container";
+import { Footer } from "@/components/organisms/Footer";
+import { KegiatanContent } from "@/components/organisms/KegiatanContent";
+import { Navbar } from "@/components/organisms/Navbar";
+import { getAllKegiatan, getAllKegiatanTags } from "@/lib/kegiatan";
+
 export const metadata: Metadata = {
   title: "Kegiatan",
 };
 
 export default function KegiatanPage() {
+  const items = getAllKegiatan();
+  const categories = getAllKegiatanTags(items);
+
   return (
-    <main className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold">Kegiatan</h1>
-      <p className="mt-4 text-muted-foreground">Halaman dalam pengembangan.</p>
+    <main>
+      <Navbar activeHref="/kegiatan" />
+      <Container as="section" className="py-8 md:py-12">
+        <KegiatanContent items={items} categories={categories} />
+      </Container>
+      <Footer />
     </main>
   );
 }

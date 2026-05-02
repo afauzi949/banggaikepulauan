@@ -1,0 +1,18 @@
+{
+  "slug": "paisu-pok",
+  "title": "Paisu Pok",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Legenda", "Budaya"],
+  "excerpt": "Danau karst ikonik di Desa Lukpanenteng dengan air sebening kaca yang menciptakan ilusi perahu melayang.",
+  "description": "Paisu Pok adalah danau karst yang terkenal dengan kejernihan airnya yang luar biasa, menciptakan ilusi optik seolah-olah perahu melayang di udara. Danau ini terletak di Desa Lukpanenteng dan menjadi ikon pariwisata Banggai Kepulauan.",
+  "location": {
+    "village": "Desa Lukpanenteng",
+    "subdistrict": "Bulagi",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.58, 123.45]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": true,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

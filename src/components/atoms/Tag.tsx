@@ -27,15 +27,8 @@ const sizeMap: Record<TagSize, string> = {
   lg: "px-4 py-2 text-[16px] leading-[20px]",
 };
 
-export function Tag({
-  variant = "primary",
-  size = "sm",
-  className,
-  children,
-}: TagProps) {
+export function Tag({ variant = "primary", size = "sm", className, children }: TagProps) {
   return (
-    <span className={cn(base, variantMap[variant], sizeMap[size], className)}>
-      {children}
-    </span>
+    <span className={cn(base, variantMap[variant], sizeMap[size], className)}>{children}</span>
   );
 }

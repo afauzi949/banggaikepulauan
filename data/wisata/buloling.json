@@ -1,0 +1,18 @@
+{
+  "slug": "buloling",
+  "title": "Buloling",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Ekowisata"],
+  "excerpt": "Destinasi ekowisata di Desa Sambulangan yang menawarkan keindahan alam dan keanekaragaman hayati.",
+  "description": "Buloling adalah kawasan ekowisata yang terletak di Desa Sambulangan, Kecamatan Bulagi Utara. Tempat ini menawarkan pengalaman wisata alam yang otentik dengan keanekaragaman hayati yang masih terjaga.",
+  "location": {
+    "village": "Desa Sambulangan, Kec. Bulagi Utara",
+    "subdistrict": "Bulagi Utara",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.56, 123.51]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "bubung-babasal",
+  "title": "Bubung Babasal",
+  "category": "wisata-alam",
+  "tags": ["Wisata Alam", "Fenomena Alam"],
+  "excerpt": "Fenomena alam unik di Desa Bungin yang menampilkan formasi geologi menarik dan pemandangan spektakuler.",
+  "description": "Bubung Babasal adalah fenomena alam yang terletak di Desa Bungin, Kecamatan Tinangkung. Formasi geologi unik di tempat ini menawarkan pemandangan yang spektakuler dan menjadi daya tarik bagi wisatawan yang mencari pengalaman alam yang berbeda.",
+  "location": {
+    "village": "Desa Bungin, Kec. Tinangkung",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [-1.62, 123.55]
+  },
+  "cover": "/images/wisata/sample.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

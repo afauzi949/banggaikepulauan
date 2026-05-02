@@ -18,9 +18,7 @@ async function readAll(): Promise<Transport[]> {
 
   const result = TransportListSchema.safeParse(json);
   if (!result.success) {
-    throw new Error(
-      `Invalid transport list ${TRANSPORT_FILE}: ${result.error.message}`,
-    );
+    throw new Error(`Invalid transport list ${TRANSPORT_FILE}: ${result.error.message}`);
   }
 
   return result.data;
@@ -31,9 +29,7 @@ export type TransportListOpts = {
   limit?: number;
 };
 
-export async function getTransportList(
-  opts: TransportListOpts = {},
-): Promise<Transport[]> {
+export async function getTransportList(opts: TransportListOpts = {}): Promise<Transport[]> {
   const { type, limit } = opts;
 
   let items = await readAll();

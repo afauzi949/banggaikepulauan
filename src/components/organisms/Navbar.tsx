@@ -16,15 +16,9 @@ interface NavbarProps {
   items?: NavItem[];
 }
 
-export function Navbar({
-  activeHref = "/",
-  items = DEFAULT_ITEMS,
-}: NavbarProps) {
+export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps) {
   return (
-    <Container
-      as="nav"
-      className="flex items-center justify-between rounded-[20px] bg-white py-4"
-    >
+    <Container as="nav" className="flex items-center justify-between rounded-[20px] bg-white py-4">
       <Logo />
       <NavLinks items={items} activeHref={activeHref} />
     </Container>
