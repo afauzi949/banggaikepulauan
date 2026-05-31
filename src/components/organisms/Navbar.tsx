@@ -31,6 +31,10 @@ export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    
+    // Initial check in case the page is already scrolled on load
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -49,17 +53,22 @@ export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps)
 
   return (
     <>
+      {/* Spacer to prevent content from hiding behind the fixed navbar */}
+      <div className="h-[76px] w-full" aria-hidden="true" />
+
       <header
         className={cn(
           "fixed left-0 right-0 top-0 z-[100] w-full transition-all duration-300 ease-in-out",
-          isScrolled ? "py-2" : "py-4 md:py-6"
+          isScrolled ? "bg-transparent pt-4" : "bg-white"
         )}
       >
         <Container>
           <div
             className={cn(
-              "flex items-center justify-between rounded-[20px] bg-white px-6 py-4 shadow-2xl transition-all duration-300",
-              isScrolled ? "bg-opacity-95 backdrop-blur-md" : ""
+              "flex items-center justify-between transition-all duration-300",
+              isScrolled 
+                ? "rounded-[20px] bg-white/95 px-6 py-4 shadow-2xl backdrop-blur-md" 
+                : "bg-transparent py-4"
             )}
           >
             <Logo />
