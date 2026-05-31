@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { cn } from "@/lib/utils";
 
 interface NavLinkProps {

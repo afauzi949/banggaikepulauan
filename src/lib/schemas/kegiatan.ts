@@ -9,6 +9,7 @@ export const KegiatanSchema = z.object({
   excerpt: z.string().max(300),
   description: z.string().min(1),
   cover: z.string().min(1),
+  images: z.array(z.string()).optional(),
   date: z.string().min(1),
   published: z.boolean().default(true),
 });
