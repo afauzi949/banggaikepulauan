@@ -2,17 +2,26 @@
   "slug": "situs-mata-air-bilabanggai",
   "title": "Situs Mata Air Bilabanggai",
   "category": "sejarah",
-  "tags": ["Sejarah", "Wisata Alam"],
-  "excerpt": "Situs mata air bersejarah di Desa Lumbi-Lumbia yang dipercaya sebagai sumber kehidupan masyarakat adat.",
-  "description": "Situs Mata Air Bilabanggai adalah mata air bersejarah yang terletak di Desa Lumbi-Lumbia. Situs ini memiliki nilai budaya dan spiritual yang tinggi bagi masyarakat setempat, dipercaya sebagai sumber kehidupan sejak zaman nenek moyang.",
+  "tags": [
+    "Sejarah",
+    "Wisata Alam"
+  ],
+  "excerpt": "Merupakan situs mata air bersejarah sejak zaman belanda yang dinamai bilabanggai. Telah menjadi sumber mata air selama puluhan tahun dan menjadi titik...",
+  "description": "Merupakan situs mata air bersejarah sejak zaman belanda yang dinamai bilabanggai. Telah menjadi sumber mata air selama puluhan tahun dan menjadi titik penting terbentuknya desa dan permukiman lumbi-lumbia.",
   "location": {
     "village": "Desa Lumbi-Lumbia",
-    "subdistrict": "Bulagi",
+    "subdistrict": "Kab. Banggai Kepulauan",
     "regency": "Banggai Kepulauan",
-    "coordinates": [-1.59, 123.50]
+    "coordinates": [
+      -1.393,
+      -123.089
+    ]
   },
-  "cover": "/images/wisata/sample.jpg",
+  "cover": "/images/wisata/mata_air_bilabanggai.png",
   "featured": false,
   "published": true,
-  "publishedAt": "2026-04-20T09:00:00+08:00"
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "fasilitas": [
+    "Jalan setapak licin dan rimbun"
+  ]
 }

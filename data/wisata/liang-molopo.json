@@ -2,17 +2,31 @@
   "slug": "liang-molopo",
   "title": "Liang Molopo",
   "category": "sejarah",
-  "tags": ["Wisata Alam", "Sejarah", "Spiritual"],
-  "excerpt": "Gua bersejarah di Dusun Tobusang yang menjadi situs spiritual dan menyimpan kisah masa lalu masyarakat Buko.",
-  "description": "Liang Molopo adalah sebuah gua bersejarah yang terletak di Dusun Tobusang, Desa Buko. Gua ini memiliki nilai spiritual tinggi bagi masyarakat setempat dan menjadi salah satu situs warisan budaya yang penting di Banggai Kepulauan.",
+  "tags": [
+    "Wisata Alam",
+    "Sejarah",
+    "Spiritual"
+  ],
+  "excerpt": "Dalam bahasa Banggai, “Liang” berarti gua, sedangkan “Molopo” berarti runtuh—menggambarkan bentuk gua yang terbentuk dari runtuhan batu dan pelapukan ...",
+  "description": "Dalam bahasa Banggai, “Liang” berarti gua, sedangkan “Molopo” berarti runtuh—menggambarkan bentuk gua yang terbentuk dari runtuhan batu dan pelapukan tanah secara alami. Menurut kisah turun-temurun, Liang Molopo dahulu menjadi lokasi bertapa dan bersemedi para leluhur masyarakat Desa Buko. Liang Molopo berada di wilayah Dusun Tobusang yang menyimpan kisah sejarah. Dahulu, kawasan ini merupakan bagian dari Kerajaan Dallu, sebuah kerajaan yang terkenal karena kekayaan alamnya, terutama bongkahan emas. Kekayaan ini menjadi alasan pecahnya konflik dengan Kerajaan Banggai, yang akhirnya menyerang Dallu untuk merebut harta tersebut. Saat pertempuran mencapai puncaknya dan pasukan Dallu berada di ambang kekalahan, Raja Dallu melakukan sesuatu yang luar biasa—beliau menginjak Abu Matano (abu dapur suci) dengan penuh keyakinan. Seketika, kabut tebal menyelimuti medan perang dan sang Raja menghilang secara misterius, tak pernah terlihat kembali. Sejak saat itulah, Kerajaan Dallu pun berakhir, dan legenda tentang Raja yang menghilang menjadi cerita dalam kehidupan masyarakat Buko. Konon, di dalam liang ini terdapat sebuah peti kemas yang dahulu disimpan oleh Raja Dallu sebagai tempat menyimpan benda-benda pusaka atau peninggalan penting kerajaan. Peti ini dijaga oleh para penunggu gaib, makhluk tak kasat mata yang dipercaya merupakan roh leluhur ataupun penjaga wilayah suci.Bagian puncak dari Liang Molopo menjadi tempat sakral bagi masyarakat sekitar. Dahulu, tempat ini sering digunakan untuk bersemedi dan memohon petunjuk kepada roh-roh leluhur, terutama saat terjadi wabah penyakit, bencana, atau maraknya kejahatan. Dalam tradisi mereka, roh para leluhur dipercaya masih menjaga keturunan dan tanah yang mereka wariskan.Sebagai bentuk penghormatan terhada leluhur, masyarakat dulu kerap menaruh sesajen di sekitar liang.",
   "location": {
-    "village": "Dusun Tobusang, Desa Buko",
-    "subdistrict": "Buko",
+    "village": "Dusun Tobusang",
+    "subdistrict": "Desa Buko",
     "regency": "Banggai Kepulauan",
-    "coordinates": [-1.57, 123.44]
+    "coordinates": [
+      -1.451,
+      -123.032
+    ]
   },
-  "cover": "/images/wisata/sample.jpg",
+  "cover": "/images/wisata/liang_malopo.png",
   "featured": false,
   "published": true,
-  "publishedAt": "2026-04-20T09:00:00+08:00"
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "fasilitas": [
+    "Gazebo",
+    "Perahu",
+    "Warung Makan",
+    "Toilet",
+    "Mushola"
+  ]
 }

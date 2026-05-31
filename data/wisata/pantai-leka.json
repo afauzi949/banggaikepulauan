@@ -2,16 +2,21 @@
   "slug": "pantai-leka",
   "title": "Pantai Leka",
   "category": "wisata-alam",
-  "tags": ["Wisata Bahari"],
-  "excerpt": "Pantai indah di Desa Bungin dengan pasir putih dan ombak tenang yang cocok untuk bersantai.",
-  "description": "Pantai Leka terletak di Desa Bungin, Kabupaten Banggai Kepulauan. Pantai ini menawarkan keindahan pasir putih, air laut yang jernih, dan suasana tenang yang ideal untuk bersantai menikmati pemandangan laut.",
+  "tags": [
+    "Wisata Bahari"
+  ],
+  "excerpt": "Pantai Leka menawarkan pemandangan pasir putih dengan air laut yang jernih berwarna biru. Sangat cocok untuk wisata santai dan menikmati suasana laut.",
+  "description": "Pantai Leka menawarkan pemandangan pasir putih dengan air laut yang jernih berwarna biru. Sangat cocok untuk wisata santai dan menikmati suasana laut.",
   "location": {
     "village": "Desa Bungin",
-    "subdistrict": "Tinangkung",
+    "subdistrict": "Kab. Banggai Kepulauan",
     "regency": "Banggai Kepulauan",
-    "coordinates": [-1.64, 123.56]
+    "coordinates": [
+      -1.443,
+      -123.059
+    ]
   },
-  "cover": "/images/wisata/sample.jpg",
+  "cover": "/images/wisata/pantai_leka_matatas.png",
   "featured": false,
   "published": true,
   "publishedAt": "2026-04-20T09:00:00+08:00"

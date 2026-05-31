@@ -35,6 +35,14 @@ export const WisataSchema = z.object({
   cover: z.string().min(1),
   gallery: z.array(z.string().min(1)).optional(),
   videos: z.array(VideoSchema).optional(),
+  tiketMasuk: z.string().optional(),
+  fasilitas: z.array(z.string()).optional(),
+  waktuKunjunganTerbaik: z.string().optional(),
+  narahubung: z.object({
+    nama: z.string(),
+    kontak: z.string()
+  }).optional(),
+  nilaiBudaya: z.string().optional(),
   featured: z.boolean().default(false),
   published: z.boolean().default(true),
   publishedAt: z.string().datetime({ offset: true }),

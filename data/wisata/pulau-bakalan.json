@@ -2,16 +2,22 @@
   "slug": "pulau-bakalan",
   "title": "Pulau Bakalan",
   "category": "wisata-alam",
-  "tags": ["Wisata Alam", "Legenda"],
-  "excerpt": "Pulau kecil di Kecamatan Tinangkung yang menyimpan legenda dan keindahan alam bahari yang masih alami.",
-  "description": "Pulau Bakalan terletak di Desa Bakalan, Kecamatan Tinangkung. Pulau ini menyimpan berbagai legenda masyarakat setempat dan menawarkan keindahan alam bahari yang masih alami dengan terumbu karang yang indah.",
+  "tags": [
+    "Wisata Alam",
+    "Legenda"
+  ],
+  "excerpt": "Menurut cerita turun-temurun, Pulau Bakalan dipercaya berasal dari sebuah kapal besar yang berlayar dari arah Jawa dan karam di wilayah perairan ini. ...",
+  "description": "Menurut cerita turun-temurun, Pulau Bakalan dipercaya berasal dari sebuah kapal besar yang berlayar dari arah Jawa dan karam di wilayah perairan ini. Bagian utama kapal diyakini menjadi Pulau Bakalan, sementara sekoci-nya berubah menjadi Pulau Bakalan Pauno.",
   "location": {
-    "village": "Desa Bakalan, Kec. Tinangkung",
+    "village": "Desa Bakalan",
     "subdistrict": "Tinangkung",
     "regency": "Banggai Kepulauan",
-    "coordinates": [-1.65, 123.57]
+    "coordinates": [
+      -1.43,
+      -123.048
+    ]
   },
-  "cover": "/images/wisata/sample.jpg",
+  "cover": "/images/wisata/pulau_bakalan.png",
   "featured": false,
   "published": true,
   "publishedAt": "2026-04-20T09:00:00+08:00"
