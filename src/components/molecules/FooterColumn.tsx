@@ -6,11 +6,7 @@ interface FooterColumnProps {
   className?: string;
 }
 
-export function FooterColumn({
-  title,
-  children,
-  className,
-}: FooterColumnProps) {
+export function FooterColumn({ title, children, className }: FooterColumnProps) {
   return (
     <div className={cn("flex flex-col gap-3", className)}>
       <h3 className="font-[family-name:var(--font-dm-sans)] text-[16px] font-semibold leading-[24px] text-[#27272a]">

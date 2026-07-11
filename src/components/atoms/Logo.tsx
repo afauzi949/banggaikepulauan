@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -8,11 +8,7 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({
-  href = "/",
-  withWordmark = true,
-  className,
-}: LogoProps) {
+export function Logo({ href = "/", withWordmark = true, className }: LogoProps) {
   const content = (
     <span
       className={cn(

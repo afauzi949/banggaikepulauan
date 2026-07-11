@@ -101,14 +101,8 @@ export function Footer({
                     <a
                       href={item.href}
                       className="text-[#52525c] hover:text-[#004d71] hover:underline"
-                      target={
-                        item.href.startsWith("http") ? "_blank" : undefined
-                      }
-                      rel={
-                        item.href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     >
                       {item.value}
                     </a>

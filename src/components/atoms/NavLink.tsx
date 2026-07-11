@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { cn } from "@/lib/utils";
 
 interface NavLinkProps {
@@ -15,12 +15,7 @@ const inactive = "font-medium text-[#0a0a0a] hover:bg-zinc-100";
 
 const active = "bg-[#d7f8f7] font-bold text-[#1447e6]";
 
-export function NavLink({
-  href,
-  active: isActive = false,
-  className,
-  children,
-}: NavLinkProps) {
+export function NavLink({ href, active: isActive = false, className, children }: NavLinkProps) {
   return (
     <Link
       href={href}

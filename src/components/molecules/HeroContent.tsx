@@ -9,17 +9,10 @@ interface HeroContentProps {
   ctaHref: string;
 }
 
-export function HeroContent({
-  eyebrow,
-  title,
-  ctaLabel,
-  ctaHref,
-}: HeroContentProps) {
+export function HeroContent({ eyebrow, title, ctaLabel, ctaHref }: HeroContentProps) {
   return (
     <div className="flex flex-col items-center gap-4 text-center">
-      <Eyebrow className="text-[56px] leading-[60px] text-white">
-        {eyebrow}
-      </Eyebrow>
+      <Eyebrow className="text-[56px] leading-[60px] text-white">{eyebrow}</Eyebrow>
       <Heading as="h1" size="2xl" weight="extrabold" className="text-white">
         {title}
       </Heading>

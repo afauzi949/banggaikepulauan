@@ -1,0 +1,25 @@
+{
+  "slug": "tari-balatindak",
+  "title": "Tari Balatindak",
+  "category": "budaya",
+  "tags": [
+    "Budaya",
+    "Seni Tari"
+  ],
+  "excerpt": "Tari Balatindak merupakan salah satu tarian tradisional suku Banggai yang berasal dari Kabupaten Banggai Kepulauan, Sulawesi Tengah.  Awalnya, Tari Ba...",
+  "description": "Tari Balatindak merupakan salah satu tarian tradisional suku Banggai yang berasal dari Kabupaten Banggai Kepulauan, Sulawesi Tengah.  Awalnya, Tari Balatindak dikenal sebagai tari perang atau tari keprajuritan suku Banggai. Kata \"Balatindak\" sendiri berasal dari bahasa Banggai yang terdiri dari dua suku kata: \"ba\" yang berarti berulang-ulang, dan \"tindak\" yang berarti menghentak-hentakkan kaki. Hal ini menggambarkan gerakan kaki yang menghentak-hentak, menunjukkan semangat keberanian dan ketangkasan dalam menghadapi musuh. Seiring waktu, Tari Balatindak berkembang menjadi tarian penyambutan tamu penting. Tarian ini menjadi bentuk penghormatan dan sambutan hangat kepada para tamu yang datang.",
+  "location": {
+    "village": "Desa Buko",
+    "subdistrict": "Kab. Banggai Kepulauan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.446,
+      -123.038
+    ]
+  },
+  "cover": "/images/wisata/tari_dua.jpg",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "nilaiBudaya": "Simbol semangat juang dan penyambutan tamu penting"
+}

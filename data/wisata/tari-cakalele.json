@@ -1,0 +1,24 @@
+{
+  "slug": "tari-cakalele",
+  "title": "Tari Cakalele",
+  "category": "budaya",
+  "tags": [
+    "Budaya",
+    "Seni Tari"
+  ],
+  "excerpt": "Tarian ini ditampilkan untuk menyambut tamu kehormatan di Desa Bakalan. Mengandung makna spiritual untuk mengusir roh jahat, dengan penari laki-laki m...",
+  "description": "Tarian ini ditampilkan untuk menyambut tamu kehormatan di Desa Bakalan. Mengandung makna spiritual untuk mengusir roh jahat, dengan penari laki-laki mengenakan pakaian adat perang.",
+  "location": {
+    "village": "Desa Bakalan",
+    "subdistrict": "Kab. Banggai Kepulauan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.431,
+      -123.049
+    ]
+  },
+  "cover": "/images/wisata/tari_cakalele.png",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

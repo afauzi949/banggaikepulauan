@@ -22,15 +22,14 @@ export async function PetaTematikSection({
   items: providedItems,
   limit = 3,
 }: PetaTematikSectionProps = {}) {
-  const items =
-    providedItems ?? (await getPetaTematikList({ featured: true, limit }));
+  const items = providedItems ?? (await getPetaTematikList({ featured: true, limit }));
 
   if (items.length === 0) {
     return null;
   }
 
   return (
-    <Container as="section" className="flex flex-col items-center gap-10 py-16">
+    <Container as="section" className="flex flex-col items-center gap-10 py-16 md:py-20">
       <SectionHeader
         title={title}
         subtitle={subtitle}

@@ -1,13 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type ContainerTag =
-  | "div"
-  | "section"
-  | "header"
-  | "footer"
-  | "main"
-  | "nav"
-  | "article";
+type ContainerTag = "div" | "section" | "header" | "footer" | "main" | "nav" | "article";
 
 interface ContainerProps {
   children: React.ReactNode;
@@ -15,13 +8,9 @@ interface ContainerProps {
   as?: ContainerTag;
 }
 
-export function Container({
-  as: Tag = "div",
-  className,
-  children,
-}: ContainerProps) {
+export function Container({ as: Tag = "div", className, children }: ContainerProps) {
   return (
-    <Tag className={cn("mx-auto w-full max-w-[1440px] px-16", className)}>
+    <Tag className={cn("mx-auto w-full max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-16", className)}>
       {children}
     </Tag>
   );

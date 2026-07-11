@@ -26,9 +26,7 @@ async function parseFile(file: string): Promise<Wisata> {
 
   const result = WisataSchema.safeParse(json);
   if (!result.success) {
-    throw new Error(
-      `Invalid wisata file ${filePath}: ${result.error.message}`,
-    );
+    throw new Error(`Invalid wisata file ${filePath}: ${result.error.message}`);
   }
 
   const expectedSlug = file.replace(/\.json$/, "");
@@ -43,18 +41,14 @@ async function parseFile(file: string): Promise<Wisata> {
 
 async function readAll(): Promise<Wisata[]> {
   const entries = await fs.readdir(WISATA_DIR);
-  const files = entries.filter(
-    (name) => name.endsWith(".json") && !name.startsWith("_"),
-  );
+  const files = entries.filter((name) => name.endsWith(".json") && !name.startsWith("_"));
 
   const items = await Promise.all(files.map(parseFile));
 
   return items.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
-export async function getWisataList(
-  opts: WisataListOpts = {},
-): Promise<Wisata[]> {
+export async function getWisataList(opts: WisataListOpts = {}): Promise<Wisata[]> {
   const { featured, category, limit, includeUnpublished = false } = opts;
 
   let items = await readAll();

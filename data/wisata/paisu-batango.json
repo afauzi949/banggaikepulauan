@@ -2,17 +2,25 @@
   "slug": "paisu-batango",
   "title": "Paisu Batango",
   "category": "wisata-alam",
-  "tags": ["Wisata Alam", "Budaya", "Mata Air"],
-  "excerpt": "Mata air alami yang jernih di Desa Lukpanenteng dengan suasana asri dan kesejukan khas pegunungan.",
-  "description": "Paisu Batango adalah mata air jernih yang menjadi salah satu destinasi favorit di Banggai Kepulauan. Air yang berasal dari celah bebatuan ini dipercaya warga sebagai sumber kehidupan dan tempat ritual budaya. Bupati Banggai Kepulauan Rusli Moidady meresmikan Fun Trip ke lokasi ini sebagai bagian dari promosi pariwisata daerah.",
+  "tags": [
+    "Wisata Alam",
+    "Budaya",
+    "Mata Air"
+  ],
+  "excerpt": "Membicarakan sejarah Paisu Batango tidak dapat dilepaskan dari asal-usul penamaan awal Desa Luwuk Panenteng. Dalam tradisi lisan yang diwariskan turun...",
+  "description": "Membicarakan sejarah Paisu Batango tidak dapat dilepaskan dari asal-usul penamaan awal Desa Luwuk Panenteng. Dalam tradisi lisan yang diwariskan turun-temurun, dikisahkan bahwa dahulu kala hiduplah seorang ibu bersama anaknya di sebuah wilayah yang dilalui aliran sungai. Sang ibu dipercaya sebagai putri dari Raja Banggai. Pada suatu waktu, anaknya terus-menerus menangis dan tidak kunjung tenang, meskipun telah diberi kenyamanan fisik dan diayun dengan penuh kasih. Setelah diperhatikan, ternyata penyebab tangis si anak adalah suara gemuruh air sungai yang mengalir deras di sekitar tempat tinggal mereka. Merasa terganggu dan tidak tega melihat anaknya tidak dapat tidur, sang ibu yang penuh kasih sayang itu pun mengambil keputusan yang tak biasa: ia hendak memindahkan aliran air tersebut. Sebelum melakukannya, ia terlebih dahulu mengambil air sebanyak mungkin dan menyimpannya dalam berbagai wadah yang dimilikinya sebagai aksi kesiapan agar kelak keluarganya tidak kekurangan air. Setelah itu, sang ibu mengucapkan kalimat dalam bahasa Banggai yang berbunyi: \"Ko paisu no kon Sulu mbali Simpong maka mu dungol\", yang berarti, “Wahai air, pergilah atau berpindahlah ke Simpong.” Dalam kepercayaan masyarakat Banggai, ucapan leluhur memiliki kekuatan spiritual dan kesakralan tersendiri. Maka sejak saat itu, aliran air tersebut dipercaya berpindah-pindah hingga akhirnya menetap di daerah Simpong, Luwuk. Sementara itu, air yang sebelumnya telah dikumpulkan dan disimpan oleh sang ibu kemudian membentuk sejumlah paisu (air) yang tersebar di wilayah Desa Lukpanenteng, antara lain Paisu Batango, Paisu Tumundo, dan Paisu Mandauling. Salah satu narasumber lokal yang terpercaya menyatakan bahwa pada masa lalu terdapat jalur aliran sungai yang secara geologis menghubungkan wilayah Simpong dengan Desa Lukpanenteng. Meskipun saat ini aliran tersebut telah mengering, sisa-sisa jalurnya masih dapat dilacak dan diyakini bermuara di sekitar kawasan Paisu Batango. Penamaan Paisu Batango berasal dari kata “batang”, namun bukan dalam pengertian umum seperti dalam bahasa Indonesia yang merujuk pada batang pohon. Dalam konteks bahasa dan budaya Banggai, batang memiliki makna yang lebih mendalam, yaitu “sumber” atau “pusat asal”. Meskipun secara harfiah berbeda, istilah ini tetap memiliki keterkaitan makna secara simbolis. Sebagaimana batang pohon yang menjadi inti dari tumbuhan dan memiliki banyak cabang berupa ranting, Paisu Batango juga digambarkan sebagai sumber utama aliran air yang memiliki beberapa percabangan. Hal ini sejalan dengan kepercayaan masyarakat bahwa aliran sungai yang deras, sebagaimana disebut dalam cerita rakyat setempat, berasal dari Paisu Batango dan kemudian mengalir ke berbagai penjuru, menyerupai struktur batang pohon dengan ranting-rantingnya. Penamaan ini tidak hanya mengandung makna geografis, tetapi juga simbolik. Dalam kehidupan sehari-hari dari generasi ke generasi masyarakat Desa Lukpanenteng, Paisu Batango dipandang sebagai sumber kehidupan. Air dari Batango ini dimanfaatkan untuk berbagai kebutuhan dasar seperti mandi, mencuci, memasak, hingga untuk dikonsumsi sebagai air minum. Oleh karena itu, nilai Paisu Batango sebagai sumber tidak hanya merujuk pada fungsi fisiknya sebagai mata air, tetapi juga pada perannya yang vital dalam menopang keberlangsungan hidup dan budaya masyarakat secara turun-temurun. Namun, hingga kini masih terdapat perbedaan pendapat di kalangan masyarakat mengenai apakah air mengalir yang dimaksud dalam cerita ini merujuk pada Paisu Batango atau paisu lainnya. Cerita ini disusun berdasarkan penuturan yang berkembang di masyarakat, sehingga terbuka kemungkinan adanya perbedaan versi.",
   "location": {
     "village": "Desa Lukpanenteng",
-    "subdistrict": "Bulagi",
+    "subdistrict": "Kab. Banggai Kepulauan",
     "regency": "Banggai Kepulauan",
-    "coordinates": [-1.5847, 123.4521]
+    "coordinates": [
+      -1.42,
+      -123.066
+    ]
   },
-  "cover": "/images/wisata/sample.jpg",
+  "cover": "/images/wisata/paisu_batango.png",
   "featured": true,
   "published": true,
-  "publishedAt": "2026-04-20T09:00:00+08:00"
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "nilaiBudaya": "Sumber kehidupan dan simbol keseimbangan alam masyarakat Banggai"
 }

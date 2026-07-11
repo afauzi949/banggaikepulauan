@@ -107,12 +107,7 @@ export function JelajahTeaserSection({
             ))}
           </ul>
 
-          <Button
-            href={ctaHref}
-            variant="primary"
-            size="md"
-            className="w-full justify-center"
-          >
+          <Button href={ctaHref} variant="primary" size="md" className="w-full justify-center">
             {ctaLabel}
           </Button>
         </div>

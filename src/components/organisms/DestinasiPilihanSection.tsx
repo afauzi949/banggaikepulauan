@@ -22,15 +22,14 @@ export async function DestinasiPilihanSection({
   items: providedItems,
   limit = 4,
 }: DestinasiPilihanSectionProps = {}) {
-  const items =
-    providedItems ?? (await getWisataList({ featured: true, limit }));
+  const items = providedItems ?? (await getWisataList({ featured: true, limit }));
 
   if (items.length === 0) {
     return null;
   }
 
   return (
-    <Container as="section" className="flex flex-col items-center gap-10 py-20">
+    <Container as="section" className="flex flex-col items-center gap-10 py-16 md:py-20">
       <SectionHeader title={title} subtitle={subtitle} align="center" />
 
       <WisataGrid items={items} cols={4} />

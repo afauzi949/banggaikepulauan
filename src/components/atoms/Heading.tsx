@@ -4,8 +4,7 @@ type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type HeadingSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 type HeadingWeight = "semibold" | "bold" | "extrabold";
 
-interface HeadingProps
-  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color"> {
+interface HeadingProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color"> {
   as?: HeadingLevel;
   size?: HeadingSize;
   weight?: HeadingWeight;

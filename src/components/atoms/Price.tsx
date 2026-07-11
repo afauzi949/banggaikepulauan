@@ -14,10 +14,7 @@ export function Price({ amount, currency = "IDR", className }: PriceProps) {
 
   return (
     <span
-      className={cn(
-        "font-[family-name:var(--font-dm-sans)] font-bold text-[#004d71]",
-        className,
-      )}
+      className={cn("font-[family-name:var(--font-dm-sans)] font-bold text-[#004d71]", className)}
     >
       {formatted}
     </span>

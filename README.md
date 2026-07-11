@@ -20,6 +20,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Manajemen Asset
+
+Semua gambar dan asset statis disimpan secara lokal di folder `public/`. **Tidak menggunakan layanan cloud (Cloudinary, dsb.).**
+
+Struktur folder asset:
+
+```
+public/
+├── brand/          # Logo dan branding
+├── geodata/        # File data geospasial
+└── images/
+    ├── hero.jpg        # Gambar hero halaman utama
+    ├── peta/           # Gambar peta interaktif
+    ├── peta-tematik/   # Preview peta tematik
+    ├── umkm/           # Foto produk UMKM
+    └── wisata/         # Foto destinasi wisata
+```
+
+Untuk menambah gambar baru, letakkan file di subfolder yang sesuai di `public/images/`, lalu referensikan dengan path relatif dari root, contoh: `/images/wisata/pantai.jpg`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

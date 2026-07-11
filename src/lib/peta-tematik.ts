@@ -1,17 +1,9 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import {
-  PetaTematikListSchema,
-  type PetaTematik,
-} from "@/lib/schemas/peta-tematik";
+import { PetaTematikListSchema, type PetaTematik } from "@/lib/schemas/peta-tematik";
 
-const PETA_TEMATIK_FILE = path.join(
-  process.cwd(),
-  "data",
-  "peta-tematik",
-  "index.json",
-);
+const PETA_TEMATIK_FILE = path.join(process.cwd(), "data", "peta-tematik", "index.json");
 
 async function readAll(): Promise<PetaTematik[]> {
   const raw = await fs.readFile(PETA_TEMATIK_FILE, "utf8");
@@ -26,9 +18,7 @@ async function readAll(): Promise<PetaTematik[]> {
 
   const result = PetaTematikListSchema.safeParse(json);
   if (!result.success) {
-    throw new Error(
-      `Invalid peta-tematik index ${PETA_TEMATIK_FILE}: ${result.error.message}`,
-    );
+    throw new Error(`Invalid peta-tematik index ${PETA_TEMATIK_FILE}: ${result.error.message}`);
   }
 
   return result.data.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
@@ -40,9 +30,7 @@ export type PetaTematikListOpts = {
   limit?: number;
 };
 
-export async function getPetaTematikList(
-  opts: PetaTematikListOpts = {},
-): Promise<PetaTematik[]> {
+export async function getPetaTematikList(opts: PetaTematikListOpts = {}): Promise<PetaTematik[]> {
   const { featured, format, limit } = opts;
 
   let items = await readAll();

@@ -1,0 +1,28 @@
+{
+  "slug": "wisata-gugus-pulau-bertasbih",
+  "title": "Wisata Gugus Pulau Bertasbih",
+  "category": "wisata-alam",
+  "tags": [
+    "Wisata Bahari",
+    "Ekowisata"
+  ],
+  "excerpt": "Merupakan wisata gugus 33 pulau-pulau kecil sehingga disebut sebagai “Bertasbih”. Setiap pulau memiliki nama dan artinya yang unik. Tersebar beberapa ...",
+  "description": "Merupakan wisata gugus 33 pulau-pulau kecil sehingga disebut sebagai “Bertasbih”. Setiap pulau memiliki nama dan artinya yang unik. Tersebar beberapa titik terumbu karang yang dapat dijadikan wisata snorkeling maupun diving. Sekaligus wisata pemandangan lautnya yang tentu tidak terkalahkan.",
+  "location": {
+    "village": "Desa Lumbi Lumbia",
+    "subdistrict": "Kab. Banggai Kepulauan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.391,
+      -123.081
+    ]
+  },
+  "cover": "/images/wisata/pulau_bertasbih.png",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "waktuKunjunganTerbaik": "Pagi hingga siang hari (cuaca tenang)",
+  "fasilitas": [
+    "Gazebo di Pulau Sombuan (oleh BAI)"
+  ]
+}

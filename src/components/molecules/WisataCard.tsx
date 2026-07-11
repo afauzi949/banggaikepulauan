@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Heading } from "@/components/atoms/Heading";
 import { Tag } from "@/components/atoms/Tag";
 import type { Wisata } from "@/lib/schemas/wisata";
-import { cn } from "@/lib/utils";
+import { cardElevation, cn } from "@/lib/utils";
 
 interface WisataCardProps {
   wisata: Wisata;
@@ -13,12 +13,7 @@ interface WisataCardProps {
   className?: string;
 }
 
-export function WisataCard({
-  wisata,
-  href,
-  imagePriority = false,
-  className,
-}: WisataCardProps) {
+export function WisataCard({ wisata, href, imagePriority = false, className }: WisataCardProps) {
   const { slug, title, excerpt, cover, location, tags = [] } = wisata;
   const url = href ?? `/wisata-dan-budaya/${slug}`;
 
@@ -27,8 +22,9 @@ export function WisataCard({
       href={url}
       aria-label={`${title}, ${location.village}`}
       className={cn(
-        "group relative block aspect-[297/507] w-full overflow-hidden rounded-[24px] border border-[#e5e5e5] bg-zinc-100",
-        "transition-shadow duration-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004d71] focus-visible:ring-offset-2",
+        "group relative block aspect-[297/507] w-full overflow-hidden rounded-[24px] bg-zinc-100",
+        cardElevation,
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004d71] focus-visible:ring-offset-2",
         className,
       )}
     >
@@ -53,12 +49,7 @@ export function WisataCard({
         )}
 
         <div className="flex flex-col gap-1">
-          <Heading
-            as="h3"
-            size="xs"
-            weight="semibold"
-            className="text-[#0a0a0a]"
-          >
+          <Heading as="h3" size="xs" weight="semibold" className="text-[#0a0a0a]">
             {title}
           </Heading>
           <p className="font-[family-name:var(--font-dm-sans)] text-[11px] leading-[20px] text-[#27272a]">

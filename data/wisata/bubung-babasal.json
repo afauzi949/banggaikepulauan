@@ -1,0 +1,24 @@
+{
+  "slug": "bubung-babasal",
+  "title": "Bubung Babasal",
+  "category": "wisata-alam",
+  "tags": [
+    "Wisata Alam",
+    "Fenomena Alam"
+  ],
+  "excerpt": "Bubung Babasal merupakan perairan berbentuk seperti lubang besar yang berisi air. Di dalamnya terdapat fenomena unik berupa kayu yang berputar mengiku...",
+  "description": "Bubung Babasal merupakan perairan berbentuk seperti lubang besar yang berisi air. Di dalamnya terdapat fenomena unik berupa kayu yang berputar mengikuti arah matahari, meskipun kayunya tidak selalu terlihat. Di bawah permukaan air, terdapat sekitar 19 ruang atau “kamar” bawah air. Beberapa di antaranya mengeluarkan gas seperti asap yang belum teridentifikasi secara ilmiah oleh laboratorium di Indonesia. Kawasan ini juga telah dilepas berbagai jenis ikan hias, dan uniknya, daun yang jatuh ke dalam air akan tetap utuh dan tidak berubah warna, seolah tidak mengalami pembusukan. Untuk menelusuri ruangan bawah air ini diperlukan keahlian khusus, seperti kemampuan menyelam menggunakan tali dan teknik cave diving.",
+  "location": {
+    "village": "Desa Bungin",
+    "subdistrict": "Tinangkung",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.445,
+      -123.061
+    ]
+  },
+  "cover": "/images/wisata/bubung_babasal.png",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

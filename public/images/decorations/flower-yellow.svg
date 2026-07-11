@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+    </filter>
+  </defs>
+  <g filter="url(#blur)">
+    <!-- Top-right petal -->
+    <ellipse cx="130" cy="60" rx="22" ry="50" transform="rotate(45 130 60)" fill="#F5A623"/>
+    <!-- Bottom-right petal -->
+    <ellipse cx="140" cy="130" rx="22" ry="50" transform="rotate(-45 140 130)" fill="#F5A623"/>
+    <!-- Bottom-left petal -->
+    <ellipse cx="70" cy="140" rx="22" ry="50" transform="rotate(45 70 140)" fill="#F5A623"/>
+    <!-- Top-left petal -->
+    <ellipse cx="60" cy="70" rx="22" ry="50" transform="rotate(-45 60 70)" fill="#F5A623"/>
+    <!-- Center dot top-right -->
+    <circle cx="145" cy="45" r="10" fill="#F5A623"/>
+    <!-- Center dot bottom-right -->
+    <circle cx="155" cy="145" r="10" fill="#F5A623"/>
+    <!-- Center dot bottom-left -->
+    <circle cx="55" cy="155" r="10" fill="#F5A623"/>
+    <!-- Center dot top-left -->
+    <circle cx="45" cy="55" r="10" fill="#F5A623"/>
+    <!-- Center circle -->
+    <circle cx="100" cy="100" r="14" fill="#F5A623"/>
+  </g>
+</svg>

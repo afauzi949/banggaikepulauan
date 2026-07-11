@@ -7,12 +7,7 @@ interface EyebrowProps {
 
 export function Eyebrow({ children, className }: EyebrowProps) {
   return (
-    <p
-      className={cn(
-        "font-[family-name:var(--font-dm-sans)] font-semibold",
-        className,
-      )}
-    >
+    <p className={cn("font-[family-name:var(--font-dm-sans)] font-semibold", className)}>
       {children}
     </p>
   );

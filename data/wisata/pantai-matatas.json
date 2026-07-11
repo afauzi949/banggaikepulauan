@@ -1,0 +1,24 @@
+{
+  "slug": "pantai-matatas",
+  "title": "Pantai Matatas",
+  "category": "wisata-alam",
+  "tags": [
+    "Wisata Bahari",
+    "Budaya Lokal"
+  ],
+  "excerpt": "Pantai Matatas menawarkan keindahan pasir putih dan air laut biru, namun terdapat mitos setempat bahwa pengunjung tidak diperkenankan mengenakan pakai...",
+  "description": "Pantai Matatas menawarkan keindahan pasir putih dan air laut biru, namun terdapat mitos setempat bahwa pengunjung tidak diperkenankan mengenakan pakaian berwarna merah.",
+  "location": {
+    "village": "Desa Bungin",
+    "subdistrict": "Kab. Banggai Kepulauan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.442,
+      -123.058
+    ]
+  },
+  "cover": "/images/wisata/pantai_leka_matatas.png",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}

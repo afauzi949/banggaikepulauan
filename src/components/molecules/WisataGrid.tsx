@@ -27,10 +27,7 @@ export function WisataGrid({
     <ul className={cn("grid w-full gap-6", colsMap[cols], className)}>
       {items.map((wisata, index) => (
         <li key={wisata.slug} className="flex">
-          <WisataCard
-            wisata={wisata}
-            imagePriority={prioritizeFirst && index === 0}
-          />
+          <WisataCard wisata={wisata} imagePriority={prioritizeFirst && index === 0} />
         </li>
       ))}
     </ul>

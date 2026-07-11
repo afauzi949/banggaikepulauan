@@ -1,0 +1,23 @@
+{
+  "slug": "pantai-pasir-putih-pulau-tambalang",
+  "title": "Pantai Pasir Putih Pulau Tambalang",
+  "category": "wisata-alam",
+  "tags": [
+    "Wisata Bahari"
+  ],
+  "excerpt": "Pantai dengan hamparan pasir putih dan air laut jernih ini menjadi daya tarik utama wisata bahari Desa Sambulangan. Aksesnya melalui kapal kecil dari ...",
+  "description": "Pantai dengan hamparan pasir putih dan air laut jernih ini menjadi daya tarik utama wisata bahari Desa Sambulangan. Aksesnya melalui kapal kecil dari dermaga Sambulangan menuju Pulau Tambalang.",
+  "location": {
+    "village": "Pulau Tambalang",
+    "subdistrict": "Desa Sambulangan",
+    "regency": "Banggai Kepulauan",
+    "coordinates": [
+      -1.376,
+      -123.115
+    ]
+  },
+  "cover": "/images/wisata/pasir_putih.png",
+  "featured": false,
+  "published": true,
+  "publishedAt": "2026-04-20T09:00:00+08:00"
+}
