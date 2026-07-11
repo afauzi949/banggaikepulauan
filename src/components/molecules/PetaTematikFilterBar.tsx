@@ -18,7 +18,7 @@ export function PetaTematikFilterBar({ items, onFilter, className }: PetaTematik
   const [selectedKategori, setSelectedKategori] = useState("");
 
   const applyFilter = useCallback(
-    (q: string, _lok: string, _kat: string) => {
+    (q: string) => {
       let result = items;
       if (q.trim()) {
         const lower = q.toLowerCase();
@@ -44,7 +44,7 @@ export function PetaTematikFilterBar({ items, onFilter, className }: PetaTematik
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
-            applyFilter(e.target.value, selectedLokasi, selectedKategori);
+            applyFilter(e.target.value);
           }}
           className={inputBase}
         />
@@ -59,7 +59,7 @@ export function PetaTematikFilterBar({ items, onFilter, className }: PetaTematik
             value={selectedLokasi}
             onChange={(e) => {
               setSelectedLokasi(e.target.value);
-              applyFilter(query, e.target.value, selectedKategori);
+              applyFilter(query);
             }}
             className={cn(inputBase, "appearance-none pr-9")}
           >
@@ -78,7 +78,7 @@ export function PetaTematikFilterBar({ items, onFilter, className }: PetaTematik
             value={selectedKategori}
             onChange={(e) => {
               setSelectedKategori(e.target.value);
-              applyFilter(query, selectedLokasi, e.target.value);
+              applyFilter(query);
             }}
             className={cn(inputBase, "appearance-none pr-9")}
           >
