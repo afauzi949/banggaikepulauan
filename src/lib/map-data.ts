@@ -41,7 +41,6 @@ export const IslandInformations: Record<
     name: "Desa Bakalan",
     description:
       "Desa Bakalan berlokasi di Kecamatan Tinangkung, sekitar 8 km dari Salakan, ibukota Kabupaten Banggai Kepulauan. Luas wilayahnya mencapai 32 km² dengan jumlah penduduk sekitar 713 jiwa (BPS 2024). Meskipun tidak terlalu besar, Desa Bakalan memiliki potensi wisata dan budaya yang luar biasa. Pantai Tebeabul menjadi daya tarik utama wisata baharinya. Penduduk Bakalan dikenal ramah dan menjunjung tinggi nilai gotong royong dalam kehidupan sehari-hari. Letaknya yang strategis dan keindahan alamnya menjadikan Bakalan sebagai salah satu destinasi potensial untuk pengembangan wisata berbasis masyarakat di Banggai Kepulauan.",
-  },n.",
   },
 };
 
