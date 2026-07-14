@@ -35,7 +35,22 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const message = ((body as Record<string, unknown>).message as string).trim();
+  const d = body as Record<string, unknown>;
+  const message = (d.message as string).trim();
+
+  // sessionId is optional but, if provided, must be a non-empty string
+  // of reasonable length to prevent abuse.
+  let sessionId: string | undefined;
+  if ("sessionId" in d) {
+    if (typeof d.sessionId !== "string" || d.sessionId.trim().length === 0) {
+      return NextResponse.json(
+        { error: "Invalid 'sessionId' field." },
+        { status: 400 }
+      );
+    }
+    // Clamp to 128 chars to prevent oversized payloads being forwarded
+    sessionId = d.sessionId.trim().slice(0, 128);
+  }
 
   if (message.length === 0) {
     return NextResponse.json(
@@ -70,7 +85,7 @@ export async function POST(req: NextRequest) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message, ...(sessionId ? { sessionId } : {}) }),
     });
 
     if (!n8nResponse.ok) {

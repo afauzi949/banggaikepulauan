@@ -157,6 +157,10 @@ export default function ChatWidget() {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  // Session ID — generated once on mount, persists for the lifetime of the page.
+  // Using a ref so it is stable across re-renders and not exposed to the client DOM.
+  const sessionIdRef = useRef<string>(uid());
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -188,8 +192,7 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Only send the plain text message — no sensitive data
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({ message: text, sessionId: sessionIdRef.current }),
       });
 
       const data: unknown = await res.json();
