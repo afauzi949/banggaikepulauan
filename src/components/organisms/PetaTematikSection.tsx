@@ -2,6 +2,7 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { MapDocumentCard } from "@/components/molecules/MapDocumentCard";
 import { SectionHeader } from "@/components/molecules/SectionHeader";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { getPetaTematikList } from "@/lib/peta-tematik";
 import type { PetaTematik } from "@/lib/schemas/peta-tematik";
 
@@ -31,8 +32,8 @@ export async function PetaTematikSection({
   return (
     <Container as="section" className="flex flex-col items-center gap-10 py-16 md:py-20">
       <SectionHeader
-        title={title}
-        subtitle={subtitle}
+        title={<TranslatableText dictKey="peta-tematik.sectionTitle" idText={title} />}
+        subtitle={<TranslatableText dictKey="peta-tematik.sectionSubtitle" idText={subtitle} />}
         align="center"
         weight="bold"
         subtitleSize="sm"
@@ -48,7 +49,7 @@ export async function PetaTematikSection({
       </ul>
 
       <Button href={ctaHref} variant="primary" size="lg">
-        {ctaLabel}
+        <TranslatableText dictKey="peta-tematik.cta" idText={ctaLabel} />
       </Button>
     </Container>
   );

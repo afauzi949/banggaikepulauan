@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { cn } from "@/lib/utils";
 
@@ -7,10 +10,15 @@ interface DwbCardProps {
   title: string;
   cover: string;
   href: string;
+  slug: string;
   className?: string;
 }
 
-export function DwbCard({ title, cover, href, className }: DwbCardProps) {
+export function DwbCard({ title, cover, href, slug, className }: DwbCardProps) {
+  const { t } = useLanguage();
+  const titleKey = `dwb.title.${slug}`;
+  const finalTitle = t(titleKey) !== titleKey ? t(titleKey) : title;
+
   return (
     <Link
       href={href}
@@ -35,7 +43,7 @@ export function DwbCard({ title, cover, href, className }: DwbCardProps) {
       {/* Title overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <h3 className="font-[family-name:var(--font-dm-sans)] text-xl font-extrabold leading-tight text-white sm:text-2xl md:text-3xl lg:text-4xl lg:leading-[40px]">
-          {title}
+          {finalTitle}
         </h3>
       </div>
     </Link>

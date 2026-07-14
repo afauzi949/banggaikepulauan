@@ -1,5 +1,8 @@
+"use client";
+
 import { Price } from "@/components/atoms/Price";
 import { Tag } from "@/components/atoms/Tag";
+import { useLanguage } from "@/context/LanguageContext";
 import type { Transport, TransportType } from "@/lib/schemas/transport";
 import { cardElevation, cn } from "@/lib/utils";
 
@@ -19,7 +22,18 @@ const typeVariantMap: Record<TransportType, "info" | "success"> = {
 };
 
 export function TransportCard({ transport, className }: TransportCardProps) {
+  const { t } = useLanguage();
   const { type, operator, origin, destination, price, currency, schedule } = transport;
+
+  const typeKey = `transport.type.${type}`;
+  const finalType = t(typeKey) !== typeKey ? t(typeKey) : typeLabelMap[type];
+
+  // We can just use the schedule strings as keys for simplicity
+  const daysKey = `transport.days.${schedule.days.replace(/\s+/g, "")}`;
+  const finalDays = t(daysKey) !== daysKey ? t(daysKey) : schedule.days;
+
+  const durationKey = `transport.duration.${schedule.durationLabel.replace(/\s+/g, "")}`;
+  const finalDuration = t(durationKey) !== durationKey ? t(durationKey) : schedule.durationLabel;
 
   return (
     <article
@@ -31,7 +45,7 @@ export function TransportCard({ transport, className }: TransportCardProps) {
     >
       <header className="flex items-center justify-between gap-3">
         <Tag variant={typeVariantMap[type]} size="sm">
-          {typeLabelMap[type]}
+          {finalType}
         </Tag>
         <Price amount={price} currency={currency} className="text-[16px]" />
       </header>
@@ -51,7 +65,7 @@ export function TransportCard({ transport, className }: TransportCardProps) {
           🕒
         </span>
         <p className="font-[family-name:var(--font-dm-sans)] text-[14px] leading-[20px] text-[#4b5563]">
-          {schedule.days} | {schedule.departureTime} | {schedule.durationLabel}
+          {finalDays} | {schedule.departureTime} | {finalDuration}
         </p>
       </div>
     </article>

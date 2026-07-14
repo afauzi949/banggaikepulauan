@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { SectionHeader } from "@/components/molecules/SectionHeader";
 import { TransportCard } from "@/components/molecules/TransportCard";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { getTransportList } from "@/lib/transport";
 import type { Transport } from "@/lib/schemas/transport";
 import { cn } from "@/lib/utils";
@@ -34,8 +35,8 @@ export async function AksesSection({
     >
       <SectionHeader
         id="akses-heading"
-        title={title}
-        subtitle={subtitle}
+        title={<TranslatableText dictKey="akses.title" idText={title} />}
+        subtitle={<TranslatableText dictKey="akses.subtitle" idText={subtitle} />}
         align="left"
         size="md"
         weight="bold"
@@ -52,7 +53,7 @@ export async function AksesSection({
         href={ctaHref}
         className="font-[family-name:var(--font-dm-sans)] text-[16px] font-bold leading-[24px] text-[#2563eb] hover:underline"
       >
-        {ctaLabel} <span aria-hidden>➔</span>
+        <TranslatableText dictKey="akses.cta" idText={ctaLabel} /> <span aria-hidden>➔</span>
       </Link>
     </section>
   );

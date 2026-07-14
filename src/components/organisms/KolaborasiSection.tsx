@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/atoms/Container";
 import { Heading } from "@/components/atoms/Heading";
 import { Tag } from "@/components/atoms/Tag";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { cn } from "@/lib/utils";
 
 interface KolaborasiSectionProps {
@@ -49,13 +50,13 @@ export function KolaborasiSection({
 
         <div className="flex flex-col items-start gap-5 lg:w-[535px]">
           <Tag variant="accent" size="lg">
-            {eyebrow}
+            <TranslatableText dictKey="kolaborasi.eyebrow" idText={eyebrow} />
           </Tag>
           <Heading as="h2" size="md" weight="extrabold" className="text-[#111827]">
-            {title}
+            <TranslatableText dictKey="kolaborasi.title" idText={title} />
           </Heading>
           <p className="font-[family-name:var(--font-dm-sans)] text-[18px] leading-[29px] text-[#4b5563]">
-            {description}
+            <TranslatableText dictKey="kolaborasi.description" idText={description} />
           </p>
           {isExternal ? (
             <a
@@ -64,14 +65,16 @@ export function KolaborasiSection({
               rel="noopener noreferrer"
               className="font-[family-name:var(--font-dm-sans)] text-[20px] font-medium leading-[20px] text-[#155dfc] hover:underline"
             >
-              {linkLabel} <span aria-hidden>→</span>
+              <TranslatableText dictKey="kolaborasi.linkLabel" idText={linkLabel} />{" "}
+              <span aria-hidden>→</span>
             </a>
           ) : (
             <Link
               href={linkHref}
               className="font-[family-name:var(--font-dm-sans)] text-[20px] font-medium leading-[20px] text-[#155dfc] hover:underline"
             >
-              {linkLabel} <span aria-hidden>→</span>
+              <TranslatableText dictKey="kolaborasi.linkLabel" idText={linkLabel} />{" "}
+              <span aria-hidden>→</span>
             </Link>
           )}
         </div>

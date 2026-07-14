@@ -47,23 +47,3 @@ export async function getPetaTematikList(opts: PetaTematikListOpts = {}): Promis
 
   return items;
 }
-
-export function formatFileSize(bytes: number): string {
-  if (bytes >= 1024 * 1024) {
-    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-  }
-  if (bytes >= 1024) {
-    return `${(bytes / 1024).toFixed(0)} KB`;
-  }
-  return `${bytes} B`;
-}
-
-const FORMAT_LABEL: Record<PetaTematik["format"], string> = {
-  SHP_ZIP: "SHP (ZIP)",
-  GeoJSON: "GeoJSON",
-  PDF: "PDF",
-};
-
-export function formatLabel(format: PetaTematik["format"]): string {
-  return FORMAT_LABEL[format];
-}

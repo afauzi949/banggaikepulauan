@@ -1,5 +1,6 @@
 import { AksesSection } from "@/components/organisms/AksesSection";
 import { Container } from "@/components/atoms/Container";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { DestinasiPilihanSection } from "@/components/organisms/DestinasiPilihanSection";
 import { HeroSection } from "@/components/organisms/HeroSection";
 import { Footer } from "@/components/organisms/Footer";
@@ -14,7 +15,18 @@ export default function HomePage() {
     <main>
       <Navbar activeHref="/" />
       <HeroSection />
-      <DestinasiPilihanSection />
+      <DestinasiPilihanSection
+        title={<TranslatableText dictKey="destinasi.title" idText="Destinasi Pilihan" />}
+        subtitle={
+          <TranslatableText
+            dictKey="destinasi.subtitle"
+            idText="Telusuri keindahan tersembunyi Banggai Kepulauan."
+          />
+        }
+        ctaLabel={<TranslatableText dictKey="destinasi.cta" idText="Lihat Selengkapnya" />}
+        limit={4}
+        cols={4}
+      />
       <PetaInteraktifSection />
       <Container
         as="section"

@@ -38,10 +38,12 @@ export const WisataSchema = z.object({
   tiketMasuk: z.string().optional(),
   fasilitas: z.array(z.string()).optional(),
   waktuKunjunganTerbaik: z.string().optional(),
-  narahubung: z.object({
-    nama: z.string(),
-    kontak: z.string()
-  }).optional(),
+  narahubung: z
+    .object({
+      nama: z.string(),
+      kontak: z.string(),
+    })
+    .optional(),
   nilaiBudaya: z.string().optional(),
   featured: z.boolean().default(false),
   published: z.boolean().default(true),

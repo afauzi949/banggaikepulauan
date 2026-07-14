@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 import { Container } from "@/components/atoms/Container";
 import { HeroContent } from "@/components/molecules/HeroContent";
 
@@ -16,11 +19,16 @@ interface HeroSectionProps {
 export function HeroSection({
   imageSrc = HERO_IMAGE_SRC,
   imageAlt = "Pemandangan udara Banggai Kepulauan",
-  eyebrow = "Pesona Kabupaten",
-  title = "Banggai Kepulauan",
-  ctaLabel = "Explore Now!",
   ctaHref = "#",
+  eyebrow,
+  title,
+  ctaLabel,
 }: HeroSectionProps) {
+  const { t } = useLanguage();
+
+  const finalEyebrow = eyebrow || t("hero.eyebrow");
+  const finalTitle = title || t("hero.title");
+  const finalCtaLabel = ctaLabel || t("hero.cta");
   return (
     <section className="relative h-[810px] w-full overflow-hidden">
       {/* Background image */}
@@ -37,7 +45,12 @@ export function HeroSection({
 
       {/* Centered content */}
       <Container className="absolute inset-0 flex items-center justify-center">
-        <HeroContent eyebrow={eyebrow} title={title} ctaLabel={ctaLabel} ctaHref={ctaHref} />
+        <HeroContent
+          eyebrow={finalEyebrow}
+          title={finalTitle}
+          ctaLabel={finalCtaLabel}
+          ctaHref={ctaHref}
+        />
       </Container>
     </section>
   );

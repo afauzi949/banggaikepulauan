@@ -5,12 +5,12 @@ import { Container } from "@/components/atoms/Container";
 import { DwbCard } from "@/components/molecules/DwbCard";
 import { Footer } from "@/components/organisms/Footer";
 import { Navbar } from "@/components/organisms/Navbar";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { getAllDwb } from "@/lib/dwb";
 
 export const metadata: Metadata = {
   title: "Dokumen Warisan Bangkep",
-  description:
-    "Dokumentasi warisan budaya, sejarah, dan tradisi Kabupaten Banggai Kepulauan.",
+  description: "Dokumentasi warisan budaya, sejarah, dan tradisi Kabupaten Banggai Kepulauan.",
 };
 
 const HERO_IMAGE = "/images/dwb/hero.jpg";
@@ -39,19 +39,17 @@ export default function DwbPage() {
       {/* Intro Section */}
       <Container as="section" className="py-10 md:py-16">
         <h1 className="font-[family-name:var(--font-dm-sans)] text-2xl font-bold leading-tight text-[#0a0a0a] md:text-[30px] md:leading-[36px]">
-          Dokumen Warisan Banggai Kepulauan
+          <TranslatableText dictKey="dwb.pageTitle" idText="Dokumen Warisan Banggai Kepulauan" />
         </h1>
         <p className="mt-4 max-w-5xl text-justify font-[family-name:var(--font-dm-sans)] text-base leading-7 text-[#0a0a0a] md:mt-6 md:text-lg md:leading-[28px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
-          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-          elementum tellus.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
+          est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin
+          lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet
+          feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante
+          pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel
+          bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum
+          tellus.
         </p>
       </Container>
 
@@ -61,6 +59,7 @@ export default function DwbPage() {
           {items.map((item) => (
             <DwbCard
               key={item.slug}
+              slug={item.slug}
               title={item.title}
               cover={item.cover}
               href={`/dwb/${item.slug}`}

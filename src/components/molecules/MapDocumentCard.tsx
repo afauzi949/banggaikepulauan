@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { Tag } from "@/components/atoms/Tag";
-import { formatFileSize, formatLabel } from "@/lib/peta-tematik";
+import { formatFileSize, formatLabel } from "@/lib/schemas/peta-tematik";
 import type { PetaTematik } from "@/lib/schemas/peta-tematik";
 import { cardElevation, cn } from "@/lib/utils";
 
@@ -17,7 +20,12 @@ export function MapDocumentCard({
   ctaLabel = "Lihat Selengkapnya",
   className,
 }: MapDocumentCardProps) {
-  const { title, preview, format, sizeBytes, downloadUrl } = document;
+  const { t } = useLanguage();
+  const { slug, title, preview, format, sizeBytes, downloadUrl } = document;
+
+  const titleKey = `peta-tematik.title.${slug}`;
+  const finalTitle = t(titleKey) !== titleKey ? t(titleKey) : title;
+  const finalCta = t("destinasi.cta") !== "destinasi.cta" ? t("destinasi.cta") : ctaLabel;
 
   return (
     <Link
@@ -43,7 +51,7 @@ export function MapDocumentCard({
       <div className="flex flex-col gap-4 px-6 pt-4">
         <div className="flex flex-col gap-1">
           <h3 className="font-[family-name:var(--font-dm-sans)] text-[20px] font-bold leading-[28px] text-[#111827]">
-            {title}
+            {finalTitle}
           </h3>
           <div className="flex flex-wrap items-center gap-2">
             <Tag variant="neutral" size="sm">
@@ -63,7 +71,7 @@ export function MapDocumentCard({
             "transition-colors group-hover:bg-[#003d5a]",
           )}
         >
-          {ctaLabel}
+          {finalCta}
         </span>
       </div>
     </Link>

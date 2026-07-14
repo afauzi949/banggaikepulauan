@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar } from "lucide-react";
 
 import { Container } from "@/components/atoms/Container";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { Footer } from "@/components/organisms/Footer";
 import { Navbar } from "@/components/organisms/Navbar";
 import { getKegiatanBySlug } from "@/lib/kegiatan";
@@ -27,8 +28,7 @@ export default function KegiatanDetailPage({ params }: Props) {
     notFound();
   }
 
-  // Split description into paragraphs
-  const paragraphs = data.description.split("\n\n").filter(Boolean);
+  // We will let TranslatableText handle the description string with whitespace-pre-wrap
 
   return (
     <main className="bg-white">
@@ -41,7 +41,9 @@ export default function KegiatanDetailPage({ params }: Props) {
           className="inline-flex w-fit items-center gap-2 rounded-md bg-zinc-100 px-4 py-2 font-medium text-zinc-700 transition-all hover:gap-4 cursor-pointer"
         >
           <ArrowLeft className="h-6 w-6" />
-          <p className="leading-[-4px]">Kembali</p>
+          <p className="leading-[-4px]">
+            <TranslatableText dictKey="nav.kembali" idText="Kembali" />
+          </p>
         </Link>
       </Container>
 
@@ -78,7 +80,7 @@ export default function KegiatanDetailPage({ params }: Props) {
       {/* Content */}
       <Container className="mb-20 max-w-4xl space-y-6">
         <h1 className="text-2xl font-bold text-zinc-900 sm:text-3xl md:text-4xl">
-          {data.title}
+          <TranslatableText dictKey={`kegiatan.title.${data.slug}`} idText={data.title} />
         </h1>
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-600">
@@ -89,17 +91,18 @@ export default function KegiatanDetailPage({ params }: Props) {
 
         {data.excerpt && (
           <p className="text-lg font-medium italic text-zinc-800">
-            &quot;{data.excerpt}&quot;
+            &quot;
+            <TranslatableText dictKey={`kegiatan.excerpt.${data.slug}`} idText={data.excerpt} />
+            &quot;
           </p>
         )}
 
         {/* Paragraphs */}
-        <div className="space-y-4 pt-4">
-          {paragraphs.map((paragraph, i) => (
-            <p key={i} className="text-base leading-relaxed text-zinc-700">
-              {paragraph}
-            </p>
-          ))}
+        <div className="space-y-4 pt-4 text-base leading-relaxed text-zinc-700 whitespace-pre-wrap">
+          <TranslatableText
+            dictKey={`kegiatan.description.${data.slug}`}
+            idText={data.description}
+          />
         </div>
 
         {/* Link For DWB */}
@@ -124,7 +127,7 @@ export default function KegiatanDetailPage({ params }: Props) {
                 key={i}
                 className="rounded-full bg-emerald-100 px-3 py-1 text-xs text-emerald-800"
               >
-                {tag}
+                <TranslatableText dictKey={`tag.${tag}`} idText={tag} />
               </span>
             ))}
           </div>

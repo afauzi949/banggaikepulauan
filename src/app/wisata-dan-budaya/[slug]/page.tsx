@@ -3,6 +3,7 @@ import Image from "next/image";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin } from "lucide-react";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 
 import { Container } from "@/components/atoms/Container";
 import { Footer } from "@/components/organisms/Footer";
@@ -21,7 +22,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getWisataBySlug(params.slug);
   if (!data) return { title: "Tidak ditemukan" };
-  
+
   return { title: data.title, description: data.excerpt };
 }
 
@@ -57,7 +58,10 @@ export default async function WisataDetailPage({ params }: Props) {
       <Container>
         <div className="flex flex-col gap-4 mt-6">
           {images.slice(0, 3).map((img, idx) => (
-            <div key={idx} className="h-full w-full rounded-xl overflow-hidden aspect-video relative">
+            <div
+              key={idx}
+              className="h-full w-full rounded-xl overflow-hidden aspect-video relative"
+            >
               <Image
                 src={img}
                 alt={`${data.title} preview ${idx + 1}`}
@@ -78,28 +82,41 @@ export default async function WisataDetailPage({ params }: Props) {
                 key={i}
                 className="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium"
               >
-                {cat}
+                <TranslatableText dictKey={`tag.${cat}`} idText={cat} />
               </span>
             ))}
           </div>
 
           <h1 className="text-4xl font-bold text-zinc-900 mt-2">
-            {data.title}
+            <TranslatableText dictKey={`wisata.title.${data.slug}`} idText={data.title} />
           </h1>
 
           <div className="flex items-center text-sm text-zinc-600 gap-2 font-medium">
             <MapPin className="w-4 h-4 text-emerald-600" />
-            {data.location.village}, Kec. {data.location.subdistrict}, Kab. {data.location.regency}
+            <TranslatableText
+              dictKey={`location.${data.location.village.toLowerCase().replace(/[^a-z0-9]/g, "")}`}
+              idText={`${data.location.village}, Kec. ${data.location.subdistrict}, Kab. ${data.location.regency}`}
+            />
           </div>
 
           <div className="text-zinc-700 text-base leading-relaxed whitespace-pre-wrap mt-6">
-            {data.description}
+            <TranslatableText
+              dictKey={`wisata.description.${data.slug}`}
+              idText={data.description}
+            />
           </div>
 
           {data.nilaiBudaya && (
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md mt-6">
-              <p className="text-zinc-700 font-semibold mb-2">🌀 Nilai Budaya:</p>
-              <p className="text-zinc-600 italic leading-relaxed">{data.nilaiBudaya}</p>
+              <p className="text-zinc-700 font-semibold mb-2">
+                🌀 <TranslatableText dictKey="detail.nilaiBudaya" idText="Nilai Budaya:" />
+              </p>
+              <p className="text-zinc-600 italic leading-relaxed">
+                <TranslatableText
+                  dictKey={`wisata.nilaibudaya.${data.slug}`}
+                  idText={data.nilaiBudaya}
+                />
+              </p>
             </div>
           )}
         </div>
@@ -108,9 +125,14 @@ export default async function WisataDetailPage({ params }: Props) {
         <div className="space-y-4">
           <div className="border border-zinc-200 rounded-xl p-5 shadow-sm bg-white">
             <h3 className="font-semibold text-zinc-800 mb-2 flex items-center gap-2">
-              🎫 Tiket Masuk
+              🎫 <TranslatableText dictKey="detail.tiketMasuk" idText="Tiket Masuk" />
             </h3>
-            <p className="text-zinc-600 font-medium">{data.tiketMasuk || "Gratis"}</p>
+            <p className="text-zinc-600 font-medium">
+              <TranslatableText
+                dictKey={data.tiketMasuk?.toLowerCase() === "gratis" ? "detail.gratis" : ""}
+                idText={data.tiketMasuk || "Gratis"}
+              />
+            </p>
           </div>
 
           {data.fasilitas && data.fasilitas.length > 0 && (
@@ -131,9 +153,7 @@ export default async function WisataDetailPage({ params }: Props) {
               <h3 className="font-semibold text-zinc-800 mb-2 flex items-center gap-2">
                 🕰️ Waktu Kunjungan Terbaik
               </h3>
-              <p className="text-zinc-600 text-sm font-medium mt-1">
-                {data.waktuKunjunganTerbaik}
-              </p>
+              <p className="text-zinc-600 text-sm font-medium mt-1">{data.waktuKunjunganTerbaik}</p>
             </div>
           )}
 
@@ -142,12 +162,8 @@ export default async function WisataDetailPage({ params }: Props) {
               <h3 className="font-semibold text-zinc-800 mb-3 flex gap-2 items-center">
                 ☎️ Narahubung
               </h3>
-              <p className="text-zinc-700 font-semibold">
-                {data.narahubung.nama}
-              </p>
-              <p className="text-blue-600 font-medium">
-                {data.narahubung.kontak}
-              </p>
+              <p className="text-zinc-700 font-semibold">{data.narahubung.nama}</p>
+              <p className="text-blue-600 font-medium">{data.narahubung.kontak}</p>
             </div>
           )}
         </div>
@@ -156,9 +172,7 @@ export default async function WisataDetailPage({ params }: Props) {
       {/* Map */}
       {data.location.coordinates && (
         <Container className="mt-12">
-          <h3 className="text-2xl font-bold text-zinc-800 mb-6">
-            🗺️ Lokasi di Peta
-          </h3>
+          <h3 className="text-2xl font-bold text-zinc-800 mb-6">🗺️ Lokasi di Peta</h3>
           <div className="w-full h-[400px] rounded-xl overflow-hidden border border-zinc-200">
             <Map markers={[data.location.coordinates[1], data.location.coordinates[0]]} />
           </div>

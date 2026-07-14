@@ -8,22 +8,22 @@ import { Logo } from "@/components/atoms/Logo";
 import { NavLinks, type NavItem } from "@/components/molecules/NavLinks";
 import { NavLink } from "@/components/atoms/NavLink";
 import { cn } from "@/lib/utils";
-
-const DEFAULT_ITEMS: NavItem[] = [
-  { label: "Beranda", href: "/" },
-  { label: "Wisata & Budaya", href: "/wisata-dan-budaya" },
-  { label: "Kegiatan", href: "/kegiatan" },
-  { label: "Peta Tematik", href: "/peta-tematik" },
-  { label: "DWB", href: "/dwb" },
-  { label: "Jelajah Bangkep", href: "/jelajah" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 interface NavbarProps {
   activeHref?: string;
-  items?: NavItem[];
 }
 
-export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps) {
+export function Navbar({ activeHref = "/" }: NavbarProps) {
+  const { t } = useLanguage();
+  const items: NavItem[] = [
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.wisata"), href: "/wisata-dan-budaya" },
+    { label: t("nav.kegiatan"), href: "/kegiatan" },
+    { label: t("nav.peta"), href: "/peta-tematik" },
+    { label: t("nav.dwb"), href: "/dwb" },
+    { label: t("nav.jelajah"), href: "/jelajah" },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,10 +31,10 @@ export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps)
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
+
     // Initial check in case the page is already scrolled on load
     handleScroll();
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -59,20 +59,20 @@ export function Navbar({ activeHref = "/", items = DEFAULT_ITEMS }: NavbarProps)
       <header
         className={cn(
           "fixed left-0 right-0 top-0 z-[100] w-full transition-all duration-300 ease-in-out",
-          isScrolled ? "bg-transparent pt-4" : "bg-white"
+          isScrolled ? "bg-transparent pt-4" : "bg-white",
         )}
       >
         <Container>
           <div
             className={cn(
               "flex items-center justify-between transition-all duration-300",
-              isScrolled 
-                ? "rounded-[20px] bg-white/95 px-6 py-4 shadow-2xl backdrop-blur-md" 
-                : "bg-transparent py-4"
+              isScrolled
+                ? "rounded-[20px] bg-white/95 px-6 py-4 shadow-2xl backdrop-blur-md"
+                : "bg-transparent py-4",
             )}
           >
             <Logo />
-            
+
             {/* Desktop Nav */}
             <div className="hidden lg:block">
               <NavLinks items={items} activeHref={activeHref} />

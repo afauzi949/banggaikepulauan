@@ -1,7 +1,4 @@
-export const IslandInformations: Record<
-  string,
-  { name: string; description: string }
-> = {
+export const IslandInformations: Record<string, { name: string; description: string }> = {
   "island-main": {
     name: "Banggai Kepulauan",
     description:

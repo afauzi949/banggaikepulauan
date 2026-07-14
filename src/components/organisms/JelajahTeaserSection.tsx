@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/atoms/Button";
 import { SectionHeader } from "@/components/molecules/SectionHeader";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { cn } from "@/lib/utils";
 
 export interface UMKMTeaserItem {
@@ -57,8 +58,8 @@ export function JelajahTeaserSection({
     >
       <SectionHeader
         id="jelajah-teaser-heading"
-        title={title}
-        subtitle={subtitle}
+        title={<TranslatableText dictKey="jelajah-teaser.title" idText={title} />}
+        subtitle={<TranslatableText dictKey="jelajah-teaser.subtitle" idText={subtitle} />}
         align="left"
         size="md"
         weight="bold"
@@ -77,7 +78,7 @@ export function JelajahTeaserSection({
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white/90 px-4 py-2 shadow-sm backdrop-blur-sm">
             <p className="font-[family-name:var(--font-dm-sans)] text-[16px] font-bold leading-[24px] text-[#111827]">
               <span aria-hidden>📍 </span>
-              {totalLabel}
+              <TranslatableText dictKey="jelajah-teaser.totalLabel" idText={totalLabel} />
             </p>
           </div>
         </div>
@@ -97,10 +98,10 @@ export function JelajahTeaserSection({
                 </div>
                 <div className="flex min-w-0 flex-col">
                   <h3 className="font-[family-name:var(--font-dm-sans)] text-[18px] font-bold leading-[28px] text-[#111827]">
-                    {item.name}
+                    <TranslatableText dictKey={`umkm.name.${item.slug}`} idText={item.name} />
                   </h3>
                   <p className="font-[family-name:var(--font-dm-sans)] text-[14px] leading-[20px] text-[#6b7280]">
-                    {item.meta}
+                    <TranslatableText dictKey={`umkm.meta.${item.slug}`} idText={item.meta} />
                   </p>
                 </div>
               </li>
@@ -108,7 +109,7 @@ export function JelajahTeaserSection({
           </ul>
 
           <Button href={ctaHref} variant="primary" size="md" className="w-full justify-center">
-            {ctaLabel}
+            <TranslatableText dictKey="jelajah-teaser.cta" idText={ctaLabel} />
           </Button>
         </div>
       </div>

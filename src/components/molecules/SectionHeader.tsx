@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Heading } from "@/components/atoms/Heading";
 import { cn } from "@/lib/utils";
 
@@ -7,8 +8,8 @@ type HeadingSize = "md" | "lg";
 type SubtitleSize = "sm" | "md";
 
 interface SectionHeaderProps {
-  title: string;
-  subtitle?: string;
+  title: ReactNode;
+  subtitle?: ReactNode;
   align?: Align;
   size?: HeadingSize;
   weight?: HeadingWeight;

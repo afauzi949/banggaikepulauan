@@ -5,7 +5,9 @@ import React from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L from "leaflet";
 
-const CustomMarkerIcon = (color: string = "#059669") => // emerald-600 to match new theme
+const CustomMarkerIcon = (
+  color: string = "#059669", // emerald-600 to match new theme
+) =>
   L.divIcon({
     html: `
       <div style="
@@ -39,10 +41,7 @@ const DetailMap: React.FC<{
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      <Marker
-        position={[markers[0], markers[1]]}
-        icon={CustomMarkerIcon(color)}
-      >
+      <Marker position={[markers[0], markers[1]]} icon={CustomMarkerIcon(color)}>
         {label && <Popup>{label}</Popup>}
       </Marker>
     </MapContainer>

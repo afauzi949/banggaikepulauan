@@ -49,8 +49,8 @@ export function WisataCardDark({
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {tags.slice(0, 3).map((tag) => (
-              <span 
-                key={tag} 
+              <span
+                key={tag}
                 className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold group-hover:bg-white/80 group-hover:text-zinc-800 transition-colors duration-500"
               >
                 {tag}
@@ -71,7 +71,10 @@ export function WisataCardDark({
 
           {/* Hover Content (Overview) - Hidden normally, visible on hover */}
           <p className="absolute inset-0 font-[family-name:var(--font-dm-sans)] text-sm leading-5 opacity-0 translate-y-4 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-            {shortExcerpt} <span className="font-semibold underline decoration-zinc-900 decoration-1 underline-offset-2">View More</span>
+            {shortExcerpt}{" "}
+            <span className="font-semibold underline decoration-zinc-900 decoration-1 underline-offset-2">
+              View More
+            </span>
           </p>
         </div>
       </div>

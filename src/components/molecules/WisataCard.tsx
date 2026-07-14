@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { Heading } from "@/components/atoms/Heading";
 import { Tag } from "@/components/atoms/Tag";
@@ -14,7 +17,20 @@ interface WisataCardProps {
 }
 
 export function WisataCard({ wisata, href, imagePriority = false, className }: WisataCardProps) {
+  const { t } = useLanguage();
   const { slug, title, excerpt, cover, location, tags = [] } = wisata;
+
+  const finalTitle =
+    t(`wisata.title.${slug}`) !== `wisata.title.${slug}` ? t(`wisata.title.${slug}`) : title;
+  const finalExcerpt =
+    t(`wisata.excerpt.${slug}`) !== `wisata.excerpt.${slug}`
+      ? t(`wisata.excerpt.${slug}`)
+      : excerpt;
+
+  // Try to translate location.village if there's a specific key, otherwise just use it
+  const locKey = `location.${location.village.toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+  const finalLocation = t(locKey) !== locKey ? t(locKey) : location.village;
+
   const url = href ?? `/wisata-dan-budaya/${slug}`;
 
   return (
@@ -40,26 +56,30 @@ export function WisataCard({ wisata, href, imagePriority = false, className }: W
       <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-3 rounded-tl-[16px] rounded-tr-[16px] bg-white p-4">
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {tags.slice(0, 3).map((tag) => (
-              <Tag key={tag} variant="primary" size="sm">
-                {tag}
-              </Tag>
-            ))}
+            {tags.slice(0, 3).map((tag) => {
+              const tagKey = `tag.${tag}`;
+              const finalTag = t(tagKey) !== tagKey ? t(tagKey) : tag;
+              return (
+                <Tag key={tag} variant="primary" size="sm">
+                  {finalTag}
+                </Tag>
+              );
+            })}
           </div>
         )}
 
         <div className="flex flex-col gap-1">
           <Heading as="h3" size="xs" weight="semibold" className="text-[#0a0a0a]">
-            {title}
+            {finalTitle}
           </Heading>
           <p className="font-[family-name:var(--font-dm-sans)] text-[11px] leading-[20px] text-[#27272a]">
-            {location.village}
+            {finalLocation}
           </p>
         </div>
 
         <div className="relative">
           <p className="line-clamp-2 pr-16 font-[family-name:var(--font-dm-sans)] text-[14px] leading-[20px] text-[#27272a]">
-            {excerpt}
+            {finalExcerpt}
           </p>
           <span
             aria-hidden

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { MapPin, Phone, Map } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { Tag } from "@/components/atoms/Tag";
 import type { Umkm } from "@/lib/schemas/umkm";
@@ -11,7 +14,14 @@ interface JelajahCardProps {
 }
 
 export function JelajahCard({ umkm, className }: JelajahCardProps) {
-  const { name, tags = [], description, location, cover, operatingHours, contact } = umkm;
+  const { t } = useLanguage();
+  const { slug, name, tags = [], description, location, cover, operatingHours, contact } = umkm;
+
+  const descKey = `umkm.description.${slug}`;
+  const finalDesc = t(descKey) !== descKey ? t(descKey) : description;
+
+  const locKey = `location.${location.village.toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+  const finalVillage = t(locKey) !== locKey ? t(locKey) : location.village;
 
   return (
     <article
@@ -32,11 +42,15 @@ export function JelajahCard({ umkm, className }: JelajahCardProps) {
 
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-3">
-          {tags.slice(0, 3).map((tag) => (
-            <Tag key={tag} variant="primary" size="sm" className="bg-white text-[#004d71]">
-              {tag}
-            </Tag>
-          ))}
+          {tags.slice(0, 3).map((tag) => {
+            const tagKey = `tag.${tag}`;
+            const finalTag = t(tagKey) !== tagKey ? t(tagKey) : tag;
+            return (
+              <Tag key={tag} variant="primary" size="sm" className="bg-white text-[#004d71]">
+                {finalTag}
+              </Tag>
+            );
+          })}
         </div>
       )}
 
@@ -55,17 +69,17 @@ export function JelajahCard({ umkm, className }: JelajahCardProps) {
         <div className="flex items-start gap-1">
           <MapPin className="mt-0.5 size-4 shrink-0 text-white" />
           <p className="font-[family-name:var(--font-dm-sans)] text-[13px] leading-[17px] text-white">
-            {location.village}, {location.subdistrict} Kab. {location.regency}
+            {finalVillage}, {location.subdistrict} Kab. {location.regency}
           </p>
         </div>
       </div>
 
       <p className="font-[family-name:var(--font-dm-sans)] text-sm leading-5 text-white">
-        {description}
+        {finalDesc}
       </p>
 
       {contact && (
-        <div className="mt-auto flex gap-4">
+        <div className="mt-auto flex flex-wrap gap-4">
           {contact.googleMapsUrl && (
             <a
               href={contact.googleMapsUrl}
@@ -75,7 +89,7 @@ export function JelajahCard({ umkm, className }: JelajahCardProps) {
             >
               <Map className="size-[18px] text-black" />
               <span className="font-[family-name:var(--font-dm-sans)] text-xs text-black">
-                Rute Google Maps
+                {t("jelajah.maps") !== "jelajah.maps" ? t("jelajah.maps") : "Rute Google Maps"}
               </span>
             </a>
           )}
@@ -88,7 +102,9 @@ export function JelajahCard({ umkm, className }: JelajahCardProps) {
             >
               <Phone className="size-4 text-black" />
               <span className="font-[family-name:var(--font-dm-sans)] text-xs text-black">
-                Kontak Whatsapp
+                {t("jelajah.whatsapp") !== "jelajah.whatsapp"
+                  ? t("jelajah.whatsapp")
+                  : "Kontak Whatsapp"}
               </span>
             </a>
           )}

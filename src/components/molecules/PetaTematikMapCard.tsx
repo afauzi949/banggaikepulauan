@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Download, Eye } from "lucide-react";
-
-import { formatFileSize, formatLabel } from "@/lib/peta-tematik";
+import { formatFileSize, formatLabel } from "@/lib/schemas/peta-tematik";
 import type { PetaTematik } from "@/lib/schemas/peta-tematik";
 import { cn } from "@/lib/utils";
 
