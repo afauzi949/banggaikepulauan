@@ -10,18 +10,33 @@ const CustomMarkerIcon = (
 ) =>
   L.divIcon({
     html: `
-      <div style="
-        background-color: ${color};
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      "></div>
+      <div class="map-marker-container" style="display: flex; justify-content: center; align-items: flex-end; width: 100%; height: 100%;">
+        <style>
+          @keyframes bounce-marker {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+          }
+          .map-marker-container svg {
+            animation: bounce-marker 2s infinite ease-in-out;
+            filter: drop-shadow(0px 6px 4px rgba(0,0,0,0.5));
+            transition: transform 0.2s;
+            cursor: pointer;
+          }
+          .map-marker-container:hover svg {
+            transform: scale(1.15);
+            animation: none;
+          }
+        </style>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="36" height="48">
+          <path d="M18 0C8.06 0 0 8.06 0 18c0 13.5 18 30 18 30s18-16.5 18-30C36 8.06 27.94 0 18 0z" fill="white"/>
+          <circle cx="18" cy="18" r="11" fill="${color}"/>
+        </svg>
+      </div>
     `,
-    className: "custom-marker",
-    iconSize: [24, 24],
-    iconAnchor: [12, 24],
+    className: "", // Empty to override default Leaflet styles
+    iconSize: [36, 48],
+    iconAnchor: [18, 48],
+    popupAnchor: [0, -48],
   });
 
 const DetailMap: React.FC<{
@@ -37,8 +52,8 @@ const DetailMap: React.FC<{
       className="h-[400px] w-full rounded-xl overflow-hidden z-0"
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+        url="https://mt1.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}"
       />
 
       <Marker position={[markers[0], markers[1]]} icon={CustomMarkerIcon(color)}>
