@@ -174,7 +174,7 @@ export default async function WisataDetailPage({ params }: Props) {
         <Container className="mt-12">
           <h3 className="text-2xl font-bold text-zinc-800 mb-6">🗺️ Lokasi di Peta</h3>
           <div className="w-full h-[400px] rounded-xl overflow-hidden border border-zinc-200">
-            <Map markers={[data.location.coordinates[1], data.location.coordinates[0]]} />
+            <Map markers={[data.location.coordinates[0], data.location.coordinates[1]]} label={data.title} />
           </div>
         </Container>
       )}

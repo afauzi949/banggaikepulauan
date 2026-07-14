@@ -40,9 +40,17 @@ export default function JelajahLeafletMap({ markers }: JelajahLeafletMapProps) {
       {markers.map((marker) => (
         <Marker key={marker.slug} position={marker.position}>
           <Popup>
-            <div className="font-[family-name:var(--font-dm-sans)]">
-              <p className="text-sm font-bold">{marker.name}</p>
-              <p className="text-xs text-zinc-600">{marker.village}</p>
+            <div className="flex flex-col gap-1 font-[family-name:var(--font-dm-sans)]">
+              <p className="text-sm font-bold m-0">{marker.name}</p>
+              <p className="text-xs text-zinc-600 m-0">{marker.village}</p>
+              <a
+                href={`https://www.google.com/maps?q=${marker.position[0]},${marker.position[1]}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-600 hover:underline m-0 mt-1"
+              >
+                Buka di Google Maps
+              </a>
             </div>
           </Popup>
         </Marker>

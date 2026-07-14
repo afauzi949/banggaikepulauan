@@ -42,7 +42,19 @@ const DetailMap: React.FC<{
       />
 
       <Marker position={[markers[0], markers[1]]} icon={CustomMarkerIcon(color)}>
-        {label && <Popup>{label}</Popup>}
+        <Popup>
+          <div className="flex flex-col gap-1 font-[family-name:var(--font-dm-sans)]">
+            {label && <p className="font-bold text-sm m-0">{label}</p>}
+            <a
+              href={`https://www.google.com/maps?q=${markers[0]},${markers[1]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-blue-600 hover:underline m-0"
+            >
+              Buka di Google Maps
+            </a>
+          </div>
+        </Popup>
       </Marker>
     </MapContainer>
   );

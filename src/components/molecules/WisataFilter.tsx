@@ -4,6 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 
 import { cn } from "@/lib/utils";
 import type { Wisata } from "@/lib/schemas/wisata";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface WisataFilterProps {
   items: Wisata[];
@@ -15,6 +16,7 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
   const [query, setQuery] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const { t } = useLanguage();
 
   const locations = useMemo(() => {
     const set = new Set(items.map((w) => w.location.subdistrict));
@@ -51,11 +53,11 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
     <div className={cn("flex flex-col gap-4 sm:flex-row sm:items-end", className)}>
       <label className="flex flex-1 flex-col gap-1.5">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Judul
+          {t("filter.title") !== "filter.title" ? t("filter.title") : "Judul"}
         </span>
         <input
           type="text"
-          placeholder="Cari Judul..."
+          placeholder={t("filter.searchTitle") !== "filter.searchTitle" ? t("filter.searchTitle") : "Cari Judul..."}
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -67,7 +69,7 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
 
       <label className="flex flex-1 flex-col gap-1.5">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Lokasi
+          {t("filter.location") !== "filter.location" ? t("filter.location") : "Lokasi"}
         </span>
         <select
           value={selectedLocation}
@@ -77,7 +79,7 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
           }}
           className={cn(inputBase, "appearance-none")}
         >
-          <option value="">Pilih lokasi</option>
+          <option value="">{t("filter.selectLocation") !== "filter.selectLocation" ? t("filter.selectLocation") : "Pilih lokasi"}</option>
           {locations.map((loc) => (
             <option key={loc} value={loc}>
               {loc}
@@ -88,7 +90,7 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
 
       <label className="flex w-full flex-col gap-1.5 sm:w-auto sm:min-w-[200px]">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Kategori
+          {t("filter.category") !== "filter.category" ? t("filter.category") : "Kategori"}
         </span>
         <select
           value={selectedCategory}
@@ -98,10 +100,10 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
           }}
           className={cn(inputBase, "appearance-none")}
         >
-          <option value="">Pilih kategori</option>
+          <option value="">{t("filter.selectCategory") !== "filter.selectCategory" ? t("filter.selectCategory") : "Pilih kategori"}</option>
           {categories.map((cat) => (
             <option key={cat} value={cat}>
-              {cat}
+              {t(`tag.${cat}`) !== `tag.${cat}` ? t(`tag.${cat}`) : cat}
             </option>
           ))}
         </select>

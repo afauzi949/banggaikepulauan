@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 
+import { useLanguage } from "@/context/LanguageContext";
 import type { Wisata } from "@/lib/schemas/wisata";
 import { cn } from "@/lib/utils";
 
@@ -20,8 +21,19 @@ export function WisataCardDark({
   const { slug, title, cover, location, tags = [], excerpt } = wisata;
   const url = href ?? `/wisata-dan-budaya/${slug}`;
 
+  const { t } = useLanguage();
+
   // Truncate excerpt cleanly
   const shortExcerpt = excerpt && excerpt.length > 80 ? excerpt.slice(0, 80) + "..." : excerpt;
+
+  const titleKey = `wisata.title.${slug}`;
+  const finalTitle = t(titleKey) !== titleKey ? t(titleKey) : title;
+  
+  const excerptKey = `wisata.excerpt.${slug}`;
+  const translatedExcerpt = t(excerptKey) !== excerptKey ? t(excerptKey) : shortExcerpt;
+
+  const locKey = `location.${location.village.toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+  const finalLocation = t(locKey) !== locKey ? t(locKey) : location.village;
 
   return (
     <Link
@@ -53,25 +65,25 @@ export function WisataCardDark({
                 key={tag}
                 className="rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold group-hover:bg-white/80 group-hover:text-zinc-800 transition-colors duration-500"
               >
-                {tag}
+                {t(`tag.${tag}`) !== `tag.${tag}` ? t(`tag.${tag}`) : tag}
               </span>
             ))}
           </div>
         )}
 
         <h3 className="font-[family-name:var(--font-dm-sans)] text-lg font-bold leading-7">
-          {title}
+          {finalTitle}
         </h3>
 
         <div className="relative w-full h-[60px] overflow-hidden">
           {/* Default Content (Location) - Visible normally, hides on hover */}
           <p className="absolute inset-0 font-[family-name:var(--font-dm-sans)] text-sm leading-5 text-white/80 transition-all duration-500 group-hover:-translate-y-4 group-hover:opacity-0">
-            Lokasi: {location.village}, Kab. {location.regency}
+            {t("wisata.location") !== "wisata.location" ? t("wisata.location") : "Lokasi"}: {finalLocation}, {t("wisata.regency") !== "wisata.regency" ? t("wisata.regency") : "Kab."} {location.regency}
           </p>
 
           {/* Hover Content (Overview) - Hidden normally, visible on hover */}
           <p className="absolute inset-0 font-[family-name:var(--font-dm-sans)] text-sm leading-5 opacity-0 translate-y-4 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-            {shortExcerpt}{" "}
+            {translatedExcerpt}{" "}
             <span className="font-semibold underline decoration-zinc-900 decoration-1 underline-offset-2">
               View More
             </span>
