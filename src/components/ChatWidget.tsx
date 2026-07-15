@@ -15,15 +15,10 @@ interface Message {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-/**
- * Generate a simple unique ID for message keys.
- * Using crypto.randomUUID() which is available in modern browsers and Node.js.
- */
 function uid(): string {
   if (typeof crypto !== "undefined" && crypto.randomUUID) {
     return crypto.randomUUID();
   }
-  // Fallback for environments without crypto.randomUUID
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
@@ -31,15 +26,17 @@ function uid(): string {
 
 function TypingIndicator() {
   return (
-    <div className="flex items-end gap-2 mb-3">
-      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center shadow">
-        <BotIcon className="w-4 h-4 text-white" />
-      </div>
-      <div className="bg-white/90 border border-teal-100 rounded-2xl rounded-bl-sm px-4 py-2.5 shadow-sm">
+    <div className="flex items-end gap-3 mb-4">
+      <img 
+        src="/brand/logo-bangkep.svg" 
+        alt="Bot" 
+        className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
+      />
+      <div className="bg-white border border-gray-200 border-l-4 border-l-blue-900 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
         <div className="flex items-center gap-1.5" aria-label="Sedang mengetik">
-          <span className="block w-1.5 h-1.5 rounded-full bg-teal-400 animate-bounce [animation-delay:0ms]" />
-          <span className="block w-1.5 h-1.5 rounded-full bg-teal-400 animate-bounce [animation-delay:150ms]" />
-          <span className="block w-1.5 h-1.5 rounded-full bg-teal-400 animate-bounce [animation-delay:300ms]" />
+          <span className="block w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0ms]" />
+          <span className="block w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:150ms]" />
+          <span className="block w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:300ms]" />
         </div>
       </div>
     </div>
@@ -53,23 +50,28 @@ function ChatMessage({ message }: { message: Message }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className={`flex items-end gap-2 mb-3 ${isUser ? "flex-row-reverse" : "flex-row"}`}
+      className={`flex items-end gap-3 mb-4 ${isUser ? "flex-row-reverse" : "flex-row"}`}
     >
       {/* Avatar */}
-      {!isUser && (
-        <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center shadow">
-          <BotIcon className="w-4 h-4 text-white" />
+      {!isUser ? (
+        <img 
+          src="/brand/logo-bangkep.svg" 
+          alt="Bot" 
+          className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
+        />
+      ) : (
+        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-gray-300">
+          <UserIcon className="w-5 h-5 text-slate-500" />
         </div>
       )}
       {/* Bubble */}
       <div
-        className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed shadow-sm ${
+        className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
           isUser
-            ? "bg-gradient-to-br from-teal-600 to-cyan-700 text-white rounded-br-sm"
-            : "bg-white/90 border border-teal-100 text-slate-700 rounded-bl-sm"
+            ? "bg-white border border-gray-200 shadow-[4px_4px_0px_rgba(0,0,0,0.8)] text-slate-800 rounded-br-sm"
+            : "bg-white border border-gray-200 border-l-4 border-l-blue-900 shadow-sm text-slate-800 rounded-bl-sm"
         }`}
       >
-        {/* Text rendered as plain text via React JSX (XSS-safe) */}
         {message.text}
       </div>
     </motion.div>
@@ -78,18 +80,33 @@ function ChatMessage({ message }: { message: Message }) {
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
+function UserIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+    </svg>
+  );
+}
+
+function PaperclipIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+    </svg>
+  );
+}
+
+function SmileIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
 function ChatIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   );
@@ -97,15 +114,7 @@ function ChatIcon({ className }: { className?: string }) {
 
 function CloseIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" aria-hidden="true">
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
@@ -114,31 +123,9 @@ function CloseIcon({ className }: { className?: string }) {
 
 function SendIcon({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <line x1="22" y1="2" x2="11" y2="13" />
       <polygon points="22 2 15 22 11 13 2 9 22 2" />
-    </svg>
-  );
-}
-
-function BotIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.38-1 1.72V7h2a7 7 0 0 1 7 7v1a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-1a7 7 0 0 1 7-7h2V5.72A2 2 0 0 1 10 4a2 2 0 0 1 2-2zm-3 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3 5a4 4 0 0 1-3-1.35A4 4 0 0 0 12 21a4 4 0 0 0 3-1.35A4 4 0 0 1 12 16z" />
     </svg>
   );
 }
@@ -157,14 +144,12 @@ export default function ChatWidget() {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Session ID — generated once on mount, persists for the lifetime of the page.
-  // Using a ref so it is stable across re-renders and not exposed to the client DOM.
+  // Session ID
   const sessionIdRef = useRef<string>(uid());
-
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  // Auto-scroll to the latest message
+  // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
@@ -180,7 +165,6 @@ export default function ChatWidget() {
     const text = inputValue.trim();
     if (!text || isLoading) return;
 
-    // Enforce client-side message length (mirrors server-side validation)
     if (text.length > 2000) return;
 
     const userMessage: Message = { id: uid(), role: "user", text };
@@ -197,13 +181,8 @@ export default function ChatWidget() {
 
       const data: unknown = await res.json();
 
-      // Extract the reply text from the response JSON.
-      // n8n typically returns { output: "..." } or { reply: "..." } or { text: "..." }
       let replyText = "Maaf, saya tidak dapat memproses permintaan Anda saat ini.";
-      if (
-        typeof data === "object" &&
-        data !== null
-      ) {
+      if (typeof data === "object" && data !== null) {
         const d = data as Record<string, unknown>;
         if (typeof d.output === "string" && d.output.trim()) {
           replyText = d.output.trim();
@@ -214,9 +193,7 @@ export default function ChatWidget() {
         } else if (typeof d.message === "string" && d.message.trim()) {
           replyText = d.message.trim();
         } else if (typeof d.error === "string") {
-          // Show a user-friendly error, not the raw server error
           replyText = "Terjadi kesalahan. Silakan coba lagi.";
-          // Log the actual error for debugging (no sensitive data)
           console.error("[ChatWidget] API error:", d.error);
         }
       }
@@ -224,7 +201,6 @@ export default function ChatWidget() {
       const botMessage: Message = { id: uid(), role: "bot", text: replyText };
       setMessages((prev) => [...prev, botMessage]);
     } catch {
-      // Network error
       setMessages((prev) => [
         ...prev,
         {
@@ -238,7 +214,6 @@ export default function ChatWidget() {
     }
   }, [inputValue, isLoading]);
 
-  // Allow sending with Enter (Shift+Enter = new line)
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -262,11 +237,11 @@ export default function ChatWidget() {
             transition={{ type: "spring", stiffness: 350, damping: 22 }}
             onClick={() => setIsOpen(true)}
             aria-label="Buka asisten wisata"
-            className="fixed bottom-20 right-6 z-[60] w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 via-teal-600 to-cyan-700 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2"
+            className="fixed bottom-20 right-6 z-[60] h-14 px-5 rounded-full bg-white text-slate-800 shadow-xl shadow-slate-300 flex items-center justify-center gap-2.5 border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2"
           >
-            <ChatIcon className="w-6 h-6" />
-            {/* Pulse ring */}
-            <span className="absolute inset-0 rounded-full animate-ping bg-teal-400 opacity-25 pointer-events-none" />
+            <img src="/brand/logo-bangkep.svg" alt="Bangkep Logo" className="w-8 h-8 object-contain" />
+            <span className="font-bold text-lg tracking-wide text-blue-900">AI</span>
+            <span className="absolute inset-0 rounded-full animate-ping bg-slate-300 opacity-25 pointer-events-none" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -281,23 +256,25 @@ export default function ChatWidget() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 24 }}
             transition={{ type: "spring", stiffness: 320, damping: 26 }}
-            className="fixed bottom-20 right-6 z-[60] w-[calc(100vw-3rem)] max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-teal-900/30 border border-teal-200/30"
+            className="fixed bottom-20 right-6 z-[60] w-[calc(100vw-3rem)] max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-gray-200 bg-slate-50"
             style={{ height: "clamp(420px, 60vh, 580px)" }}
             role="dialog"
             aria-label="Asisten Wisata Bangkep"
             aria-modal="false"
           >
             {/* Header */}
-            <div className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-700 flex-shrink-0">
-              <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-inner">
-                <BotIcon className="w-5 h-5 text-white" />
-              </div>
+            <div className="flex items-center gap-3 px-4 py-4 bg-white border-b border-gray-200 flex-shrink-0">
+              <img 
+                src="/brand/logo-bangkep.svg" 
+                alt="Bot" 
+                className="w-10 h-10 rounded-full object-cover border border-gray-100" 
+              />
               <div className="flex-1 min-w-0">
-                <p className="text-white font-semibold text-sm leading-tight truncate">
+                <p className="text-slate-800 font-bold text-sm leading-tight truncate">
                   Asisten Wisata Bangkep
                 </p>
-                <p className="text-teal-100 text-xs flex items-center gap-1">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <p className="text-slate-500 text-xs flex items-center gap-1 mt-0.5">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
                   Online
                 </p>
               </div>
@@ -305,29 +282,15 @@ export default function ChatWidget() {
                 id="chat-widget-close"
                 onClick={() => setIsOpen(false)}
                 aria-label="Tutup chat"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
               >
-                <CloseIcon className="w-4 h-4 text-white" />
+                <CloseIcon className="w-5 h-5" />
               </button>
-            </div>
-
-            {/* Decorative ocean wave divider */}
-            <div className="flex-shrink-0 bg-gradient-to-r from-teal-700 via-teal-600 to-cyan-700 -mb-px">
-              <svg viewBox="0 0 400 12" className="w-full" preserveAspectRatio="none" aria-hidden="true">
-                <path
-                  d="M0,6 C100,12 200,0 300,6 C350,9 380,3 400,6 L400,12 L0,12 Z"
-                  fill="rgb(240 253 250)"
-                />
-              </svg>
             </div>
 
             {/* Messages */}
             <div
-              className="flex-1 overflow-y-auto px-4 py-3 bg-teal-50/60 backdrop-blur-sm scroll-smooth"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 20% 80%, rgba(20,184,166,0.07) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(6,182,212,0.07) 0%, transparent 60%)",
-              }}
+              className="flex-1 overflow-y-auto px-4 py-5 scroll-smooth bg-slate-50"
               aria-live="polite"
               aria-atomic="false"
             >
@@ -339,30 +302,40 @@ export default function ChatWidget() {
             </div>
 
             {/* Input Area */}
-            <div className="flex-shrink-0 flex items-end gap-2 px-3 py-3 bg-white border-t border-teal-100">
-              <textarea
-                ref={inputRef}
-                id="chat-widget-input"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyDown={handleKeyDown}
-                disabled={isLoading}
-                placeholder={isLoading ? "Mengetik..." : "Tanya tentang wisata Bangkep…"}
-                rows={1}
-                maxLength={2000}
-                aria-label="Ketik pesan"
-                className="flex-1 resize-none rounded-xl border border-teal-200 bg-teal-50 px-3 py-2 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition disabled:opacity-50 disabled:cursor-not-allowed max-h-24 overflow-y-auto leading-relaxed"
-                style={{ scrollbarWidth: "thin" }}
-              />
-              <button
-                id="chat-widget-send"
-                onClick={handleSend}
-                disabled={isLoading || !inputValue.trim()}
-                aria-label="Kirim pesan"
-                className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 text-white flex items-center justify-center shadow transition-all duration-150 hover:scale-105 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
-              >
-                <SendIcon className="w-4 h-4" />
-              </button>
+            <div className="flex-shrink-0 px-4 py-4 bg-slate-50">
+              <div className="flex items-end gap-2 px-3 py-2 bg-white rounded-xl border border-gray-800 shadow-[2px_2px_0px_rgba(0,0,0,1)] focus-within:shadow-[4px_4px_0px_rgba(0,0,0,1)] transition-shadow duration-200">
+                <textarea
+                  ref={inputRef}
+                  id="chat-widget-input"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  disabled={isLoading}
+                  placeholder={isLoading ? "Mengetik..." : "Type a new message here"}
+                  rows={1}
+                  maxLength={2000}
+                  aria-label="Ketik pesan"
+                  className="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed max-h-24 overflow-y-auto leading-relaxed"
+                  style={{ scrollbarWidth: "thin" }}
+                />
+                <div className="flex items-center gap-1.5 pb-1">
+                  <button type="button" className="p-1.5 text-slate-400 hover:text-slate-600 transition-colors">
+                    <PaperclipIcon className="w-5 h-5" />
+                  </button>
+                  <button type="button" className="p-1.5 text-slate-400 hover:text-slate-600 transition-colors">
+                    <SmileIcon className="w-5 h-5" />
+                  </button>
+                  <button
+                    id="chat-widget-send"
+                    onClick={handleSend}
+                    disabled={isLoading || !inputValue.trim()}
+                    aria-label="Kirim pesan"
+                    className="p-1.5 text-slate-800 hover:text-blue-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    <SendIcon className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

@@ -5,6 +5,7 @@ import { CalendarDays, ChevronDown, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { Kegiatan } from "@/lib/schemas/kegiatan";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface KegiatanFilterProps {
   items: Kegiatan[];
@@ -15,6 +16,7 @@ interface KegiatanFilterProps {
 
 export function KegiatanFilter({ items, categories, onFilter, className }: KegiatanFilterProps) {
   const [query, setQuery] = useState("");
+  const { t } = useLanguage();
   const [dateFrom, setDateFrom] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -49,12 +51,16 @@ export function KegiatanFilter({ items, categories, onFilter, className }: Kegia
       {/* Judul */}
       <label className="flex flex-[2] flex-col gap-1.5">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Judul
+          {t("filter.title") !== "filter.title" ? t("filter.title") : "Judul"}
         </span>
         <div className="relative">
           <input
             type="text"
-            placeholder="Cari judul..."
+            placeholder={
+              t("filter.searchTitle") !== "filter.searchTitle"
+                ? t("filter.searchTitle")
+                : "Cari judul..."
+            }
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -78,7 +84,7 @@ export function KegiatanFilter({ items, categories, onFilter, className }: Kegia
       {/* Tanggal */}
       <label className="flex flex-1 flex-col gap-1.5">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Tanggal
+          {t("filter.tanggal") !== "filter.tanggal" ? t("filter.tanggal") : "Tanggal"}
         </span>
         <div className="relative">
           <CalendarDays className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#737373]" />
@@ -97,7 +103,7 @@ export function KegiatanFilter({ items, categories, onFilter, className }: Kegia
       {/* Kategori */}
       <label className="flex w-full flex-col gap-1.5 sm:w-auto sm:min-w-[200px]">
         <span className="font-[family-name:var(--font-dm-sans)] text-sm font-medium text-[#0a0a0a]">
-          Kategori
+          {t("filter.kategori") !== "filter.kategori" ? t("filter.kategori") : "Kategori"}
         </span>
         <div className="relative">
           <select
@@ -108,10 +114,14 @@ export function KegiatanFilter({ items, categories, onFilter, className }: Kegia
             }}
             className={cn(inputBase, "appearance-none pr-9")}
           >
-            <option value="">Pilih kategori</option>
+            <option value="">
+              {t("filter.selectCategory") !== "filter.selectCategory"
+                ? t("filter.selectCategory")
+                : "Pilih kategori"}
+            </option>
             {categories.map((cat) => (
               <option key={cat} value={cat}>
-                {cat}
+                {t(`tag.${cat}`) !== `tag.${cat}` ? t(`tag.${cat}`) : cat}
               </option>
             ))}
           </select>

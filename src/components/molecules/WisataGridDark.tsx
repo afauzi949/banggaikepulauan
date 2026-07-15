@@ -27,7 +27,9 @@ export function WisataGridDark({ items, className }: WisataGridDarkProps) {
 
       {filtered.length === 0 ? (
         <p className="py-12 text-center font-[family-name:var(--font-dm-sans)] text-sm text-[#737373]">
-          {t("filter.noResult") !== "filter.noResult" ? t("filter.noResult") : "Tidak ada wisata yang ditemukan."}
+          {t("filter.noResult") !== "filter.noResult"
+            ? t("filter.noResult")
+            : "Tidak ada wisata yang ditemukan."}
         </p>
       ) : (
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -17,10 +17,7 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json(
-      { error: "Invalid JSON in request body." },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid JSON in request body." }, { status: 400 });
   }
 
   if (
@@ -29,10 +26,7 @@ export async function POST(req: NextRequest) {
     !("message" in body) ||
     typeof (body as Record<string, unknown>).message !== "string"
   ) {
-    return NextResponse.json(
-      { error: "Missing or invalid 'message' field." },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Missing or invalid 'message' field." }, { status: 400 });
   }
 
   const d = body as Record<string, unknown>;
@@ -43,27 +37,21 @@ export async function POST(req: NextRequest) {
   let sessionId: string | undefined;
   if ("sessionId" in d) {
     if (typeof d.sessionId !== "string" || d.sessionId.trim().length === 0) {
-      return NextResponse.json(
-        { error: "Invalid 'sessionId' field." },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid 'sessionId' field." }, { status: 400 });
     }
     // Clamp to 128 chars to prevent oversized payloads being forwarded
     sessionId = d.sessionId.trim().slice(0, 128);
   }
 
   if (message.length === 0) {
-    return NextResponse.json(
-      { error: "Message cannot be empty." },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Message cannot be empty." }, { status: 400 });
   }
 
   // Enforce a reasonable maximum message length to prevent abuse.
   if (message.length > 2000) {
     return NextResponse.json(
       { error: "Message is too long. Maximum 2000 characters." },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -74,7 +62,7 @@ export async function POST(req: NextRequest) {
     console.error("[api/chat] N8N_WEBHOOK_URL environment variable is not set.");
     return NextResponse.json(
       { error: "Chat service is not configured. Please try again later." },
-      { status: 503 }
+      { status: 503 },
     );
   }
 
@@ -89,12 +77,10 @@ export async function POST(req: NextRequest) {
     });
 
     if (!n8nResponse.ok) {
-      console.error(
-        `[api/chat] n8n responded with status: ${n8nResponse.status}`
-      );
+      console.error(`[api/chat] n8n responded with status: ${n8nResponse.status}`);
       return NextResponse.json(
         { error: "The chat backend returned an error. Please try again." },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
@@ -113,10 +99,9 @@ export async function POST(req: NextRequest) {
     console.error("[api/chat] Failed to reach n8n webhook:", err);
     return NextResponse.json(
       {
-        error:
-          "Could not connect to the chat service. Please check your connection and try again.",
+        error: "Could not connect to the chat service. Please check your connection and try again.",
       },
-      { status: 503 }
+      { status: 503 },
     );
   }
 }

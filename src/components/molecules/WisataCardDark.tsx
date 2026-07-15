@@ -28,7 +28,7 @@ export function WisataCardDark({
 
   const titleKey = `wisata.title.${slug}`;
   const finalTitle = t(titleKey) !== titleKey ? t(titleKey) : title;
-  
+
   const excerptKey = `wisata.excerpt.${slug}`;
   const translatedExcerpt = t(excerptKey) !== excerptKey ? t(excerptKey) : shortExcerpt;
 
@@ -78,7 +78,10 @@ export function WisataCardDark({
         <div className="relative w-full h-[60px] overflow-hidden">
           {/* Default Content (Location) - Visible normally, hides on hover */}
           <p className="absolute inset-0 font-[family-name:var(--font-dm-sans)] text-sm leading-5 text-white/80 transition-all duration-500 group-hover:-translate-y-4 group-hover:opacity-0">
-            {t("wisata.location") !== "wisata.location" ? t("wisata.location") : "Lokasi"}: {finalLocation}, {t("wisata.regency") !== "wisata.regency" ? t("wisata.regency") : "Kab."} {location.regency}
+            {t("wisata.location") !== "wisata.location" ? t("wisata.location") : "Lokasi"}:{" "}
+            {finalLocation},{" "}
+            {t("wisata.regency") !== "wisata.regency" ? t("wisata.regency") : "Kab."}{" "}
+            {location.regency}
           </p>
 
           {/* Hover Content (Overview) - Hidden normally, visible on hover */}

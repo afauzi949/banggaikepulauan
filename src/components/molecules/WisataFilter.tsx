@@ -57,7 +57,11 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
         </span>
         <input
           type="text"
-          placeholder={t("filter.searchTitle") !== "filter.searchTitle" ? t("filter.searchTitle") : "Cari Judul..."}
+          placeholder={
+            t("filter.searchTitle") !== "filter.searchTitle"
+              ? t("filter.searchTitle")
+              : "Cari Judul..."
+          }
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -79,7 +83,11 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
           }}
           className={cn(inputBase, "appearance-none")}
         >
-          <option value="">{t("filter.selectLocation") !== "filter.selectLocation" ? t("filter.selectLocation") : "Pilih lokasi"}</option>
+          <option value="">
+            {t("filter.selectLocation") !== "filter.selectLocation"
+              ? t("filter.selectLocation")
+              : "Pilih lokasi"}
+          </option>
           {locations.map((loc) => (
             <option key={loc} value={loc}>
               {loc}
@@ -100,7 +108,11 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
           }}
           className={cn(inputBase, "appearance-none")}
         >
-          <option value="">{t("filter.selectCategory") !== "filter.selectCategory" ? t("filter.selectCategory") : "Pilih kategori"}</option>
+          <option value="">
+            {t("filter.selectCategory") !== "filter.selectCategory"
+              ? t("filter.selectCategory")
+              : "Pilih kategori"}
+          </option>
           {categories.map((cat) => (
             <option key={cat} value={cat}>
               {t(`tag.${cat}`) !== `tag.${cat}` ? t(`tag.${cat}`) : cat}

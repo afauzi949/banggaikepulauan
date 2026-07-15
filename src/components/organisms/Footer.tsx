@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/atoms/Logo";
@@ -58,6 +61,51 @@ export function Footer({
   supportedByLogos,
   className,
 }: FooterProps = {}) {
+  const { t } = useLanguage();
+
+  const finalTagline =
+    tagline === "Jelajahi keindahan Banggai Kepulauan dan temukan keistimewaan tersembunyi disini!"
+      ? t("footer.tagline") !== "footer.tagline"
+        ? t("footer.tagline")
+        : tagline
+      : tagline;
+
+  const finalNavItems =
+    navItems === DEFAULT_NAV_ITEMS
+      ? [
+          { href: "/", label: t("nav.home") !== "nav.home" ? t("nav.home") : "Beranda" },
+          {
+            href: "/wisata-dan-budaya",
+            label: t("nav.wisata") !== "nav.wisata" ? t("nav.wisata") : "Wisata & Budaya",
+          },
+          {
+            href: "/kegiatan",
+            label: t("nav.kegiatan") !== "nav.kegiatan" ? t("nav.kegiatan") : "Kegiatan",
+          },
+          {
+            href: "/peta-tematik",
+            label: t("nav.peta") !== "nav.peta" ? t("nav.peta") : "Peta Tematik",
+          },
+          {
+            href: "/akses",
+            label: t("nav.akses") !== "nav.akses" ? t("nav.akses") : "Transportasi",
+          },
+          {
+            href: "/jelajah",
+            label:
+              t("nav.jelajahUMKM") !== "nav.jelajahUMKM" ? t("nav.jelajahUMKM") : "Jelajah UMKM",
+          },
+          { href: "/dwb", label: t("nav.dwb") !== "nav.dwb" ? t("nav.dwb") : "DWB" },
+        ]
+      : navItems;
+
+  const finalSupportedBy =
+    supportedByLabel === "Supported by:"
+      ? t("footer.supportedBy") !== "footer.supportedBy"
+        ? t("footer.supportedBy")
+        : supportedByLabel
+      : supportedByLabel;
+
   return (
     <footer
       className={cn(
@@ -66,18 +114,21 @@ export function Footer({
       )}
     >
       <Container className="flex flex-col gap-10 py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          <div className="flex flex-col gap-3 md:max-w-[448px]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
+          <div className="flex flex-col gap-3 md:col-span-4 md:max-w-[448px]">
             <Logo href="/" withWordmark />
             <p className="font-[family-name:var(--font-dm-sans)] text-[14px] leading-[20px] text-[#52525c]">
-              {tagline}
+              {finalTagline}
             </p>
           </div>
 
-          <FooterColumn title="Navigasi">
-            <ul className="grid grid-cols-2 gap-x-10 gap-y-2 sm:grid-cols-3 sm:grid-flow-col sm:grid-rows-3">
-              {navItems.map((item) => (
-                <li key={item.href}>
+          <FooterColumn
+            title={t("footer.navigasi") !== "footer.navigasi" ? t("footer.navigasi") : "Navigasi"}
+            className="md:col-span-5"
+          >
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 sm:grid-flow-col sm:grid-rows-3">
+              {finalNavItems.map((item) => (
+                <li key={item.href} className="whitespace-nowrap">
                   <Link
                     href={item.href}
                     className="font-[family-name:var(--font-dm-sans)] text-[14px] leading-[20px] text-[#3f3f46] hover:underline"
@@ -89,7 +140,10 @@ export function Footer({
             </ul>
           </FooterColumn>
 
-          <FooterColumn title="Kontak" className="md:items-center md:text-center">
+          <FooterColumn
+            title={t("footer.kontak") !== "footer.kontak" ? t("footer.kontak") : "Kontak"}
+            className="md:col-span-3 md:items-center md:text-center"
+          >
             <ul className="flex flex-col gap-2">
               {contactItems.map((item) => (
                 <li
@@ -115,11 +169,11 @@ export function Footer({
           </FooterColumn>
         </div>
 
-        {(supportedByLogos || supportedByLabel) && (
+        {(supportedByLogos || finalSupportedBy) && (
           <div className="flex flex-col items-center gap-4">
-            {supportedByLabel && (
+            {finalSupportedBy && (
               <p className="font-[family-name:var(--font-dm-sans)] text-[14px] font-bold leading-[20px] text-[#3f3f46]">
-                {supportedByLabel}
+                {finalSupportedBy}
               </p>
             )}
             {supportedByLogos && (
