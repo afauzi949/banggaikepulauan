@@ -37,7 +37,7 @@ export default async function WisataDetailPage({ params }: Props) {
   const images = data.gallery && data.gallery.length > 0 ? data.gallery : [data.cover];
 
   return (
-    <main className="bg-white text-zinc-900 pb-16">
+    <main className="bg-white text-zinc-900">
       <Navbar activeHref="/wisata-dan-budaya" />
 
       {/* Spacer to push content below fixed navbar */}
