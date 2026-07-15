@@ -166,7 +166,7 @@ export function PetaInteraktifSection() {
                 "transition-colors ease-in-out hover:cursor-pointer fill-purple-500 hover:fill-purple-400",
                 selectedIsland === "leme-leme-darat" && "fill-purple-400",
               )}
-              d="M 90 540 L 105 538 L 110 550 L 95 552 Z"
+              d="M 60 215 L 75 220 L 65 235 L 50 230 Z"
             />
             {/* Outline */}
             <path
