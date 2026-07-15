@@ -97,6 +97,7 @@ export function PetaInteraktifSection() {
             {/* Regions */}
             <path
               id="bungin"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
                 selectedIsland === "bungin" && "fill-yellow-300",
@@ -105,6 +106,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="bungin"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
                 selectedIsland === "bungin" && "fill-yellow-300",
@@ -114,6 +116,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="bakalan"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-red-500 hover:fill-red-400",
                 selectedIsland === "bakalan" && "fill-red-400",
@@ -122,6 +125,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="sambulangan"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
                 selectedIsland === "sambulangan" && "fill-yellow-300",
@@ -130,6 +134,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="luk-panenteng"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-red-500 hover:fill-red-400",
                 selectedIsland === "luk-panenteng" && "fill-red-400",
@@ -138,6 +143,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="lumbi-lumbia"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
                 selectedIsland === "lumbi-lumbia" && "fill-yellow-300",
@@ -146,6 +152,7 @@ export function PetaInteraktifSection() {
             />
             <path
               id="buko"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-red-500 hover:fill-red-400",
                 selectedIsland === "buko" && "fill-red-400",
@@ -154,19 +161,21 @@ export function PetaInteraktifSection() {
             />
             <path
               id="lolantang"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-orange-500 hover:fill-orange-400",
                 selectedIsland === "lolantang" && "fill-orange-400",
               )}
-              d="M401.5 323 L423 294 H430.5 V287.5 H436.5 V279.5 L440 274 L370 274 L370 323 Z"
+              d="M401.5 323 L423 294 H430.5 V287.5 H436.5 V279.5 L440 274 L400 250 L350 280 L360 340 Z"
             />
             <path
               id="leme-leme-darat"
+              stroke="black" strokeWidth={1}
               className={cn(
                 "transition-colors ease-in-out hover:cursor-pointer fill-purple-500 hover:fill-purple-400",
                 selectedIsland === "leme-leme-darat" && "fill-purple-400",
               )}
-              d="M77.5 189.5 L70 192 L58 205 L55 220.5 L48 235 L43 238 L38 255 L100 255 L100 189.5 Z"
+              d="M77.5 189.5 L70 192 L58 205 L55 220.5 L48 235 L43 238 L38 255 L85 270 L115 220 L95 180 Z"
             />
             {/* Outline */}
             <path
