@@ -127,8 +127,8 @@ export function PetaInteraktifSection() {
               id="sambulangan"
               stroke="black" strokeWidth={1}
               className={cn(
-                "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
-                selectedIsland === "sambulangan" && "fill-yellow-300",
+                "transition-colors ease-in-out hover:cursor-pointer fill-cyan-500 hover:fill-cyan-400",
+                selectedIsland === "sambulangan" && "fill-cyan-400",
               )}
               d="M483 103.5L488 88.5V79.6667L492 89L499.5 96.5H507L503.5 89L525 63.5L525.5 51.5V145H483V103.5Z"
             />
@@ -136,8 +136,8 @@ export function PetaInteraktifSection() {
               id="luk-panenteng"
               stroke="black" strokeWidth={1}
               className={cn(
-                "transition-colors ease-in-out hover:cursor-pointer fill-red-500 hover:fill-red-400",
-                selectedIsland === "luk-panenteng" && "fill-red-400",
+                "transition-colors ease-in-out hover:cursor-pointer fill-rose-500 hover:fill-rose-400",
+                selectedIsland === "luk-panenteng" && "fill-rose-400",
               )}
               d="M296.5 167L169 193L173.822 61.9397L181.5 60.5L198 63.5L209.5 60.5L223.5 66.5L245.5 94V98.5L249.5 100V107.5H252.5L255.5 105.5L259 109.5L262.5 103H265L262.5 94L272.5 88.5L278.5 91L298 77.5L298.98 78.1238L296.5 167Z"
             />
@@ -145,8 +145,8 @@ export function PetaInteraktifSection() {
               id="lumbi-lumbia"
               stroke="black" strokeWidth={1}
               className={cn(
-                "transition-colors ease-in-out hover:cursor-pointer fill-yellow-400 hover:fill-yellow-300",
-                selectedIsland === "lumbi-lumbia" && "fill-yellow-300",
+                "transition-colors ease-in-out hover:cursor-pointer fill-blue-500 hover:fill-blue-400",
+                selectedIsland === "lumbi-lumbia" && "fill-blue-400",
               )}
               d="M159 520.5V492H54V495.5L61 500.5L55.5 507H50L61 519H64.5L66 520.5H159Z"
             />
@@ -154,8 +154,8 @@ export function PetaInteraktifSection() {
               id="buko"
               stroke="black" strokeWidth={1}
               className={cn(
-                "transition-colors ease-in-out hover:cursor-pointer fill-red-500 hover:fill-red-400",
-                selectedIsland === "buko" && "fill-red-400",
+                "transition-colors ease-in-out hover:cursor-pointer fill-indigo-500 hover:fill-indigo-400",
+                selectedIsland === "buko" && "fill-indigo-400",
               )}
               d="M172.999 558V537H71.2852L77 539.5L82.5 541.5L78.5 546L84.639 558H172.999Z"
             />
