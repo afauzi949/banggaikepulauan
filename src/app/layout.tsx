@@ -5,6 +5,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ChatWidget from "@/components/ChatWidget";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,6 +48,7 @@ export default function RootLayout({
           <LanguageSwitcher />
           <ChatWidget />
         </LanguageProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
