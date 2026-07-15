@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,9 +28,11 @@ function uid(): string {
 function TypingIndicator() {
   return (
     <div className="flex items-end gap-3 mb-4">
-      <img 
+      <Image 
         src="/brand/logo-bangkep.svg" 
         alt="Bot" 
+        width={32}
+        height={32}
         className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
       />
       <div className="bg-white border border-gray-200 border-l-4 border-l-blue-900 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
@@ -54,9 +57,11 @@ function ChatMessage({ message }: { message: Message }) {
     >
       {/* Avatar */}
       {!isUser ? (
-        <img 
+        <Image 
           src="/brand/logo-bangkep.svg" 
           alt="Bot" 
+          width={32}
+          height={32}
           className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
         />
       ) : (
@@ -104,13 +109,7 @@ function SmileIcon({ className }: { className?: string }) {
   );
 }
 
-function ChatIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-    </svg>
-  );
-}
+
 
 function CloseIcon({ className }: { className?: string }) {
   return (
@@ -239,7 +238,7 @@ export default function ChatWidget() {
             aria-label="Buka asisten wisata"
             className="fixed bottom-20 right-6 z-[60] h-14 px-5 rounded-full bg-white text-slate-800 shadow-xl shadow-slate-300 flex items-center justify-center gap-2.5 border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2"
           >
-            <img src="/brand/logo-bangkep.svg" alt="Bangkep Logo" className="w-8 h-8 object-contain" />
+            <Image src="/brand/logo-bangkep.svg" alt="Bangkep Logo" width={32} height={32} className="w-8 h-8 object-contain" />
             <span className="font-bold text-lg tracking-wide text-blue-900">AI</span>
             <span className="absolute inset-0 rounded-full animate-ping bg-slate-300 opacity-25 pointer-events-none" />
           </motion.button>
@@ -264,9 +263,11 @@ export default function ChatWidget() {
           >
             {/* Header */}
             <div className="flex items-center gap-3 px-4 py-4 bg-white border-b border-gray-200 flex-shrink-0">
-              <img 
+              <Image 
                 src="/brand/logo-bangkep.svg" 
                 alt="Bot" 
+                width={40}
+                height={40}
                 className="w-10 h-10 rounded-full object-cover border border-gray-100" 
               />
               <div className="flex-1 min-w-0">
