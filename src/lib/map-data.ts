@@ -39,6 +39,18 @@ export const IslandInformations: Record<string, { name: string; description: str
     description:
       "Desa Bakalan berlokasi di Kecamatan Tinangkung, sekitar 8 km dari Salakan, ibukota Kabupaten Banggai Kepulauan. Luas wilayahnya mencapai 32 km² dengan jumlah penduduk sekitar 713 jiwa (BPS 2024). Meskipun tidak terlalu besar, Desa Bakalan memiliki potensi wisata dan budaya yang luar biasa. Pantai Tebeabul menjadi daya tarik utama wisata baharinya. Penduduk Bakalan dikenal ramah dan menjunjung tinggi nilai gotong royong dalam kehidupan sehari-hari. Letaknya yang strategis dan keindahan alamnya menjadikan Bakalan sebagai salah satu destinasi potensial untuk pengembangan wisata berbasis masyarakat di Banggai Kepulauan.",
   },
+
+  lolantang: {
+    name: "Desa Lolantang",
+    description:
+      "Desa Lolantang terletak di Kecamatan Bulagi Selatan, Kabupaten Banggai Kepulauan, dengan luas wilayah sekitar 18 km² dan jarak sekitar 85 km dari Salakan, pusat pemerintahan kabupaten. Berdasarkan data BPS 2024, jumlah penduduk desa ini mencapai sekitar 845 jiwa. Selain memiliki nuansa pesisir yang tenang, Lolantang sangat terkenal sebagai destinasi wisata sejarah dan religi. Desa ini dipercaya oleh masyarakat setempat sebagai titik awal mula penyebaran agama Islam di Pulau Peling. Daya tarik utama bagi wisatawan dan peziarah adalah keberadaan situs bersejarah berupa benteng kuno serta Makam Imam Lipu Adino dan Makam Imam Sya'ban, yang terletak di atas bukit di ketinggian sekitar 500 mdpl. Masyarakat desa ini hidup dengan menjunjung tinggi nilai kekeluargaan, di mana sebagian besar warganya menggantungkan hidup sebagai nelayan dan petani perkebunan.",
+  },
+
+  "leme-leme-darat": {
+    name: "Desa Leme-Leme Darat",
+    description:
+      "Desa Leme-Leme Darat berada di Kecamatan Buko, Kabupaten Banggai Kepulauan. Desa ini memiliki luas wilayah kurang lebih 22 km² dengan jarak tempuh sekitar 105 km dari ibu kota Salakan. Menurut data BPS 2024, desa ini dihuni oleh sekitar 1.120 penduduk. Leme-Leme Darat sangat populer dengan destinasi Ekowisata Dusun Kokolomboi, sebuah kawasan konservasi hutan yang menjadi magnet bagi wisatawan alam, pegiat lingkungan, hingga peneliti internasional. Di kawasan wisata ini, pengunjung dapat menjelajahi hutan tropis yang masih sangat asri, mengamati berbagai burung dan satwa endemik Banggai Kepulauan, serta melihat langsung sentra budidaya lebah madu. Warga desa ini dikenal sangat aktif dalam menjaga kelestarian lingkungan mengubah kebiasaan lama merambah hutan menjadi pengelola wisata dan petani madu lestari sehingga harmoni antara manusia dan alam tetap terjaga dengan indah.",
+  },
 };
 
 export const keywordsToBold: string[] = [

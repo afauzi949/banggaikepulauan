@@ -152,6 +152,22 @@ export function PetaInteraktifSection() {
               )}
               d="M172.999 558V537H71.2852L77 539.5L82.5 541.5L78.5 546L84.639 558H172.999Z"
             />
+            <path
+              id="lolantang"
+              className={cn(
+                "transition-colors ease-in-out hover:cursor-pointer fill-orange-500 hover:fill-orange-400",
+                selectedIsland === "lolantang" && "fill-orange-400",
+              )}
+              d="M 390 295 L 405 290 L 415 305 L 400 310 Z"
+            />
+            <path
+              id="leme-leme-darat"
+              className={cn(
+                "transition-colors ease-in-out hover:cursor-pointer fill-purple-500 hover:fill-purple-400",
+                selectedIsland === "leme-leme-darat" && "fill-purple-400",
+              )}
+              d="M 90 540 L 105 538 L 110 550 L 95 552 Z"
+            />
             {/* Outline */}
             <path
               id="island-main"
