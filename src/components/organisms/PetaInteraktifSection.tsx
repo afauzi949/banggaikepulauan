@@ -158,7 +158,7 @@ export function PetaInteraktifSection() {
                 "transition-colors ease-in-out hover:cursor-pointer fill-orange-500 hover:fill-orange-400",
                 selectedIsland === "lolantang" && "fill-orange-400",
               )}
-              d="M 390 295 L 405 290 L 415 305 L 400 310 Z"
+              d="M 370 270 L 430 270 L 430 330 L 370 330 Z"
             />
             <path
               id="leme-leme-darat"
@@ -166,7 +166,7 @@ export function PetaInteraktifSection() {
                 "transition-colors ease-in-out hover:cursor-pointer fill-purple-500 hover:fill-purple-400",
                 selectedIsland === "leme-leme-darat" && "fill-purple-400",
               )}
-              d="M 60 215 L 75 220 L 65 235 L 50 230 Z"
+              d="M 30 195 L 90 195 L 90 255 L 30 255 Z"
             />
             {/* Outline */}
             <path
