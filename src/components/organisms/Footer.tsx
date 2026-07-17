@@ -99,7 +99,7 @@ const SUPPORTED_BY_TIER_3: SponsorLogoProps[] = [
 
    },
   { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.svg", size: "sm",
-        className: "h-4 sm:h-[45px] md:h-10",
+        className: "h- sm:h-[45px] md:h-10",
 
    },
   { name: "PT JIP", src: "/images/sponsor/pt-jip.svg", size: "sm",
