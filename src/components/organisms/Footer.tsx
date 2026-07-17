@@ -2,7 +2,9 @@ import Link from "next/link";
 
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/atoms/Logo";
+import { type SponsorLogoProps } from "@/components/atoms/SponsorLogo";
 import { FooterColumn } from "@/components/molecules/FooterColumn";
+import { SponsorLogoGroup } from "@/components/molecules/SponsorLogoGroup";
 import { cn } from "@/lib/utils";
 
 export interface FooterNavItem {
@@ -23,6 +25,8 @@ interface FooterProps {
   copyright?: string;
   supportedByLabel?: string;
   supportedByLogos?: React.ReactNode;
+  mediaPartnerLabel?: string;
+  mediaPartnerLogos?: React.ReactNode;
   className?: string;
 }
 
@@ -49,13 +53,151 @@ const DEFAULT_CONTACT_ITEMS: FooterContactItem[] = [
   },
 ];
 
+
+
+/**
+ * TIER L - logo utama.
+ */
+const SUPPORTED_BY_TIER_1: SponsorLogoProps[] = [
+  { name: "ParagonCorp", src: "/images/sponsor/paragon.svg", size: "lg",
+
+   },
+];
+
+/** TIER M - logo medium. Hanya sponsor non-media-partner. */
+const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
+  { name: "JNE Express", src: "/images/sponsor/jne.svg", size: "md" },
+  { name: "FIFGROUP", src: "/images/sponsor/fifgroup.svg", size: "md",
+        className: "h-35 sm:h-[75px] md:h-20",
+   },
+];
+
+/** TIER S - logo pendukung */
+const SUPPORTED_BY_TIER_3: SponsorLogoProps[] = [
+  { name: "Taspen", src: "/images/sponsor/taspen.svg", size: "sm" },
+  { name: "GIK UGM", src: "/images/sponsor/gik-ugm.svg", size: "sm" },
+  { name: "Jasa Marga", src: "/images/sponsor/jasamarga.svg", size: "sm" },
+  { name: "Pepsodent", src: "/images/sponsor/pepsodent.svg", size: "sm",
+        className: "h-14 sm:h-[36px] md:h-10",
+   },
+  { name: "Rexona", src: "/images/sponsor/rexona.svg", size: "sm" },
+  {
+    name: "Tunas Honda",
+    src: "/images/sponsor/tunas-honda.svg",
+    size: "sm",
+    // Override manual: artwork-nya bold/tebal jadi keliatan lebih "berat" dari
+    // logo sm-tier lain walau box height-nya sama. Turunin 1-2 notch dari default sm.
+    className: "h-2 sm:h-[15px] md:h-3",
+   },
+  { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.svg", size: "sm",
+        className: "h-10 sm:h-[25px] md:h-12",
+
+   },
+  { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.svg", size: "sm" },
+  { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.svg", size: "sm",
+            className: "h-14 sm:h-[35px] md:h-10",
+
+   },
+  { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.svg", size: "sm",
+        className: "h- sm:h-[45px] md:h-10",
+
+   },
+  { name: "PT JIP", src: "/images/sponsor/pt-jip.svg", size: "sm",
+        className: "h-2 sm:h-[15px] md:h-3",
+
+   },
+  { name: "Waroeng SS", src: "/images/sponsor/ss.svg", size: "sm" },
+];
+
+/** MEDIA PARTNER - semua tier M sesuai spreadsheet */
+const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
+  { name: "KR Jogja", src: "/images/sponsor/krjogja.svg", href: "https://krjogja.com", size: "md" },
+  { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.svg", size: "md" },
+  { name: "Bangkep News", src: "/images/sponsor/bangkep-news.svg", size: "md" },
+];
+
+
+
+
+
+// /**
+//  * TIER L - logo utama.
+//  */
+// const SUPPORTED_BY_TIER_1: SponsorLogoProps[] = [
+//   { name: "ParagonCorp", src: "/images/sponsor/paragon.svg", size: "lg" },
+// ];
+
+// /** TIER M - logo medium. Hanya sponsor non-media-partner. */
+// const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
+//   { name: "JNE Express", src: "/images/sponsor/jne.svg", size: "md" },
+//   { name: "FIFGROUP", src: "/images/sponsor/fifgroup.svg", size: "md" },
+// ];
+
+// /**
+//  * TIER S - logo pendukung, sengaja dipecah jadi 2 baris TETAP (bukan flex-wrap otomatis)
+//  * biar susunannya konsisten di semua lebar layar, nggak gonta-ganti jumlah per baris.
+//  */
+// const SUPPORTED_BY_TIER_3_ROW_1: SponsorLogoProps[] = [
+//   { name: "Taspen", src: "/images/sponsor/taspen.svg", size: "sm" },
+//   { name: "GIK UGM", src: "/images/sponsor/gik-ugm.svg", size: "sm" },
+//   { name: "Jasa Marga", src: "/images/sponsor/jasamarga.svg", size: "sm" },
+//   { name: "Pepsodent", src: "/images/sponsor/pepsodent.svg", size: "sm" },
+//   { name: "Rexona", src: "/images/sponsor/rexona.svg", size: "sm" },
+//   {
+//     name: "Tunas Honda",
+//     src: "/images/sponsor/tunas-honda.svg",
+//     size: "sm",
+//     // Override manual: artwork-nya bold/tebal jadi keliatan lebih "berat" dari
+//     // logo sm-tier lain walau box height-nya sama. Turunin 1-2 notch dari default sm.
+//     className: "h-3.5 sm:h-[18px] md:h-5",
+//   },
+// ];
+
+// const SUPPORTED_BY_TIER_3_ROW_2: SponsorLogoProps[] = [
+//   { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.svg", size: "sm" },
+//   { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.svg", size: "sm" },
+//   { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.svg", size: "sm" },
+//   { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.svg", size: "sm" },
+//   // Kolom "Logo Website" keduanya "-" di spreadsheet. Default size "sm".
+//   // Hapus baris ini kalau ternyata mereka tidak wajib tampil di footer.
+//   { name: "PT JIP", src: "/images/sponsor/pt-jip.svg", size: "sm" },
+//   { name: "Waroeng SS", src: "/images/sponsor/ss.svg", size: "sm" },
+// ];
+
+// /** MEDIA PARTNER - semua tier M sesuai spreadsheet */
+// const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
+//   { name: "KR Jogja", src: "/images/sponsor/krjogja.svg", href: "https://krjogja.com", size: "md" },
+//   { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.svg", size: "md" },
+//   { name: "Bangkep News", src: "/images/sponsor/bangkep-news.svg", size: "md" },
+// ];
+
+
+
+
+
+
+/** Default node: 3 tingkat ukuran, masing-masing baris center & flex-wrap */
+const DEFAULT_SUPPORTED_BY_LOGOS = (
+  <div className="flex w-full flex-col items-center gap-6 sm:gap-8">
+    <SponsorLogoGroup logos={SUPPORTED_BY_TIER_1} className="gap-x-10 gap-y-6" />
+    <SponsorLogoGroup logos={SUPPORTED_BY_TIER_2} />
+    <SponsorLogoGroup logos={SUPPORTED_BY_TIER_3} />
+  </div>
+);
+
+const DEFAULT_MEDIA_PARTNER_NODE = (
+  <SponsorLogoGroup logos={DEFAULT_MEDIA_PARTNER_LOGOS} />
+);
+
 export function Footer({
   tagline = "Jelajahi keindahan Banggai Kepulauan dan temukan keistimewaan tersembunyi disini!",
   navItems = DEFAULT_NAV_ITEMS,
   contactItems = DEFAULT_CONTACT_ITEMS,
   copyright = `\u00A9 ${new Date().getFullYear()} Banggai Kepulauan. All rights reserved.`,
   supportedByLabel = "Supported by:",
-  supportedByLogos,
+  supportedByLogos = DEFAULT_SUPPORTED_BY_LOGOS,
+  mediaPartnerLabel = "Media Partner:",
+  mediaPartnerLogos = DEFAULT_MEDIA_PARTNER_NODE,
   className,
 }: FooterProps = {}) {
   return (
@@ -125,6 +267,21 @@ export function Footer({
             {supportedByLogos && (
               <div className="flex flex-wrap items-center justify-center gap-8">
                 {supportedByLogos}
+              </div>
+            )}
+          </div>
+        )}
+
+        {(mediaPartnerLogos || mediaPartnerLabel) && (
+          <div className="flex flex-col items-center gap-4">
+            {mediaPartnerLabel && (
+              <p className="font-[family-name:var(--font-dm-sans)] text-[14px] font-bold leading-[20px] text-[#3f3f46]">
+                {mediaPartnerLabel}
+              </p>
+            )}
+            {mediaPartnerLogos && (
+              <div className="flex flex-wrap items-center justify-center gap-8">
+                {mediaPartnerLogos}
               </div>
             )}
           </div>
