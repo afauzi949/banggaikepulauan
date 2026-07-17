@@ -53,107 +53,67 @@ const DEFAULT_CONTACT_ITEMS: FooterContactItem[] = [
   },
 ];
 
-/**
- * TIER 1 - logo utama, ukuran paling besar.
- * Ganti `src` ke path logo asli kamu (taro di /public/logos/...).
- */
-// const SUPPORTED_BY_TIER_1: SponsorLogoProps[] = [
-//   {
-//     name: "ParagonCorp",
-//     src: "/images/sponsor/paragon.png",
-//     width: 260,
-//     height: 70,
-//     className: "h-10 sm:h-14 md:h-16",
-//   },
-// ];
-
-// /** TIER 2 - logo medium */
-// const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
-//   { name: "JNE Express", src: "/images/sponsor/jne.png", width: 120, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "FIFGROUP", src: "/images/sponsor/fifgroup.png", width: 150, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.jpg", width: 110, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "Jasamarga", src: "/images/sponsor/jasamarga.png", width: 130, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "GIK UGM", src: "/images/sponsor/gik-ugm.png", width: 110, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "Taspen", src: "/images/sponsor/taspen.png", width: 100, height: 48, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.png", width: 140, height: 48, className: "h-6 sm:h-8 md:h-9" },
-// ];
-
-// /** TIER 3 - logo pendukung, ukuran paling kecil */
-// const SUPPORTED_BY_TIER_3: SponsorLogoProps[] = [
-//   { name: "Tunas Honda", src: "/images/sponsor/tunas-honda.png", width:50 , height: 36, className: "h-5 sm:h-6 md:h-7" },
-//   { name: "Rexona", src: "/images/sponsor/Rexona.png", width: 90, height: 36, className: "h-5 sm:h-6 md:h-7" },
-//   { name: "Pepsodent", src: "/images/sponsor/Pepsodent.png", width: 100, height: 36, className: "h-5 sm:h-6 md:h-7" },
-//   { name: "Wiar Sinergi Pratama", src: "/images/sponsor/wiar-sinergi-pratama.jpg", width: 90, height: 36, className: "h-5 sm:h-6 md:h-7" },
-//   { name: "JIP", src: "/images/sponsor/pt-jip.png", width: 70, height: 36, className: "h-5 sm:h-6 md:h-7" },
-//   { name: "Super Sambal", src: "/images/sponsor/SS.png", width: 60, height: 36, className: "h-5 sm:h-6 md:h-7" },
-// ];
-
-// const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
-//   { name: "KR Jogja", src: "/images/sponsor/krjogja.jpg", href: "https://krjogja.com", width: 120, height: 40, className: "h-6 sm:h-8 md:h-9" },
-//   { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.png", width: 120, height: 40, className: "h-6 sm:h-8 md:h-9" },
-// ];
-
 
 
 /**
  * TIER L - logo utama.
  */
 const SUPPORTED_BY_TIER_1: SponsorLogoProps[] = [
-  { name: "ParagonCorp", src: "/images/sponsor/paragon.png", size: "lg",
+  { name: "ParagonCorp", src: "/images/sponsor/paragon.svg", size: "lg",
 
    },
 ];
 
 /** TIER M - logo medium. Hanya sponsor non-media-partner. */
 const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
-  { name: "JNE Express", src: "/images/sponsor/jne.png", size: "md" },
-  { name: "FIFGROUP", src: "/images/sponsor/fifgroup.png", size: "md",
+  { name: "JNE Express", src: "/images/sponsor/jne.svg", size: "md" },
+  { name: "FIFGROUP", src: "/images/sponsor/fifgroup.svg", size: "md",
         className: "h-35 sm:h-[75px] md:h-20",
    },
 ];
 
 /** TIER S - logo pendukung */
 const SUPPORTED_BY_TIER_3: SponsorLogoProps[] = [
-  { name: "Taspen", src: "/images/sponsor/taspen.png", size: "sm" },
-  { name: "GIK UGM", src: "/images/sponsor/gik-ugm.png", size: "sm" },
-  { name: "Jasa Marga", src: "/images/sponsor/jasamarga.png", size: "sm" },
-  { name: "Pepsodent", src: "/images/sponsor/pepsodent.png", size: "sm",
+  { name: "Taspen", src: "/images/sponsor/taspen.svg", size: "sm" },
+  { name: "GIK UGM", src: "/images/sponsor/gik-ugm.svg", size: "sm" },
+  { name: "Jasa Marga", src: "/images/sponsor/jasamarga.svg", size: "sm" },
+  { name: "Pepsodent", src: "/images/sponsor/pepsodent.svg", size: "sm",
         className: "h-14 sm:h-[36px] md:h-10",
    },
-  { name: "Rexona", src: "/images/sponsor/rexona.png", size: "sm" },
+  { name: "Rexona", src: "/images/sponsor/rexona.svg", size: "sm" },
   {
     name: "Tunas Honda",
-    src: "/images/sponsor/tunas-honda.png",
+    src: "/images/sponsor/tunas-honda.svg",
     size: "sm",
     // Override manual: artwork-nya bold/tebal jadi keliatan lebih "berat" dari
     // logo sm-tier lain walau box height-nya sama. Turunin 1-2 notch dari default sm.
     className: "h-2 sm:h-[15px] md:h-3",
    },
-  { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.png", size: "sm",
+  { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.svg", size: "sm",
         className: "h-10 sm:h-[25px] md:h-12",
 
    },
-  { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.png", size: "sm" },
-  { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.png", size: "sm",
+  { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.svg", size: "sm" },
+  { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.svg", size: "sm",
             className: "h-14 sm:h-[35px] md:h-10",
 
    },
-  { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.png", size: "sm",
+  { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.svg", size: "sm",
+        className: "h-4 sm:h-[45px] md:h-10",
+
+   },
+  { name: "PT JIP", src: "/images/sponsor/pt-jip.svg", size: "sm",
         className: "h-2 sm:h-[15px] md:h-3",
 
    },
-  { name: "PT JIP", src: "/images/sponsor/pt-jip.png", size: "sm",
-        className: "h-2 sm:h-[15px] md:h-3",
-
-   },
-  { name: "Waroeng SS", src: "/images/sponsor/ss.png", size: "sm" },
+  { name: "Waroeng SS", src: "/images/sponsor/ss.svg", size: "sm" },
 ];
 
 /** MEDIA PARTNER - semua tier M sesuai spreadsheet */
 const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
-  { name: "KR Jogja", src: "/images/sponsor/krjogja.png", href: "https://krjogja.com", size: "md" },
-  { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.png", size: "md" },
-  { name: "Bangkep News", src: "/images/sponsor/bangkep-news.png", size: "md" },
+  { name: "KR Jogja", src: "/images/sponsor/krjogja.svg", href: "https://krjogja.com", size: "md" },
+  { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.svg", size: "md" },
+  { name: "Bangkep News", src: "/images/sponsor/bangkep-news.svg", size: "md" },
 ];
 
 
@@ -164,13 +124,13 @@ const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
 //  * TIER L - logo utama.
 //  */
 // const SUPPORTED_BY_TIER_1: SponsorLogoProps[] = [
-//   { name: "ParagonCorp", src: "/images/sponsor/paragon.png", size: "lg" },
+//   { name: "ParagonCorp", src: "/images/sponsor/paragon.svg", size: "lg" },
 // ];
 
 // /** TIER M - logo medium. Hanya sponsor non-media-partner. */
 // const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
-//   { name: "JNE Express", src: "/images/sponsor/jne.png", size: "md" },
-//   { name: "FIFGROUP", src: "/images/sponsor/fifgroup.png", size: "md" },
+//   { name: "JNE Express", src: "/images/sponsor/jne.svg", size: "md" },
+//   { name: "FIFGROUP", src: "/images/sponsor/fifgroup.svg", size: "md" },
 // ];
 
 // /**
@@ -178,14 +138,14 @@ const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
 //  * biar susunannya konsisten di semua lebar layar, nggak gonta-ganti jumlah per baris.
 //  */
 // const SUPPORTED_BY_TIER_3_ROW_1: SponsorLogoProps[] = [
-//   { name: "Taspen", src: "/images/sponsor/taspen.png", size: "sm" },
-//   { name: "GIK UGM", src: "/images/sponsor/gik-ugm.png", size: "sm" },
-//   { name: "Jasa Marga", src: "/images/sponsor/jasamarga.png", size: "sm" },
-//   { name: "Pepsodent", src: "/images/sponsor/pepsodent.png", size: "sm" },
-//   { name: "Rexona", src: "/images/sponsor/rexona.png", size: "sm" },
+//   { name: "Taspen", src: "/images/sponsor/taspen.svg", size: "sm" },
+//   { name: "GIK UGM", src: "/images/sponsor/gik-ugm.svg", size: "sm" },
+//   { name: "Jasa Marga", src: "/images/sponsor/jasamarga.svg", size: "sm" },
+//   { name: "Pepsodent", src: "/images/sponsor/pepsodent.svg", size: "sm" },
+//   { name: "Rexona", src: "/images/sponsor/rexona.svg", size: "sm" },
 //   {
 //     name: "Tunas Honda",
-//     src: "/images/sponsor/tunas-honda.png",
+//     src: "/images/sponsor/tunas-honda.svg",
 //     size: "sm",
 //     // Override manual: artwork-nya bold/tebal jadi keliatan lebih "berat" dari
 //     // logo sm-tier lain walau box height-nya sama. Turunin 1-2 notch dari default sm.
@@ -194,21 +154,21 @@ const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
 // ];
 
 // const SUPPORTED_BY_TIER_3_ROW_2: SponsorLogoProps[] = [
-//   { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.png", size: "sm" },
-//   { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.png", size: "sm" },
-//   { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.png", size: "sm" },
-//   { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.jpg", size: "sm" },
+//   { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.svg", size: "sm" },
+//   { name: "Bank Sulteng", src: "/images/sponsor/bank-sulteng.svg", size: "sm" },
+//   { name: "Wiar Sinergi Prima", src: "/images/sponsor/wiar-sinergi-prima.svg", size: "sm" },
+//   { name: "Tradco Synergi Indonesia", src: "/images/sponsor/tradco-synergi-indonesia.svg", size: "sm" },
 //   // Kolom "Logo Website" keduanya "-" di spreadsheet. Default size "sm".
 //   // Hapus baris ini kalau ternyata mereka tidak wajib tampil di footer.
-//   { name: "PT JIP", src: "/images/sponsor/pt-jip.png", size: "sm" },
-//   { name: "Waroeng SS", src: "/images/sponsor/ss.png", size: "sm" },
+//   { name: "PT JIP", src: "/images/sponsor/pt-jip.svg", size: "sm" },
+//   { name: "Waroeng SS", src: "/images/sponsor/ss.svg", size: "sm" },
 // ];
 
 // /** MEDIA PARTNER - semua tier M sesuai spreadsheet */
 // const DEFAULT_MEDIA_PARTNER_LOGOS: SponsorLogoProps[] = [
-//   { name: "KR Jogja", src: "/images/sponsor/krjogja.png", href: "https://krjogja.com", size: "md" },
-//   { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.png", size: "md" },
-//   { name: "Bangkep News", src: "/images/sponsor/bangkep-news.png", size: "md" },
+//   { name: "KR Jogja", src: "/images/sponsor/krjogja.svg", href: "https://krjogja.com", size: "md" },
+//   { name: "RRI Yogyakarta", src: "/images/sponsor/rri-yogyakarta.svg", size: "md" },
+//   { name: "Bangkep News", src: "/images/sponsor/bangkep-news.svg", size: "md" },
 // ];
 
 
