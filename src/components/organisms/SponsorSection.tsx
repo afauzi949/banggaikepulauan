@@ -39,9 +39,9 @@ export function SponsorSection() {
           <Image
             src="/images/sponsor/fifgroup.svg"
             alt="FIFGROUP"
-            width={240}
-            height={80}
-            className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+            width={300}
+            height={100}
+            className="h-14 md:h-20 lg:h-24 w-auto object-contain"
           />
         </div>
 
