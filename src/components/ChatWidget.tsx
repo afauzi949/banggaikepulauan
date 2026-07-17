@@ -83,6 +83,7 @@ function ChatMessage({ message }: { message: Message }) {
         ) : (
           <ReactMarkdown
             components={{
+              /* eslint-disable @typescript-eslint/no-unused-vars */
               p: ({ node, ...props }) => <p {...props} className="mb-2 last:mb-0" />,
               ul: ({ node, ...props }) => <ul {...props} className="list-disc pl-5 mb-2 last:mb-0" />,
               ol: ({ node, ...props }) => <ol {...props} className="list-decimal pl-5 mb-2 last:mb-0" />,
@@ -94,6 +95,7 @@ function ChatMessage({ message }: { message: Message }) {
               h1: ({ node, ...props }) => <h1 {...props} className="text-lg font-bold mb-2 mt-3 first:mt-0" />,
               h2: ({ node, ...props }) => <h2 {...props} className="text-base font-bold mb-2 mt-3 first:mt-0" />,
               h3: ({ node, ...props }) => <h3 {...props} className="text-sm font-bold mb-2 mt-3 first:mt-0" />,
+              /* eslint-enable @typescript-eslint/no-unused-vars */
             }}
           >
             {message.text}
