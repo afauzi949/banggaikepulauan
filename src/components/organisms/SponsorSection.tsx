@@ -64,7 +64,7 @@ export function SponsorSection() {
         {/* Media Partner */}
         <div className="flex flex-col items-center gap-6 mt-8 w-full">
           <p className="font-[family-name:var(--font-dm-sans)] text-[14px] md:text-[16px] font-bold text-[#4b5563] uppercase tracking-wider">
-            Media Partner
+            <TranslatableText dictKey="sponsor.mediaPartner" idText="Media Partner" />
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
