@@ -57,7 +57,7 @@ export function Footer({
   navItems = DEFAULT_NAV_ITEMS,
   contactItems = DEFAULT_CONTACT_ITEMS,
   copyright = `\u00A9 ${new Date().getFullYear()} Banggai Kepulauan. All rights reserved.`,
-  supportedByLabel = "Supported by:",
+  supportedByLabel,
   supportedByLogos,
   className,
 }: FooterProps = {}) {
