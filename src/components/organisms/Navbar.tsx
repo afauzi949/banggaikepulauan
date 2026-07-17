@@ -22,7 +22,6 @@ export function Navbar({ activeHref = "/" }: NavbarProps) {
     { label: t("nav.kegiatan"), href: "/kegiatan" },
     { label: t("nav.peta"), href: "/peta-tematik" },
     { label: t("nav.dwb"), href: "/dwb" },
-    { label: t("nav.jelajah"), href: "/jelajah" },
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

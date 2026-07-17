@@ -35,7 +35,6 @@ const DEFAULT_NAV_ITEMS: FooterNavItem[] = [
   { href: "/kegiatan", label: "Kegiatan" },
   { href: "/peta-tematik", label: "Peta Tematik" },
   { href: "/akses", label: "Transportasi" },
-  { href: "/jelajah", label: "Jelajah UMKM" },
   { href: "/dwb", label: "DWB" },
 ];
 
@@ -89,11 +88,6 @@ export function Footer({
           {
             href: "/akses",
             label: t("nav.akses") !== "nav.akses" ? t("nav.akses") : "Transportasi",
-          },
-          {
-            href: "/jelajah",
-            label:
-              t("nav.jelajahUMKM") !== "nav.jelajahUMKM" ? t("nav.jelajahUMKM") : "Jelajah UMKM",
           },
           { href: "/dwb", label: t("nav.dwb") !== "nav.dwb" ? t("nav.dwb") : "DWB" },
         ]
