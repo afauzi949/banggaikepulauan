@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -71,13 +72,33 @@ function ChatMessage({ message }: { message: Message }) {
       )}
       {/* Bubble */}
       <div
-        className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm leading-relaxed ${
+        className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
           isUser
-            ? "bg-white border border-gray-200 shadow-[4px_4px_0px_rgba(0,0,0,0.8)] text-slate-800 rounded-br-sm"
-            : "bg-white border border-gray-200 border-l-4 border-l-blue-900 shadow-sm text-slate-800 rounded-bl-sm"
+            ? "max-w-[75%] bg-white border border-gray-200 shadow-[4px_4px_0px_rgba(0,0,0,0.8)] text-slate-800 rounded-br-sm"
+            : "max-w-[90%] overflow-hidden bg-white border border-gray-200 border-l-4 border-l-blue-900 shadow-sm text-slate-800 rounded-bl-sm"
         }`}
       >
-        {message.text}
+        {isUser ? (
+          message.text
+        ) : (
+          <ReactMarkdown
+            components={{
+              p: ({ node, ...props }) => <p {...props} className="mb-2 last:mb-0" />,
+              ul: ({ node, ...props }) => <ul {...props} className="list-disc pl-5 mb-2 last:mb-0" />,
+              ol: ({ node, ...props }) => <ol {...props} className="list-decimal pl-5 mb-2 last:mb-0" />,
+              li: ({ node, ...props }) => <li {...props} className="mb-1" />,
+              a: ({ node, ...props }) => (
+                <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" />
+              ),
+              strong: ({ node, ...props }) => <strong {...props} className="font-semibold" />,
+              h1: ({ node, ...props }) => <h1 {...props} className="text-lg font-bold mb-2 mt-3 first:mt-0" />,
+              h2: ({ node, ...props }) => <h2 {...props} className="text-base font-bold mb-2 mt-3 first:mt-0" />,
+              h3: ({ node, ...props }) => <h3 {...props} className="text-sm font-bold mb-2 mt-3 first:mt-0" />,
+            }}
+          >
+            {message.text}
+          </ReactMarkdown>
+        )}
       </div>
     </motion.div>
   );
@@ -93,23 +114,27 @@ function UserIcon({ className }: { className?: string }) {
   );
 }
 
-function PaperclipIcon({ className }: { className?: string }) {
+function ExpandIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="15 3 21 3 21 9" />
+      <polyline points="9 21 3 21 3 15" />
+      <line x1="21" y1="3" x2="14" y2="10" />
+      <line x1="3" y1="21" x2="10" y2="14" />
     </svg>
   );
 }
 
-function SmileIcon({ className }: { className?: string }) {
+function ShrinkIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="4 14 10 14 10 20" />
+      <polyline points="20 10 14 14 14 4" />
+      <line x1="14" y1="10" x2="21" y2="3" />
+      <line x1="3" y1="21" x2="10" y2="14" />
     </svg>
   );
 }
-
-
 
 function CloseIcon({ className }: { className?: string }) {
   return (
@@ -133,6 +158,7 @@ function SendIcon({ className }: { className?: string }) {
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: uid(),
@@ -255,8 +281,11 @@ export default function ChatWidget() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 24 }}
             transition={{ type: "spring", stiffness: 320, damping: 26 }}
-            className="fixed bottom-20 right-6 z-[60] w-[calc(100vw-3rem)] max-w-sm flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-gray-200 bg-slate-50"
-            style={{ height: "clamp(420px, 60vh, 580px)" }}
+            className={`fixed bottom-20 right-6 z-[60] flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-gray-200 bg-slate-50 transition-[width,max-width,height] duration-300 ease-in-out ${
+              isExpanded 
+                ? "w-[calc(100vw-3rem)] max-w-2xl h-[clamp(500px,80vh,800px)]" 
+                : "w-[calc(100vw-3rem)] max-w-sm h-[clamp(420px,60vh,580px)]"
+            }`}
             role="dialog"
             aria-label="Asisten Wisata Bangkep"
             aria-modal="false"
@@ -279,14 +308,24 @@ export default function ChatWidget() {
                   Online
                 </p>
               </div>
-              <button
-                id="chat-widget-close"
-                onClick={() => setIsOpen(false)}
-                aria-label="Tutup chat"
-                className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
-              >
-                <CloseIcon className="w-5 h-5" />
-              </button>
+              <div className="flex gap-1">
+                <button
+                  id="chat-widget-expand"
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  aria-label={isExpanded ? "Perkecil chat" : "Perbesar chat"}
+                  className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                >
+                  {isExpanded ? <ShrinkIcon className="w-4 h-4" /> : <ExpandIcon className="w-4 h-4" />}
+                </button>
+                <button
+                  id="chat-widget-close"
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Tutup chat"
+                  className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+                >
+                  <CloseIcon className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -320,12 +359,6 @@ export default function ChatWidget() {
                   style={{ scrollbarWidth: "thin" }}
                 />
                 <div className="flex items-center gap-1.5 pb-1">
-                  <button type="button" className="p-1.5 text-slate-400 hover:text-slate-600 transition-colors">
-                    <PaperclipIcon className="w-5 h-5" />
-                  </button>
-                  <button type="button" className="p-1.5 text-slate-400 hover:text-slate-600 transition-colors">
-                    <SmileIcon className="w-5 h-5" />
-                  </button>
                   <button
                     id="chat-widget-send"
                     onClick={handleSend}
