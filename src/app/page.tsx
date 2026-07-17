@@ -5,10 +5,11 @@ import { DestinasiPilihanSection } from "@/components/organisms/DestinasiPilihan
 import { HeroSection } from "@/components/organisms/HeroSection";
 import { Footer } from "@/components/organisms/Footer";
 import { JelajahTeaserSection } from "@/components/organisms/JelajahTeaserSection";
-import { KolaborasiSection } from "@/components/organisms/KolaborasiSection";
+
 import { Navbar } from "@/components/organisms/Navbar";
 import { PetaInteraktifSection } from "@/components/organisms/PetaInteraktifSection";
 import { PetaTematikSection } from "@/components/organisms/PetaTematikSection";
+import { SponsorSection } from "@/components/organisms/SponsorSection";
 
 export default function HomePage() {
   return (
@@ -36,7 +37,8 @@ export default function HomePage() {
         <JelajahTeaserSection />
       </Container>
       <PetaTematikSection />
-      <KolaborasiSection />
+
+      <SponsorSection />
       <Footer />
     </main>
   );
