@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/atoms/Logo";
-import { SponsorLogo, type SponsorLogoProps } from "@/components/atoms/SponsorLogo";
+import { type SponsorLogoProps } from "@/components/atoms/SponsorLogo";
 import { FooterColumn } from "@/components/molecules/FooterColumn";
 import { SponsorLogoGroup } from "@/components/molecules/SponsorLogoGroup";
 import { cn } from "@/lib/utils";
@@ -113,7 +113,7 @@ const SUPPORTED_BY_TIER_2: SponsorLogoProps[] = [
 ];
 
 /** TIER S - logo pendukung */
-const SUPPORTED_BY_TIER_3_ROW_1: SponsorLogoProps[] = [
+const SUPPORTED_BY_TIER_3: SponsorLogoProps[] = [
   { name: "Taspen", src: "/images/sponsor/taspen.png", size: "sm" },
   { name: "GIK UGM", src: "/images/sponsor/gik-ugm.png", size: "sm" },
   { name: "Jasa Marga", src: "/images/sponsor/jasamarga.png", size: "sm" },
@@ -128,9 +128,7 @@ const SUPPORTED_BY_TIER_3_ROW_1: SponsorLogoProps[] = [
     // Override manual: artwork-nya bold/tebal jadi keliatan lebih "berat" dari
     // logo sm-tier lain walau box height-nya sama. Turunin 1-2 notch dari default sm.
     className: "h-2 sm:h-[15px] md:h-3",
-  }];
-
-  const SUPPORTED_BY_TIER_3_ROW_2: SponsorLogoProps[] = [
+   },
   { name: "Blue Alliance", src: "/images/sponsor/blue-alliance.png", size: "sm",
         className: "h-10 sm:h-[25px] md:h-12",
 
@@ -223,10 +221,7 @@ const DEFAULT_SUPPORTED_BY_LOGOS = (
   <div className="flex w-full flex-col items-center gap-6 sm:gap-8">
     <SponsorLogoGroup logos={SUPPORTED_BY_TIER_1} className="gap-x-10 gap-y-6" />
     <SponsorLogoGroup logos={SUPPORTED_BY_TIER_2} />
-    <div className="flex flex-col gap-6">
-      <SponsorLogoGroup logos={SUPPORTED_BY_TIER_3_ROW_1} />
-      <SponsorLogoGroup logos={SUPPORTED_BY_TIER_3_ROW_2} />
-    </div>
+    <SponsorLogoGroup logos={SUPPORTED_BY_TIER_3} />
   </div>
 );
 
