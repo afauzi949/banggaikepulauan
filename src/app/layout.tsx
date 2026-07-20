@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import ChatWidget from "@/components/ChatWidget";
+import { Preloader } from "@/components/organisms/Preloader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
       >
+        <Preloader />
         <SmoothScroll>
           <LanguageProvider>
             {children}

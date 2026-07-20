@@ -1,24 +1,30 @@
 {
   "slug": "buloling",
-  "title": "Buloling",
+  "title": "Goa Buloling",
   "category": "wisata-alam",
-  "tags": [
-    "Wisata Alam",
-    "Ekowisata"
-  ],
-  "excerpt": "Buloling merupakan kawasan mangrove yang diyakini memiliki hubungan bawah tanah dengan Sumur O’ang, meskipun belum ada kajian pasti apakah keduanya te...",
-  "description": "Buloling merupakan kawasan mangrove yang diyakini memiliki hubungan bawah tanah dengan Sumur O’ang, meskipun belum ada kajian pasti apakah keduanya terhubung secara geologis.",
+  "tags": ["Wisata Alam", "Ekowisata", "Geowisata", "Cenote"],
+  "excerpt": "Fenomena geologi langka berupa cenote — gua amblesan bawah air yang dikelilingi rimbunnya hutan mangrove asri di Desa Sambulangan.",
+  "description": "Goa Buloling adalah fenomena geologi langka berupa cenote — gua amblesan bawah air yang dikelilingi rimbunnya hutan mangrove asri. Berbentuk sumuran vertikal yang melebar di kedalaman, gua ini membentuk ruang bawah air raksasa yang telah terpetakan hingga 42 meter, dengan lorong yang diperkirakan masih berlanjut jauh lebih dalam.\n\nAirnya berasal langsung dari akuifer air tawar bawah tanah yang tenang, tanpa pengaruh arus laut — menghasilkan kejernihan luar biasa dan gradasi warna air yang memukau, dari hijau tosca di zona dangkal hingga biru pekat di kedalaman cenote.",
   "location": {
     "village": "Desa Sambulangan",
     "subdistrict": "Bulagi Utara",
     "regency": "Banggai Kepulauan",
-    "coordinates": [
-      -1.212673,
-      123.140709
-    ]
+    "coordinates": [-1.212673, 123.140709]
   },
   "cover": "/images/wisata/buloling.webp",
+  "gallery": [
+    "/images/wisata/buloling.webp",
+    "/images/wisata/buloling.webp",
+    "/images/wisata/buloling.webp"
+  ],
+  "tiketMasuk": "Gratis",
+  "fasilitas": ["Jalur Wisatawan", "Area Tepian Cenote", "Pemandu Lokal"],
+  "waktuKunjunganTerbaik": "Pagi hari (07.00–11.00 WITA) untuk cahaya optimal",
   "featured": true,
   "published": true,
-  "publishedAt": "2026-04-20T09:00:00+08:00"
+  "publishedAt": "2026-04-20T09:00:00+08:00",
+  "seo": {
+    "title": "Goa Buloling — Cenote Tersembunyi di Hutan Mangrove Sambulangan",
+    "description": "Jelajahi Goa Buloling, fenomena cenote langka di Desa Sambulangan, Banggai Kepulauan. Kolam air tawar tersembunyi di jantung hutan mangrove dengan kedalaman terpetakan 42 meter."
+  }
 }
