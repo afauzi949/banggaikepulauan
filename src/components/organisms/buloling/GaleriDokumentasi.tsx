@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 type GalleryItem = {
   id: number;
@@ -13,51 +14,52 @@ type GalleryItem = {
   credit?: string;
 };
 
-const galleryItems: GalleryItem[] = [
-  {
-    id: 1,
-    src: "/images/wisata/buloling.webp",
-    alt: "Branching Coral di Zona Dangkal",
-    caption: "Kehidupan bawah air di tepi cenote",
-    credit: "Dokumentasi Tim Eksplorasi",
-  },
-  {
-    id: 2,
-    src: "/images/wisata/buloling.webp",
-    alt: "Batas Drop-Off Vertikal Gua Buloling",
-    caption: "Titik peralihan dari zona dangkal ke jurang vertikal",
-    credit: "Sulawesi Dive Trek",
-  },
-  {
-    id: 3,
-    src: "/images/wisata/buloling.webp",
-    alt: "Gradasi Kedalaman Goa Buloling",
-    caption: "Gradasi warna air yang jadi ciri khas Goa Buloling",
-  },
-  {
-    id: 4,
-    src: "/images/wisata/buloling.webp",
-    alt: "Pemandangan Lanskap Alami dan Area Tepian",
-    caption: "Suasana asri dikelilingi hutan mangrove",
-  },
-  {
-    id: 5,
-    src: "/images/wisata/buloling.webp",
-    alt: "Tim Eksplorasi Gua Sulawesi Dive Trek",
-    caption: "Dokumentasi eksplorasi oleh tim penyelam — sumber data kedalaman 42m",
-    credit: "Sulawesi Dive Trek",
-  },
-  {
-    id: 6,
-    src: "/images/wisata/buloling.webp",
-    alt: "Pemandangan Bawah Permukaan",
-    caption: "Menyusuri kedalaman cenote",
-    credit: "Tim Eksplorasi",
-  },
-];
-
 export function GaleriDokumentasi() {
+  const { t } = useLanguage();
   const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
+
+  const galleryItems: GalleryItem[] = [
+    {
+      id: 1,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item1.alt"),
+      caption: t("buloling.galeri.item1.caption"),
+      credit: "Dokumentasi Tim Eksplorasi",
+    },
+    {
+      id: 2,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item2.alt"),
+      caption: t("buloling.galeri.item2.caption"),
+      credit: "Sulawesi Dive Trek",
+    },
+    {
+      id: 3,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item3.alt"),
+      caption: t("buloling.galeri.item3.caption"),
+    },
+    {
+      id: 4,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item4.alt"),
+      caption: t("buloling.galeri.item4.caption"),
+    },
+    {
+      id: 5,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item5.alt"),
+      caption: t("buloling.galeri.item5.caption"),
+      credit: "Sulawesi Dive Trek",
+    },
+    {
+      id: 6,
+      src: "/images/wisata/buloling.webp",
+      alt: t("buloling.galeri.item6.alt"),
+      caption: t("buloling.galeri.item6.caption"),
+      credit: "Tim Eksplorasi",
+    },
+  ];
 
   return (
     <section className="py-16 bg-white overflow-hidden border-t border-zinc-100">
@@ -73,15 +75,15 @@ export function GaleriDokumentasi() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-zinc-300" />
             <span className="text-zinc-500 text-sm font-semibold tracking-widest uppercase">
-              Galeri Foto
+              {t("buloling.galeri.eyebrow")}
             </span>
             <div className="w-8 h-0.5 bg-zinc-300" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
-            Dokumentasi Goa Buloling
+            {t("buloling.galeri.title")}
           </h2>
           <p className="text-zinc-500 max-w-xl mx-auto">
-            Klik foto untuk tampilan penuh
+            {t("buloling.galeri.clickHint")}
           </p>
         </motion.div>
 
@@ -99,7 +101,7 @@ export function GaleriDokumentasi() {
               <button
                 onClick={() => setLightbox(item)}
                 className="group relative w-full overflow-hidden rounded-xl block focus:outline-none focus:ring-2 focus:ring-zinc-400"
-                aria-label={`Buka foto: ${item.alt}`}
+                aria-label={`${t("buloling.galeri.openPhoto")} ${item.alt}`}
               >
                 <Image
                   src={item.src}
@@ -136,7 +138,7 @@ export function GaleriDokumentasi() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-center text-zinc-400 text-xs mt-8"
         >
-          * Foto bersifat ilustratif — akan diperbarui dengan dokumentasi lapangan resmi.
+          {t("buloling.galeri.note")}
         </motion.p>
       </div>
 
@@ -174,7 +176,7 @@ export function GaleriDokumentasi() {
               <button
                 onClick={() => setLightbox(null)}
                 className="absolute top-3 right-3 w-9 h-9 rounded-full bg-black/50 flex items-center justify-center text-white hover:bg-black/70 transition-colors"
-                aria-label="Tutup"
+                aria-label={t("buloling.galeri.closeLabel")}
               >
                 <X className="w-5 h-5" />
               </button>

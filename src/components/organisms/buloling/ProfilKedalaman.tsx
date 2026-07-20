@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 type DepthZone = {
   range: [number, number];
@@ -11,46 +12,48 @@ type DepthZone = {
   desc: string;
 };
 
-const depthZones: DepthZone[] = [
-  {
-    range: [0, 5],
-    label: "Zona Dangkal",
-    color: "#4dd0e1",
-    highlight: "bg-teal-400",
-    desc: "Area permukaan cenote. Cahaya matahari masih menembus dengan baik, menghasilkan warna tosca yang memesona. Cocok untuk snorkeling dan pengamatan biota.",
-  },
-  {
-    range: [5, 20],
-    label: "Drop-Off Vertikal",
-    color: "#0097a7",
-    highlight: "bg-cyan-700",
-    desc: "Zona transisi dramatis — dinding batu kapur yang turun tegak lurus. Branching coral dan kehidupan laut mengisi celah-celah batu di zona ini.",
-  },
-  {
-    range: [20, 42],
-    label: "Zona Dalam (Cenote)",
-    color: "#01579b",
-    highlight: "bg-blue-800",
-    desc: "Jantung cenote. Gelap dan sunyi, hanya dapat dijelajahi oleh penyelam berpengalaman. Kedalaman terpetakan mencapai 42 meter.",
-  },
-  {
-    range: [42, 60],
-    label: "Lorong Misterius ????",
-    color: "#1a1a2e",
-    highlight: "bg-slate-900",
-    desc: "Batas pengetahuan manusia. Lorong-lorong di kedalaman 42m+ belum sepenuhnya terpetakan — misteri yang menunggu untuk dijawab oleh penelitian selanjutnya.",
-  },
-];
-
-function getActiveZone(depth: number): DepthZone {
-  return (
-    depthZones.find((z) => depth >= z.range[0] && depth < z.range[1]) ??
-    depthZones[depthZones.length - 1]
-  );
-}
-
 export function ProfilKedalaman() {
+  const { t } = useLanguage();
   const [depth, setDepth] = useState(0);
+
+  const depthZones: DepthZone[] = [
+    {
+      range: [0, 5],
+      label: t("buloling.profil.zone.dangkal.label"),
+      color: "#4dd0e1",
+      highlight: "bg-teal-400",
+      desc: t("buloling.profil.zone.dangkal.desc"),
+    },
+    {
+      range: [5, 20],
+      label: t("buloling.profil.zone.dropoff.label"),
+      color: "#0097a7",
+      highlight: "bg-cyan-700",
+      desc: t("buloling.profil.zone.dropoff.desc"),
+    },
+    {
+      range: [20, 42],
+      label: t("buloling.profil.zone.cenote.label"),
+      color: "#01579b",
+      highlight: "bg-blue-800",
+      desc: t("buloling.profil.zone.cenote.desc"),
+    },
+    {
+      range: [42, 60],
+      label: t("buloling.profil.zone.mystery.label"),
+      color: "#1a1a2e",
+      highlight: "bg-slate-900",
+      desc: t("buloling.profil.zone.mystery.desc"),
+    },
+  ];
+
+  function getActiveZone(depth: number): DepthZone {
+    return (
+      depthZones.find((z) => depth >= z.range[0] && depth < z.range[1]) ??
+      depthZones[depthZones.length - 1]
+    );
+  }
+
   const activeZone = getActiveZone(depth);
 
   // Calculate fill percentages for SVG
@@ -78,16 +81,15 @@ export function ProfilKedalaman() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-zinc-300" />
             <span className="text-zinc-500 text-sm font-semibold tracking-widest uppercase">
-              Profil Kedalaman
+              {t("buloling.profil.eyebrow")}
             </span>
             <div className="w-8 h-0.5 bg-zinc-300" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
-            Seberapa Dalam Goa Ini?
+            {t("buloling.profil.title")}
           </h2>
           <p className="text-zinc-600 max-w-xl mx-auto">
-            Potongan melintang ini menunjukkan seberapa jauh cenote menembus ke bawah
-            permukaan tanah. Geser slider untuk menjelajahi setiap zona.
+            {t("buloling.profil.subtitle")}
           </p>
         </motion.div>
 
@@ -162,7 +164,7 @@ export function ProfilKedalaman() {
                 <text x="100" y={40 + (50 / 60) * totalH} textAnchor="middle" fontSize="14" fill="white" opacity={0.6} fontWeight="bold">????</text>
 
                 {/* Ground label */}
-                <text x="100" y="28" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">Permukaan Tanah</text>
+                <text x="100" y="28" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">{t("buloling.profil.groundLabel")}</text>
 
                 {/* Current depth indicator */}
                 <rect x="55" y={32 + sliderY} width="90" height="14" rx="3" fill="#f59e0b" opacity="0.9" />
@@ -186,7 +188,7 @@ export function ProfilKedalaman() {
                   step={1}
                   value={depth}
                   onChange={(e) => setDepth(Number(e.target.value))}
-                  aria-label="Slider kedalaman goa"
+                  aria-label={t("buloling.profil.sliderAriaLabel")}
                   className="absolute cursor-pointer accent-emerald-600"
                   style={{
                     width: "260px",
@@ -210,7 +212,7 @@ export function ProfilKedalaman() {
             {/* Current depth display */}
             <div className="rounded-2xl bg-zinc-900 p-6 text-white">
               <p className="text-zinc-400 text-xs font-semibold uppercase tracking-widest mb-2">
-                Kedalaman Saat Ini
+                {t("buloling.profil.currentDepth")}
               </p>
               <p className="text-5xl font-bold mb-1">
                 {depth}
@@ -230,7 +232,7 @@ export function ProfilKedalaman() {
 
             {/* Legend */}
             <div className="space-y-2">
-              <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-3">Legenda Zona</p>
+              <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-3">{t("buloling.profil.legend")}</p>
               {depthZones.map((z) => (
                 <div
                   key={z.label}
@@ -250,9 +252,7 @@ export function ProfilKedalaman() {
             {/* Scientific note */}
             <div className="rounded-xl bg-amber-50 border border-amber-200 p-4">
               <p className="text-amber-800 text-sm leading-relaxed">
-                <strong className="text-amber-900">⚠️ Catatan Ilmiah:</strong> Area bertanda{" "}
-                <strong>&#34;????&#34;</strong> adalah misteri yang belum terpecahkan — kedalaman
-                sesungguhnya masih menjadi tanda tanya bagi para penyelam dan peneliti.
+                <strong className="text-amber-900">{t("buloling.profil.scientificNote")}</strong> {t("buloling.profil.scientificNoteText")}
               </p>
             </div>
           </motion.div>

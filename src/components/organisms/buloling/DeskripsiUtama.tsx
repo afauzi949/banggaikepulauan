@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion";
 import { Droplets, Mountain, ArrowDown } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface DeskripsiUtamaProps {
   onScrollToPeta?: () => void;
 }
 
 export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-[#f0fafb]">
       {/* Background decorative blobs */}
@@ -25,7 +28,7 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
         >
           <div className="w-8 h-0.5 bg-teal-500" />
           <span className="text-teal-600 text-sm font-semibold tracking-widest uppercase">
-            Fenomena Geologi Langka
+            {t("buloling.deskripsi.eyebrow")}
           </span>
         </motion.div>
 
@@ -38,30 +41,20 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0d3b4f] leading-tight mb-6">
-              Apa Itu Goa Buloling?
+              {t("buloling.deskripsi.title")}
             </h2>
             <p className="text-zinc-700 text-base leading-relaxed mb-5">
-              Goa Buloling adalah fenomena geologi langka berupa{" "}
-              <strong className="text-teal-700">cenote</strong> — gua amblesan bawah air
-              yang dikelilingi rimbunnya hutan mangrove asri. Berbentuk sumuran vertikal
-              yang melebar di kedalaman, gua ini membentuk ruang bawah air raksasa yang
-              telah terpetakan hingga{" "}
-              <strong className="text-[#c8922a]">42 meter</strong>, dengan lorong yang
-              diperkirakan masih berlanjut jauh lebih dalam.
+              {t("buloling.deskripsi.p1")}
             </p>
             <p className="text-zinc-700 text-base leading-relaxed mb-8">
-              Airnya berasal langsung dari{" "}
-              <strong className="text-teal-700">akuifer air tawar bawah tanah</strong>{" "}
-              yang tenang, tanpa pengaruh arus laut — menghasilkan kejernihan luar biasa
-              dan gradasi warna air yang memukau, dari hijau tosca di zona dangkal hingga
-              biru pekat di kedalaman cenote.
+              {t("buloling.deskripsi.p2")}
             </p>
 
             <button
               onClick={onScrollToPeta}
               className="group inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-800 transition-colors"
             >
-              Lihat peta kedalaman
+              {t("buloling.deskripsi.cta")}
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </button>
           </motion.div>
@@ -78,9 +71,9 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
               <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center mb-4 group-hover:bg-teal-100 transition-colors">
                 <Droplets className="w-6 h-6 text-teal-600" />
               </div>
-              <p className="text-[#0d3b4f] font-bold text-2xl mb-1">Air Tawar</p>
+              <p className="text-[#0d3b4f] font-bold text-2xl mb-1">{t("buloling.deskripsi.stat1.title")}</p>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                Sumber akuifer murni bebas pengaruh arus laut
+                {t("buloling.deskripsi.stat1.desc")}
               </p>
             </div>
 
@@ -90,7 +83,7 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
               </div>
               <p className="text-[#0d3b4f] font-bold text-2xl mb-1">42 m+</p>
               <p className="text-zinc-500 text-sm leading-relaxed">
-                Kedalaman terpetakan, dengan lorong yang masih menjadi misteri
+                {t("buloling.deskripsi.stat2.desc")}
               </p>
             </div>
 
@@ -99,8 +92,7 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
                 Tagline
               </p>
               <p className="text-lg font-semibold leading-relaxed italic">
-                &ldquo;Jendela alami menuju dunia bawah tanah — kolam air tawar tersembunyi
-                di jantung hutan mangrove Sambulangan.&rdquo;
+                {t("buloling.deskripsi.tagline")}
               </p>
             </div>
           </motion.div>

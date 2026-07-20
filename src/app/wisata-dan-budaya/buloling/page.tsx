@@ -3,6 +3,8 @@ import Image from "next/image";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin } from "lucide-react";
+import { TranslatableText } from "@/components/atoms/TranslatableText";
+import { TranslatableHTML } from "@/components/atoms/TranslatableHTML";
 
 import { Container } from "@/components/atoms/Container";
 import { Footer } from "@/components/organisms/Footer";
@@ -14,7 +16,6 @@ import { PetaZona } from "@/components/organisms/buloling/PetaZona";
 import { ProfilKedalaman } from "@/components/organisms/buloling/ProfilKedalaman";
 import { StepperGeologi } from "@/components/organisms/buloling/StepperGeologi";
 import { GaleriDokumentasi } from "@/components/organisms/buloling/GaleriDokumentasi";
-import { KonservasiEkologis } from "@/components/organisms/buloling/KonservasiEkologis";
 
 const Map = dynamic(() => import("@/components/organisms/maps/DetailMap"), {
   ssr: false,
@@ -58,7 +59,7 @@ export default async function GoaBulolingPage() {
           className="w-fit flex gap-2 hover:gap-4 transition-all bg-zinc-100 font-medium text-zinc-700 rounded-md px-4 py-2 items-center cursor-pointer"
         >
           <ArrowLeft className="w-5 h-5" />
-          <p>Kembali</p>
+          <p><TranslatableText dictKey="buloling.page.back" idText="Kembali" /></p>
         </Link>
       </Container>
 
@@ -85,32 +86,31 @@ export default async function GoaBulolingPage() {
                 key={i}
                 className="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-sm font-medium"
               >
-                {cat}
+                <TranslatableText dictKey={`tag.${cat}`} idText={cat} />
               </span>
             ))}
           </div>
 
-          <h1 className="text-4xl font-bold text-zinc-900 mt-2">{data.title}</h1>
+          <h1 className="text-4xl font-bold text-zinc-900 mt-2">
+            <TranslatableText dictKey={`wisata.title.${data.slug}`} idText={data.title} />
+          </h1>
 
           <div className="flex items-center text-sm text-zinc-600 gap-2 font-medium">
             <MapPin className="w-4 h-4 text-emerald-600" />
             <span>
-              {data.location.village}, Kec. {data.location.subdistrict}, Kab. {data.location.regency}
+              <TranslatableText
+                dictKey={`location.${data.location.village.toLowerCase().replace(/[^a-z0-9]/g, "")}`}
+                idText={`${data.location.village}, Kec. ${data.location.subdistrict}, Kab. ${data.location.regency}`}
+              />
             </span>
           </div>
 
           <div className="text-zinc-700 text-base leading-relaxed whitespace-pre-wrap mt-6">
             <p>
-              Goa Buloling adalah fenomena geologi langka berupa <strong>cenote</strong> — gua amblesan bawah
-              air yang dikelilingi rimbunnya hutan mangrove asri. Berbentuk sumuran vertikal yang
-              melebar di kedalaman, gua ini membentuk ruang bawah air raksasa yang telah
-              terpetakan hingga <strong>42 meter</strong>, dengan lorong yang diperkirakan masih berlanjut jauh lebih
-              dalam.
+              <TranslatableHTML dictKey="buloling.page.desc1" />
             </p>
             <p className="mt-4">
-              Airnya berasal langsung dari <strong>akuifer air tawar bawah tanah</strong> yang tenang, tanpa
-              pengaruh arus laut — menghasilkan kejernihan luar biasa dan gradasi warna air yang
-              memukau, dari hijau tosca di zona dangkal hingga biru pekat di kedalaman cenote.
+              <TranslatableHTML dictKey="buloling.page.desc2" />
             </p>
           </div>
         </div>
@@ -119,15 +119,20 @@ export default async function GoaBulolingPage() {
         <div className="space-y-4">
           <div className="border border-zinc-200 rounded-xl p-5 shadow-sm bg-white">
             <h3 className="font-semibold text-zinc-800 mb-2 flex items-center gap-2">
-              🎫 Tiket Masuk
+              🎫 <TranslatableText dictKey="buloling.page.tiketMasuk" idText="Tiket Masuk" />
             </h3>
-            <p className="text-zinc-600 font-medium">{data.tiketMasuk || "Gratis"}</p>
+            <p className="text-zinc-600 font-medium">
+              <TranslatableText
+                dictKey={data.tiketMasuk?.toLowerCase() === "gratis" ? "buloling.page.gratis" : ""}
+                idText={data.tiketMasuk || "Gratis"}
+              />
+            </p>
           </div>
 
           {data.fasilitas && data.fasilitas.length > 0 && (
             <div className="border border-zinc-200 rounded-xl p-5 shadow-sm bg-white">
               <h3 className="font-semibold text-zinc-800 mb-2 flex items-center gap-2">
-                🏕️ Fasilitas
+                🏕️ <TranslatableText dictKey="buloling.page.fasilitas" idText="Fasilitas" />
               </h3>
               <ul className="list-disc pl-5 text-zinc-600 text-sm space-y-1 mt-3">
                 {data.fasilitas.map((f, i) => (
@@ -137,19 +142,10 @@ export default async function GoaBulolingPage() {
             </div>
           )}
 
-          {data.waktuKunjunganTerbaik && (
-            <div className="border border-zinc-200 rounded-xl p-5 shadow-sm bg-white">
-              <h3 className="font-semibold text-zinc-800 mb-2 flex items-center gap-2">
-                🕰️ Waktu Terbaik
-              </h3>
-              <p className="text-zinc-600 text-sm font-medium mt-1">{data.waktuKunjunganTerbaik}</p>
-            </div>
-          )}
-
           {data.narahubung && (
             <div className="border border-zinc-200 rounded-xl p-5 shadow-sm bg-white">
               <h3 className="font-semibold text-zinc-800 mb-3 flex gap-2 items-center">
-                ☎️ Narahubung
+                ☎️ <TranslatableText dictKey="buloling.page.narahubung" idText="Narahubung" />
               </h3>
               <p className="text-zinc-700 font-semibold">{data.narahubung.nama}</p>
               <p className="text-blue-600 font-medium">{data.narahubung.kontak}</p>
@@ -172,20 +168,17 @@ export default async function GoaBulolingPage() {
       {/* ─── Galeri Dokumentasi ─── */}
       <GaleriDokumentasi />
 
-      {/* ─── Konservasi & Ekologi ─── */}
-      <KonservasiEkologis />
-
       {/* ─── Peta Lokasi ─── */}
       {data.location.coordinates && (
         <Container className="mt-12">
-          <h3 className="text-2xl font-bold text-zinc-800 mb-6">🗺️ Lokasi di Peta</h3>
+          <h3 className="text-2xl font-bold text-zinc-800 mb-6">
+            <TranslatableText dictKey="buloling.page.petaLokasi" idText="🗺️ Lokasi di Peta" />
+          </h3>
 
           {/* Scientific disclaimer */}
           <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 mb-6">
             <p className="text-amber-800 text-sm leading-relaxed">
-              <strong>📍 Catatan Ilmiah:</strong> Goa Buloling diyakini memiliki koneksi
-              bawah tanah dengan Sumur O&#39;ang, meski hingga kini belum ada studi definitif
-              yang membuktikan hubungan geologis keduanya.
+              <strong><TranslatableText dictKey="buloling.page.catatanIlmiah" idText="📍 Catatan Ilmiah:" /></strong> <TranslatableText dictKey="buloling.page.catatanIlmiahText" idText="Goa Buloling diyakini memiliki koneksi bawah tanah dengan Sumur O'ang, meski hingga kini belum ada studi definitif yang membuktikan hubungan geologis keduanya." />
             </p>
           </div>
 

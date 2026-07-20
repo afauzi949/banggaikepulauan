@@ -10,6 +10,7 @@ import { Navbar } from "@/components/organisms/Navbar";
 import { PetaInteraktifSection } from "@/components/organisms/PetaInteraktifSection";
 import { PetaTematikSection } from "@/components/organisms/PetaTematikSection";
 import { SponsorSection } from "@/components/organisms/SponsorSection";
+import { VideoSection } from "@/components/organisms/VideoSection";
 import { Reveal } from "@/components/atoms/Reveal";
 
 export default function HomePage() {
@@ -33,6 +34,9 @@ export default function HomePage() {
       </Reveal>
       <Reveal>
         <PetaInteraktifSection />
+      </Reveal>
+      <Reveal>
+        <VideoSection />
       </Reveal>
       <Container
         as="section"

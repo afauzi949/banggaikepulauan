@@ -2,43 +2,46 @@
 
 import { motion } from "framer-motion";
 import { Droplets, Trees, Fish, Leaf } from "lucide-react";
-
-const items = [
-  {
-    icon: <Droplets className="w-7 h-7" />,
-    color: "from-cyan-500 to-teal-600",
-    bgLight: "bg-cyan-50",
-    borderColor: "border-cyan-100",
-    title: "Air Tawar (Cenote)",
-    desc: "Sumber akuifer murni yang menopang ekosistem sekitar dan menjadi cadangan air bersih alam yang tak ternilai.",
-  },
-  {
-    icon: <Trees className="w-7 h-7" />,
-    color: "from-emerald-500 to-green-700",
-    bgLight: "bg-emerald-50",
-    borderColor: "border-emerald-100",
-    title: "Ekosistem Mangrove",
-    desc: "Benteng alami pesisir sekaligus rumah bagi beragam biota — melindungi garis pantai dari abrasi dan badai.",
-  },
-  {
-    icon: <Fish className="w-7 h-7" />,
-    color: "from-blue-500 to-indigo-600",
-    bgLight: "bg-blue-50",
-    borderColor: "border-blue-100",
-    title: "Habitat Biota Air",
-    desc: "Rumah bagi coral dan kehidupan bawah air unik yang bergantung pada kejernihan dan kestabilan ekosistem cenote.",
-  },
-  {
-    icon: <Leaf className="w-7 h-7" />,
-    color: "from-amber-500 to-orange-600",
-    bgLight: "bg-amber-50",
-    borderColor: "border-amber-100",
-    title: "Konservasi & Ekowisata",
-    desc: "Menjaga keseimbangan antara pariwisata bertanggung jawab dan kelestarian alam demi generasi mendatang.",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function KonservasiEkologis() {
+  const { t } = useLanguage();
+
+  const items = [
+    {
+      icon: <Droplets className="w-7 h-7" />,
+      color: "from-cyan-500 to-teal-600",
+      bgLight: "bg-cyan-50",
+      borderColor: "border-cyan-100",
+      title: t("buloling.konservasi.item1.title"),
+      desc: t("buloling.konservasi.item1.desc"),
+    },
+    {
+      icon: <Trees className="w-7 h-7" />,
+      color: "from-emerald-500 to-green-700",
+      bgLight: "bg-emerald-50",
+      borderColor: "border-emerald-100",
+      title: t("buloling.konservasi.item2.title"),
+      desc: t("buloling.konservasi.item2.desc"),
+    },
+    {
+      icon: <Fish className="w-7 h-7" />,
+      color: "from-blue-500 to-indigo-600",
+      bgLight: "bg-blue-50",
+      borderColor: "border-blue-100",
+      title: t("buloling.konservasi.item3.title"),
+      desc: t("buloling.konservasi.item3.desc"),
+    },
+    {
+      icon: <Leaf className="w-7 h-7" />,
+      color: "from-amber-500 to-orange-600",
+      bgLight: "bg-amber-50",
+      borderColor: "border-amber-100",
+      title: t("buloling.konservasi.item4.title"),
+      desc: t("buloling.konservasi.item4.desc"),
+    },
+  ];
+
   return (
     <section className="py-16 bg-zinc-50 overflow-hidden border-t border-zinc-100">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-8">
@@ -53,16 +56,15 @@ export function KonservasiEkologis() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-emerald-500" />
             <span className="text-emerald-600 text-sm font-semibold tracking-widest uppercase">
-              Konservasi & Ekologi
+              {t("buloling.konservasi.eyebrow")}
             </span>
             <div className="w-8 h-0.5 bg-emerald-500" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
-            Kenapa Goa Buloling Perlu Dijaga?
+            {t("buloling.konservasi.title")}
           </h2>
           <p className="text-zinc-600 max-w-xl mx-auto">
-            Setiap elemen ekosistem Goa Buloling saling terhubung — menjaga satu berarti
-            menjaga seluruhnya.
+            {t("buloling.konservasi.subtitle")}
           </p>
         </motion.div>
 
@@ -107,12 +109,11 @@ export function KonservasiEkologis() {
           <div className="relative px-8 py-12 text-center">
             <p className="text-4xl mb-6">🌿</p>
             <blockquote className="text-xl sm:text-2xl font-semibold text-white leading-relaxed italic max-w-2xl mx-auto">
-              &ldquo;Mari bersama menjaga kelestarian dan keasrian alam Goa Buloling, demi masa
-              depan Desa Sambulangan.&rdquo;
+              {t("buloling.konservasi.quote")}
             </blockquote>
             <div className="mt-6 w-16 h-0.5 bg-emerald-300 mx-auto" />
             <p className="text-emerald-100 text-sm mt-4 font-medium">
-              Desa Sambulangan, Kec. Bulagi Utara, Kab. Banggai Kepulauan
+              {t("buloling.konservasi.quoteCredit")}
             </p>
           </div>
         </motion.div>

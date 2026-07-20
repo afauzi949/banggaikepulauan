@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Zone = {
   id: string;
@@ -12,56 +13,52 @@ type Zone = {
   detail: string;
 };
 
-const zones: Zone[] = [
-  {
-    id: "mangrove",
-    label: "Pohon Mangrove",
-    color: "bg-emerald-600",
-    textColor: "text-emerald-700",
-    desc: "Kanopi hutan bakau yang menaungi cenote",
-    detail:
-      "Hutan mangrove lebat yang mengelilingi Goa Buloling berfungsi sebagai penyangga ekosistem pesisir dan menjaga kualitas air cenote dari sedimen luar.",
-  },
-  {
-    id: "dangkal",
-    label: "Zona Dangkal",
-    color: "bg-teal-400",
-    textColor: "text-teal-700",
-    desc: "Kedalaman 0–5 m, teduh & terlindungi",
-    detail:
-      "Zona dangkal (0–5m) adalah area transisi antara permukaan dan cenote dalam. Cahaya matahari masih menembus dengan baik, menciptakan warna hijau tosca yang memesona.",
-  },
-  {
-    id: "dropoff",
-    label: "Drop-Off Vertikal",
-    color: "bg-cyan-700",
-    textColor: "text-cyan-700",
-    desc: "Batas tajam antara zona dangkal dan dalam (5–20 m)",
-    detail:
-      "Drop-off adalah titik peralihan dramatis dari lantai batu kapur ke jurang vertikal. Di sinilah warna air berubah drastis dari tosca cerah menjadi biru gelap yang misterius.",
-  },
-  {
-    id: "cenote",
-    label: "Zona Dalam (Cenote)",
-    color: "bg-[#0d3b4f]",
-    textColor: "text-[#0d3b4f]",
-    desc: "Kedalaman 20m–42m+ — jantung fenomena geologi",
-    detail:
-      "Zona dalam adalah inti dari fenomena cenote Goa Buloling. Kedalaman terpetakan mencapai 42 meter, namun lorong-lorong di dasarnya diperkirakan masih berlanjut lebih jauh. Area bertanda '????' ini masih menjadi misteri bagi para penyelam.",
-  },
-  {
-    id: "jalur",
-    label: "Jalur Wisatawan",
-    color: "bg-amber-500",
-    textColor: "text-amber-700",
-    desc: "Jalur akses aman menuju tepian cenote",
-    detail:
-      "Jalur wisatawan mengikuti kontur alam di sekitar cenote, memungkinkan pengunjung menikmati pemandangan dari tepian dengan aman tanpa merusak ekosistem yang rentan.",
-  },
-];
-
 export function PetaZona() {
+  const { t } = useLanguage();
   const [activeZone, setActiveZone] = useState<Zone | null>(null);
+
+  const zones: Zone[] = [
+    {
+      id: "mangrove",
+      label: t("buloling.peta.zone.mangrove.label"),
+      color: "bg-emerald-600",
+      textColor: "text-emerald-700",
+      desc: t("buloling.peta.zone.mangrove.desc"),
+      detail: t("buloling.peta.zone.mangrove.detail"),
+    },
+    {
+      id: "dangkal",
+      label: t("buloling.peta.zone.dangkal.label"),
+      color: "bg-teal-400",
+      textColor: "text-teal-700",
+      desc: t("buloling.peta.zone.dangkal.desc"),
+      detail: t("buloling.peta.zone.dangkal.detail"),
+    },
+    {
+      id: "dropoff",
+      label: t("buloling.peta.zone.dropoff.label"),
+      color: "bg-cyan-700",
+      textColor: "text-cyan-700",
+      desc: t("buloling.peta.zone.dropoff.desc"),
+      detail: t("buloling.peta.zone.dropoff.detail"),
+    },
+    {
+      id: "cenote",
+      label: t("buloling.peta.zone.cenote.label"),
+      color: "bg-[#0d3b4f]",
+      textColor: "text-[#0d3b4f]",
+      desc: t("buloling.peta.zone.cenote.desc"),
+      detail: t("buloling.peta.zone.cenote.detail"),
+    },
+    {
+      id: "jalur",
+      label: t("buloling.peta.zone.jalur.label"),
+      color: "bg-amber-500",
+      textColor: "text-amber-700",
+      desc: t("buloling.peta.zone.jalur.desc"),
+      detail: t("buloling.peta.zone.jalur.detail"),
+    },
+  ];
 
   return (
     <section id="peta-zona" className="py-16 bg-white border-t border-zinc-100">
@@ -77,19 +74,18 @@ export function PetaZona() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-zinc-300" />
             <span className="text-zinc-500 text-sm font-semibold tracking-widest uppercase">
-              Visualisasi Zona
+              {t("buloling.peta.eyebrow")}
             </span>
             <div className="w-8 h-0.5 bg-zinc-300" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
-            Jelajahi Zona Goa Buloling
+            {t("buloling.peta.title")}
           </h2>
           <p className="text-zinc-600 max-w-xl mx-auto">
-            Goa Buloling terbagi menjadi dua zona utama: zona dangkal yang teduh oleh kanopi
-            mangrove, dan zona dalam (cenote) — jantung dari fenomena geologi ini.
+            {t("buloling.peta.subtitle")}
           </p>
           <p className="text-sm text-zinc-500 mt-2 font-medium">
-            ↓ Klik zona untuk informasi lebih lanjut
+            {t("buloling.peta.clickHint")}
           </p>
         </motion.div>
 
@@ -183,10 +179,9 @@ export function PetaZona() {
               />
 
               {/* Labels */}
-              <text x="240" y="175" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">Zona Dangkal</text>
+              <text x="240" y="175" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">{t("buloling.peta.zone.dangkal.label")}</text>
               <text x="240" y="232" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">Drop-Off</text>
-              <text x="240" y="280" textAnchor="middle" fontSize="11" fill="white" fontWeight="bold">Zona Dalam</text>
-              <text x="240" y="295" textAnchor="middle" fontSize="9" fill="#a5d8ff" fontWeight="normal">(Cenote)</text>
+              <text x="240" y="280" textAnchor="middle" fontSize="11" fill="white" fontWeight="bold">{t("buloling.peta.zone.cenote.label")}</text>
 
               {/* Depth markers */}
               <line x1="120" y1="155" x2="120" y2="330" stroke="#64748b" strokeWidth="1" strokeDasharray="3,2" />
