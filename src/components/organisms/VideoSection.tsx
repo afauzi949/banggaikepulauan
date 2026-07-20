@@ -18,6 +18,7 @@ export function VideoSection() {
       <div className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl relative bg-neutral-900 flex items-center justify-center group cursor-pointer" onClick={() => setIsPlaying(true)}>
         {!isPlaying ? (
           <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://img.youtube.com/vi/V0sy8D4PoD4/maxresdefault.jpg"
               alt="Dokumenter Banggai Kepulauan 2025 Thumbnail"

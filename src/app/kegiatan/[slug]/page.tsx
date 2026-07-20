@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 
 import { Container } from "@/components/atoms/Container";
-import { PdfPreview } from "@/components/atoms/PdfPreview";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { Footer } from "@/components/organisms/Footer";
