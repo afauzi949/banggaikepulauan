@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar } from "lucide-react";
 
 import { Container } from "@/components/atoms/Container";
+import { PdfPreview } from "@/components/atoms/PdfPreview";
 import { TransitionLink as Link } from "@/components/atoms/TransitionLink";
 import { TranslatableText } from "@/components/atoms/TranslatableText";
 import { Footer } from "@/components/organisms/Footer";
 import { Navbar } from "@/components/organisms/Navbar";
+import { PeluncuranDokumenDescription } from "@/components/organisms/PeluncuranDokumenDescription";
 import { getKegiatanBySlug } from "@/lib/kegiatan";
 
 type Props = {
@@ -49,7 +51,7 @@ export default function KegiatanDetailPage({ params }: Props) {
 
       {/* Hero Image */}
       <Container>
-        {data.images && data.images.length > 0 ? (
+        {data.images && data.images.length > 0 && data.slug !== "peluncuran-dokumen-warisan-2025" ? (
           <div className="columns-1 md:columns-2 gap-6 space-y-6 mb-12">
             {data.images.map((img, idx) => (
               <div key={idx} className="break-inside-avoid rounded-xl overflow-hidden shadow-sm">
@@ -99,10 +101,17 @@ export default function KegiatanDetailPage({ params }: Props) {
 
         {/* Paragraphs */}
         <div className="space-y-4 pt-4 text-base leading-relaxed text-zinc-700 whitespace-pre-wrap">
-          <TranslatableText
-            dictKey={`kegiatan.description.${data.slug}`}
-            idText={data.description}
-          />
+          {data.slug === "peluncuran-dokumen-warisan-2025" ? (
+            <PeluncuranDokumenDescription
+              dictKey={`kegiatan.description.${data.slug}`}
+              defaultText={data.description}
+            />
+          ) : (
+            <TranslatableText
+              dictKey={`kegiatan.description.${data.slug}`}
+              idText={data.description}
+            />
+          )}
         </div>
 
         {/* Link For DWB */}
@@ -118,7 +127,6 @@ export default function KegiatanDetailPage({ params }: Props) {
             </a>
           </div>
         )}
-
         {/* Tags */}
         {data.tags && data.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-4">
