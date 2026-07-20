@@ -32,7 +32,7 @@ export async function DestinasiPilihanSection({
   }
 
   return (
-    <Container as="section" className="flex flex-col items-center gap-10 py-16 md:py-20">
+    <Container as="section" className="flex flex-col items-center gap-10 py-16 md:py-20 max-w-[1800px]">
       <SectionHeader title={title} subtitle={subtitle} align="center" />
 
       <WisataGrid items={items} cols={cols} />

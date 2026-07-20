@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import ChatWidget from "@/components/ChatWidget";
 
 const geistSans = localFont({
@@ -42,11 +43,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${dmSans.variable} antialiased`}
       >
-        <LanguageProvider>
-          {children}
-          <LanguageSwitcher />
-          <ChatWidget />
-        </LanguageProvider>
+        <SmoothScroll>
+          <LanguageProvider>
+            {children}
+            <LanguageSwitcher />
+            <ChatWidget />
+          </LanguageProvider>
+        </SmoothScroll>
       </body>
     </html>
   );

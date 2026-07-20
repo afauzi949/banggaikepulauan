@@ -1,4 +1,5 @@
 import { WisataCard } from "@/components/molecules/WisataCard";
+import { Reveal } from "@/components/atoms/Reveal";
 import type { Wisata } from "@/lib/schemas/wisata";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +29,9 @@ export function WisataGrid({
     <ul className={cn("grid w-full gap-6", colsMap[cols], className)}>
       {items.map((wisata, index) => (
         <li key={wisata.slug} className="flex">
-          <WisataCard wisata={wisata} imagePriority={prioritizeFirst && index === 0} />
+          <Reveal delay={index * 0.25} className="w-full h-full flex">
+            <WisataCard wisata={wisata} imagePriority={prioritizeFirst && index === 0} className="w-full" />
+          </Reveal>
         </li>
       ))}
     </ul>

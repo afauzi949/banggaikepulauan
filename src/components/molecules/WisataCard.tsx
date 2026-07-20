@@ -38,7 +38,7 @@ export function WisataCard({ wisata, href, imagePriority = false, className }: W
       href={url}
       aria-label={`${title}, ${location.village}`}
       className={cn(
-        "group relative block aspect-[297/507] w-full overflow-hidden rounded-[24px] bg-zinc-100",
+        "group relative block aspect-[3/4] w-full overflow-hidden rounded-[24px] bg-zinc-100",
         cardElevation,
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004d71] focus-visible:ring-offset-2",
         className,
@@ -48,7 +48,8 @@ export function WisataCard({ wisata, href, imagePriority = false, className }: W
         src={cover}
         alt={title}
         fill
-        sizes="(min-width: 1280px) 297px, (min-width: 768px) 33vw, 90vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        quality={95}
         className="object-cover transition-transform duration-500 group-hover:scale-105"
         priority={imagePriority}
       />
