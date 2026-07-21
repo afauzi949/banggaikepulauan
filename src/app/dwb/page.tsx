@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Dokumentasi warisan budaya, sejarah, dan tradisi Kabupaten Banggai Kepulauan.",
 };
 
-const HERO_IMAGE = "/images/dwb/hero.jpg";
+const HERO_IMAGE = "/images/dwb/DWB.webp";
 
 export default function DwbPage() {
   const items = getAllDwb();
@@ -33,6 +33,12 @@ export default function DwbPage() {
             priority
             unoptimized
           />
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 p-4 text-center">
+            <div className="font-[family-name:var(--font-dm-sans)] text-3xl font-bold leading-tight text-white drop-shadow-md sm:text-4xl md:text-5xl lg:text-6xl">
+              Dokumen Warisan<br />
+              Banggai Kepulauan 2026
+            </div>
+          </div>
         </div>
       </Container>
 
