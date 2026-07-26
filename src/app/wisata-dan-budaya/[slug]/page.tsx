@@ -99,7 +99,7 @@ export default async function WisataDetailPage({ params }: Props) {
             />
           </div>
 
-          <div className="text-zinc-700 text-base leading-relaxed whitespace-pre-wrap mt-6">
+          <div className="text-zinc-700 text-base leading-relaxed whitespace-pre-wrap text-justify mt-6">
             <TranslatableText
               dictKey={`wisata.description.${data.slug}`}
               idText={data.description}

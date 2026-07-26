@@ -8,6 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 type GalleryItem = {
   id: number;
+  type: "image" | "video";
   src: string;
   alt: string;
   caption: string;
@@ -21,40 +22,46 @@ export function GaleriDokumentasi() {
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      src: "/images/wisata/buloling.webp",
+      type: "image",
+      src: "/images/wisata/buloling_1.webp",
       alt: t("buloling.galeri.item1.alt"),
       caption: t("buloling.galeri.item1.caption"),
       credit: "Dokumentasi Tim Eksplorasi",
     },
     {
       id: 2,
-      src: "/images/wisata/buloling.webp",
+      type: "image",
+      src: "/images/wisata/buloling_2.webp",
       alt: t("buloling.galeri.item2.alt"),
       caption: t("buloling.galeri.item2.caption"),
       credit: "Sulawesi Dive Trek",
     },
     {
       id: 3,
-      src: "/images/wisata/buloling.webp",
+      type: "image",
+      src: "/images/wisata/buloling_3.webp",
       alt: t("buloling.galeri.item3.alt"),
       caption: t("buloling.galeri.item3.caption"),
     },
     {
       id: 4,
-      src: "/images/wisata/buloling.webp",
+      type: "image",
+      src: "/images/wisata/buloling_4.webp",
       alt: t("buloling.galeri.item4.alt"),
       caption: t("buloling.galeri.item4.caption"),
     },
     {
       id: 5,
-      src: "/images/wisata/buloling.webp",
+      type: "video",
+      src: "/videos/vid_buloling_1.mp4",
       alt: t("buloling.galeri.item5.alt"),
       caption: t("buloling.galeri.item5.caption"),
       credit: "Sulawesi Dive Trek",
     },
     {
       id: 6,
-      src: "/images/wisata/buloling.webp",
+      type: "video",
+      src: "/videos/vid_buloling_2.mp4",
       alt: t("buloling.galeri.item6.alt"),
       caption: t("buloling.galeri.item6.caption"),
       credit: "Tim Eksplorasi",
@@ -87,8 +94,8 @@ export function GaleriDokumentasi() {
           </p>
         </motion.div>
 
-        {/* Masonry grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        {/* Grid layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
@@ -96,21 +103,31 @@ export function GaleriDokumentasi() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="break-inside-avoid"
             >
               <button
                 onClick={() => setLightbox(item)}
-                className="group relative w-full overflow-hidden rounded-xl block focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                className="group relative w-full aspect-[4/3] overflow-hidden rounded-xl block focus:outline-none focus:ring-2 focus:ring-zinc-400"
                 aria-label={`${t("buloling.galeri.openPhoto")} ${item.alt}`}
               >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={600}
-                  height={i % 2 === 0 ? 400 : 300}
-                  className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+                {item.type === "video" ? (
+                  <video
+                    src={item.src}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  />
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={600}
+                    height={450}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                )}
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <div className="flex items-end justify-between">
@@ -129,17 +146,6 @@ export function GaleriDokumentasi() {
             </motion.div>
           ))}
         </div>
-
-        {/* Note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-center text-zinc-400 text-xs mt-8"
-        >
-          {t("buloling.galeri.note")}
-        </motion.p>
       </div>
 
       {/* Lightbox */}
@@ -160,13 +166,23 @@ export function GaleriDokumentasi() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-3xl w-full rounded-2xl overflow-hidden shadow-2xl"
             >
-              <Image
-                src={lightbox.src}
-                alt={lightbox.alt}
-                width={900}
-                height={600}
-                className="w-full object-cover"
-              />
+              {lightbox.type === "video" ? (
+                <video
+                  src={lightbox.src}
+                  className="w-full object-cover"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+              ) : (
+                <Image
+                  src={lightbox.src}
+                  alt={lightbox.alt}
+                  width={900}
+                  height={600}
+                  className="w-full object-cover"
+                />
+              )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-5">
                 <p className="text-white font-semibold">{lightbox.caption}</p>
                 {lightbox.credit && (

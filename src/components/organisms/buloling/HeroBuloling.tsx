@@ -16,7 +16,7 @@ export function HeroBuloling({ onScrollToContent }: HeroBulolingProps) {
       {/* Background image */}
       <Image
         src="/images/wisata/buloling.webp"
-        alt="Goa Buloling — Cenote di Hutan Mangrove Sambulangan"
+        alt="Goa Buloling, Cenote di Hutan Mangrove Sambulangan"
         fill
         className="object-cover"
         priority
@@ -63,7 +63,7 @@ export function HeroBuloling({ onScrollToContent }: HeroBulolingProps) {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="text-lg text-white/80 max-w-xl leading-relaxed mb-5 italic"
         >
-          Jendela alami menuju dunia bawah tanah — kolam air tawar tersembunyi di jantung
+          Jendela alami menuju dunia bawah tanah, kolam air tawar tersembunyi di jantung
           hutan mangrove Sambulangan.
         </motion.p>
 
