@@ -71,7 +71,9 @@ export function DeskripsiUtama({ onScrollToPeta }: DeskripsiUtamaProps) {
               <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center mb-4 group-hover:bg-teal-100 transition-colors">
                 <Droplets className="w-6 h-6 text-teal-600" />
               </div>
-              <p className="text-[#0d3b4f] font-bold text-2xl mb-1">{t("buloling.deskripsi.stat1.title")}</p>
+              <p className="text-[#0d3b4f] font-bold text-2xl mb-1">
+                {t("buloling.deskripsi.stat1.title")}
+              </p>
               <p className="text-zinc-500 text-sm leading-relaxed">
                 {t("buloling.deskripsi.stat1.desc")}
               </p>

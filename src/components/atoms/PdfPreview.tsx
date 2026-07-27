@@ -25,7 +25,10 @@ export function PdfPreview({ url }: Props) {
       </button>
 
       {showPreview && (
-        <div className="relative w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 shadow-2xl" style={{ aspectRatio: "1/1.4" }}>
+        <div
+          className="relative w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50 shadow-2xl"
+          style={{ aspectRatio: "1/1.4" }}
+        >
           <iframe
             src={previewUrl}
             className="absolute top-0 left-0 h-full w-full border-0"

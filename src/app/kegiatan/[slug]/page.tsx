@@ -50,7 +50,9 @@ export default function KegiatanDetailPage({ params }: Props) {
 
       {/* Hero Image */}
       <Container>
-        {data.images && data.images.length > 0 && data.slug !== "peluncuran-dokumen-warisan-2025" ? (
+        {data.images &&
+        data.images.length > 0 &&
+        data.slug !== "peluncuran-dokumen-warisan-2025" ? (
           <div className="columns-1 md:columns-2 gap-6 space-y-6 mb-12">
             {data.images.map((img, idx) => (
               <div key={idx} className="break-inside-avoid rounded-xl overflow-hidden shadow-sm">

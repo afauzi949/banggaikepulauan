@@ -29,12 +29,12 @@ function uid(): string {
 function TypingIndicator() {
   return (
     <div className="flex items-end gap-3 mb-4">
-      <Image 
-        src="/brand/logo-bangkep.svg" 
-        alt="Bot" 
+      <Image
+        src="/brand/logo-bangkep.svg"
+        alt="Bot"
         width={32}
         height={32}
-        className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
+        className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white"
       />
       <div className="bg-white border border-gray-200 border-l-4 border-l-blue-900 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
         <div className="flex items-center gap-1.5" aria-label="Sedang mengetik">
@@ -58,12 +58,12 @@ function ChatMessage({ message }: { message: Message }) {
     >
       {/* Avatar */}
       {!isUser ? (
-        <Image 
-          src="/brand/logo-bangkep.svg" 
-          alt="Bot" 
+        <Image
+          src="/brand/logo-bangkep.svg"
+          alt="Bot"
           width={32}
           height={32}
-          className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white" 
+          className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white"
         />
       ) : (
         <div className="flex-shrink-0 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-gray-300">
@@ -85,16 +85,31 @@ function ChatMessage({ message }: { message: Message }) {
             components={{
               /* eslint-disable @typescript-eslint/no-unused-vars */
               p: ({ node, ...props }) => <p {...props} className="mb-2 last:mb-0" />,
-              ul: ({ node, ...props }) => <ul {...props} className="list-disc pl-5 mb-2 last:mb-0" />,
-              ol: ({ node, ...props }) => <ol {...props} className="list-decimal pl-5 mb-2 last:mb-0" />,
+              ul: ({ node, ...props }) => (
+                <ul {...props} className="list-disc pl-5 mb-2 last:mb-0" />
+              ),
+              ol: ({ node, ...props }) => (
+                <ol {...props} className="list-decimal pl-5 mb-2 last:mb-0" />
+              ),
               li: ({ node, ...props }) => <li {...props} className="mb-1" />,
               a: ({ node, ...props }) => (
-                <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" />
+                <a
+                  {...props}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                />
               ),
               strong: ({ node, ...props }) => <strong {...props} className="font-semibold" />,
-              h1: ({ node, ...props }) => <h1 {...props} className="text-lg font-bold mb-2 mt-3 first:mt-0" />,
-              h2: ({ node, ...props }) => <h2 {...props} className="text-base font-bold mb-2 mt-3 first:mt-0" />,
-              h3: ({ node, ...props }) => <h3 {...props} className="text-sm font-bold mb-2 mt-3 first:mt-0" />,
+              h1: ({ node, ...props }) => (
+                <h1 {...props} className="text-lg font-bold mb-2 mt-3 first:mt-0" />
+              ),
+              h2: ({ node, ...props }) => (
+                <h2 {...props} className="text-base font-bold mb-2 mt-3 first:mt-0" />
+              ),
+              h3: ({ node, ...props }) => (
+                <h3 {...props} className="text-sm font-bold mb-2 mt-3 first:mt-0" />
+              ),
               /* eslint-enable @typescript-eslint/no-unused-vars */
             }}
           >
@@ -118,7 +133,16 @@ function UserIcon({ className }: { className?: string }) {
 
 function ExpandIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <polyline points="15 3 21 3 21 9" />
       <polyline points="9 21 3 21 3 15" />
       <line x1="21" y1="3" x2="14" y2="10" />
@@ -129,7 +153,16 @@ function ExpandIcon({ className }: { className?: string }) {
 
 function ShrinkIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <polyline points="4 14 10 14 10 20" />
       <polyline points="20 10 14 14 14 4" />
       <line x1="14" y1="10" x2="21" y2="3" />
@@ -140,7 +173,15 @@ function ShrinkIcon({ className }: { className?: string }) {
 
 function CloseIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2.5}
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
@@ -149,7 +190,16 @@ function CloseIcon({ className }: { className?: string }) {
 
 function SendIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
       <line x1="22" y1="2" x2="11" y2="13" />
       <polygon points="22 2 15 22 11 13 2 9 22 2" />
     </svg>
@@ -266,7 +316,13 @@ export default function ChatWidget() {
             aria-label="Buka asisten wisata"
             className="fixed bottom-20 right-6 z-[60] h-14 px-5 rounded-full bg-white text-slate-800 shadow-xl shadow-slate-300 flex items-center justify-center gap-2.5 border border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2"
           >
-            <Image src="/brand/logo-bangkep.svg" alt="Bangkep Logo" width={32} height={32} className="w-8 h-8 object-contain" />
+            <Image
+              src="/brand/logo-bangkep.svg"
+              alt="Bangkep Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+            />
             <span className="font-bold text-lg tracking-wide text-blue-900">AI</span>
             <span className="absolute inset-0 rounded-full animate-ping bg-slate-300 opacity-25 pointer-events-none" />
           </motion.button>
@@ -284,8 +340,8 @@ export default function ChatWidget() {
             exit={{ opacity: 0, scale: 0.92, y: 24 }}
             transition={{ type: "spring", stiffness: 320, damping: 26 }}
             className={`fixed bottom-20 right-6 z-[60] flex flex-col rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-gray-200 bg-slate-50 transition-[width,max-width,height] duration-300 ease-in-out ${
-              isExpanded 
-                ? "w-[calc(100vw-3rem)] max-w-2xl h-[clamp(500px,80vh,800px)]" 
+              isExpanded
+                ? "w-[calc(100vw-3rem)] max-w-2xl h-[clamp(500px,80vh,800px)]"
                 : "w-[calc(100vw-3rem)] max-w-sm h-[clamp(420px,60vh,580px)]"
             }`}
             role="dialog"
@@ -294,12 +350,12 @@ export default function ChatWidget() {
           >
             {/* Header */}
             <div className="flex items-center gap-3 px-4 py-4 bg-white border-b border-gray-200 flex-shrink-0">
-              <Image 
-                src="/brand/logo-bangkep.svg" 
-                alt="Bot" 
+              <Image
+                src="/brand/logo-bangkep.svg"
+                alt="Bot"
                 width={40}
                 height={40}
-                className="w-10 h-10 rounded-full object-cover border border-gray-100" 
+                className="w-10 h-10 rounded-full object-cover border border-gray-100"
               />
               <div className="flex-1 min-w-0">
                 <p className="text-slate-800 font-bold text-sm leading-tight truncate">
@@ -317,7 +373,11 @@ export default function ChatWidget() {
                   aria-label={isExpanded ? "Perkecil chat" : "Perbesar chat"}
                   className="w-8 h-8 rounded-full hover:bg-slate-100 flex items-center justify-center transition-colors text-slate-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
                 >
-                  {isExpanded ? <ShrinkIcon className="w-4 h-4" /> : <ExpandIcon className="w-4 h-4" />}
+                  {isExpanded ? (
+                    <ShrinkIcon className="w-4 h-4" />
+                  ) : (
+                    <ExpandIcon className="w-4 h-4" />
+                  )}
                 </button>
                 <button
                   id="chat-widget-close"

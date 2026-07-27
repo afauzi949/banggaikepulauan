@@ -66,6 +66,27 @@ export function GaleriDokumentasi() {
       caption: t("buloling.galeri.item6.caption"),
       credit: "Tim Eksplorasi",
     },
+    {
+      id: 7,
+      type: "image",
+      src: "/images/wisata/buloling_5.webp",
+      alt: t("buloling.galeri.item7.alt"),
+      caption: t("buloling.galeri.item7.caption"),
+    },
+    {
+      id: 8,
+      type: "image",
+      src: "/images/wisata/buloling_6.webp",
+      alt: t("buloling.galeri.item8.alt"),
+      caption: t("buloling.galeri.item8.caption"),
+    },
+    {
+      id: 9,
+      type: "image",
+      src: "/images/wisata/buloling_7.webp",
+      alt: t("buloling.galeri.item9.alt"),
+      caption: t("buloling.galeri.item9.caption"),
+    },
   ];
 
   return (
@@ -89,9 +110,7 @@ export function GaleriDokumentasi() {
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
             {t("buloling.galeri.title")}
           </h2>
-          <p className="text-zinc-500 max-w-xl mx-auto">
-            {t("buloling.galeri.clickHint")}
-          </p>
+          <p className="text-zinc-500 max-w-xl mx-auto">{t("buloling.galeri.clickHint")}</p>
         </motion.div>
 
         {/* Grid layout */}

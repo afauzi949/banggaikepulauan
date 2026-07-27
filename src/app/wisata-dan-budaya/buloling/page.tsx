@@ -59,7 +59,9 @@ export default async function GoaBulolingPage() {
           className="w-fit flex gap-2 hover:gap-4 transition-all bg-zinc-100 font-medium text-zinc-700 rounded-md px-4 py-2 items-center cursor-pointer"
         >
           <ArrowLeft className="w-5 h-5" />
-          <p><TranslatableText dictKey="buloling.page.back" idText="Kembali" /></p>
+          <p>
+            <TranslatableText dictKey="buloling.page.back" idText="Kembali" />
+          </p>
         </Link>
       </Container>
 
@@ -178,7 +180,16 @@ export default async function GoaBulolingPage() {
           {/* Scientific disclaimer */}
           <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 mb-6">
             <p className="text-amber-800 text-sm leading-relaxed">
-              <strong><TranslatableText dictKey="buloling.page.catatanIlmiah" idText="📍 Catatan Ilmiah:" /></strong> <TranslatableText dictKey="buloling.page.catatanIlmiahText" idText="Goa Buloling diyakini memiliki koneksi bawah tanah dengan Sumur O'ang, meski hingga kini belum ada studi definitif yang membuktikan hubungan geologis keduanya." />
+              <strong>
+                <TranslatableText
+                  dictKey="buloling.page.catatanIlmiah"
+                  idText="📍 Catatan Ilmiah:"
+                />
+              </strong>{" "}
+              <TranslatableText
+                dictKey="buloling.page.catatanIlmiahText"
+                idText="Goa Buloling diyakini memiliki koneksi bawah tanah dengan Sumur O'ang, meski hingga kini belum ada studi definitif yang membuktikan hubungan geologis keduanya."
+              />
             </p>
           </div>
 

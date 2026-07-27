@@ -12,10 +12,15 @@ export function VideoSection() {
   return (
     <Container as="section" className="py-16 md:py-20 flex flex-col items-center gap-10">
       <SectionHeader
-        title={<TranslatableText dictKey="video.title" idText="Dokumenter Banggai Kepulauan 2025" />}
+        title={
+          <TranslatableText dictKey="video.title" idText="Dokumenter Banggai Kepulauan 2025" />
+        }
         align="center"
       />
-      <div className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl relative bg-neutral-900 flex items-center justify-center group cursor-pointer" onClick={() => setIsPlaying(true)}>
+      <div
+        className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl relative bg-neutral-900 flex items-center justify-center group cursor-pointer"
+        onClick={() => setIsPlaying(true)}
+      >
         {!isPlaying ? (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}

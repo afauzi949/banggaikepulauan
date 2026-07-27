@@ -63,8 +63,8 @@ export function HeroBuloling({ onScrollToContent }: HeroBulolingProps) {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="text-lg text-white/80 max-w-xl leading-relaxed mb-5 italic"
         >
-          Jendela alami menuju dunia bawah tanah, kolam air tawar tersembunyi di jantung
-          hutan mangrove Sambulangan.
+          Jendela alami menuju dunia bawah tanah, kolam air tawar tersembunyi di jantung hutan
+          mangrove Sambulangan.
         </motion.p>
 
         {/* Location */}

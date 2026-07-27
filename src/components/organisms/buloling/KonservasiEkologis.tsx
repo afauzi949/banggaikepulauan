@@ -63,9 +63,7 @@ export function KonservasiEkologis() {
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
             {t("buloling.konservasi.title")}
           </h2>
-          <p className="text-zinc-600 max-w-xl mx-auto">
-            {t("buloling.konservasi.subtitle")}
-          </p>
+          <p className="text-zinc-600 max-w-xl mx-auto">{t("buloling.konservasi.subtitle")}</p>
         </motion.div>
 
         {/* Cards grid */}

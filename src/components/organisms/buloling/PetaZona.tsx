@@ -81,12 +81,8 @@ export function PetaZona() {
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
             {t("buloling.peta.title")}
           </h2>
-          <p className="text-zinc-600 max-w-xl mx-auto">
-            {t("buloling.peta.subtitle")}
-          </p>
-          <p className="text-sm text-zinc-500 mt-2 font-medium">
-            {t("buloling.peta.clickHint")}
-          </p>
+          <p className="text-zinc-600 max-w-xl mx-auto">{t("buloling.peta.subtitle")}</p>
+          <p className="text-sm text-zinc-500 mt-2 font-medium">{t("buloling.peta.clickHint")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -98,11 +94,7 @@ export function PetaZona() {
             transition={{ duration: 0.8 }}
             className="rounded-2xl overflow-hidden border border-zinc-200 shadow-sm bg-white"
           >
-            <svg
-              viewBox="0 0 480 360"
-              className="w-full"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg viewBox="0 0 480 360" className="w-full" xmlns="http://www.w3.org/2000/svg">
               {/* Sky/background */}
               <rect width="480" height="360" fill="#e0f7fa" />
 
@@ -154,7 +146,15 @@ export function PetaZona() {
               />
 
               {/* Mystery depth indicator */}
-              <text x="240" y="325" textAnchor="middle" fontSize="18" fill="white" opacity="0.6" fontWeight="bold">
+              <text
+                x="240"
+                y="325"
+                textAnchor="middle"
+                fontSize="18"
+                fill="white"
+                opacity="0.6"
+                fontWeight="bold"
+              >
                 ????
               </text>
 
@@ -179,20 +179,67 @@ export function PetaZona() {
               />
 
               {/* Labels */}
-              <text x="240" y="175" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">{t("buloling.peta.zone.dangkal.label")}</text>
-              <text x="240" y="232" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">Drop-Off</text>
-              <text x="240" y="280" textAnchor="middle" fontSize="11" fill="white" fontWeight="bold">{t("buloling.peta.zone.cenote.label")}</text>
+              <text
+                x="240"
+                y="175"
+                textAnchor="middle"
+                fontSize="10"
+                fill="white"
+                fontWeight="bold"
+              >
+                {t("buloling.peta.zone.dangkal.label")}
+              </text>
+              <text
+                x="240"
+                y="232"
+                textAnchor="middle"
+                fontSize="10"
+                fill="white"
+                fontWeight="bold"
+              >
+                Drop-Off
+              </text>
+              <text
+                x="240"
+                y="280"
+                textAnchor="middle"
+                fontSize="11"
+                fill="white"
+                fontWeight="bold"
+              >
+                {t("buloling.peta.zone.cenote.label")}
+              </text>
 
               {/* Depth markers */}
-              <line x1="120" y1="155" x2="120" y2="330" stroke="#64748b" strokeWidth="1" strokeDasharray="3,2" />
-              <text x="115" y="170" textAnchor="end" fontSize="8" fill="#475569">0m</text>
-              <text x="115" y="207" textAnchor="end" fontSize="8" fill="#475569">5m</text>
-              <text x="115" y="253" textAnchor="end" fontSize="8" fill="#475569">20m</text>
-              <text x="115" y="333" textAnchor="end" fontSize="8" fill="#475569">42m+</text>
+              <line
+                x1="120"
+                y1="155"
+                x2="120"
+                y2="330"
+                stroke="#64748b"
+                strokeWidth="1"
+                strokeDasharray="3,2"
+              />
+              <text x="115" y="170" textAnchor="end" fontSize="8" fill="#475569">
+                0m
+              </text>
+              <text x="115" y="207" textAnchor="end" fontSize="8" fill="#475569">
+                5m
+              </text>
+              <text x="115" y="253" textAnchor="end" fontSize="8" fill="#475569">
+                20m
+              </text>
+              <text x="115" y="333" textAnchor="end" fontSize="8" fill="#475569">
+                42m+
+              </text>
 
               {/* Mangrove label */}
-              <text x="80" y="42" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">Mangrove</text>
-              <text x="400" y="42" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">Mangrove</text>
+              <text x="80" y="42" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">
+                Mangrove
+              </text>
+              <text x="400" y="42" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">
+                Mangrove
+              </text>
             </svg>
           </motion.div>
 
@@ -220,7 +267,9 @@ export function PetaZona() {
                   </div>
                   <div
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
-                      activeZone?.id === zone.id ? "border-emerald-500 bg-emerald-500" : "border-zinc-300"
+                      activeZone?.id === zone.id
+                        ? "border-emerald-500 bg-emerald-500"
+                        : "border-zinc-300"
                     }`}
                   >
                     {activeZone?.id === zone.id && (

@@ -88,9 +88,7 @@ export function ProfilKedalaman() {
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">
             {t("buloling.profil.title")}
           </h2>
-          <p className="text-zinc-600 max-w-xl mx-auto">
-            {t("buloling.profil.subtitle")}
-          </p>
+          <p className="text-zinc-600 max-w-xl mx-auto">{t("buloling.profil.subtitle")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -155,20 +153,80 @@ export function ProfilKedalaman() {
                 <circle cx="150" cy={40 + sliderY} r="4" fill="#f59e0b" />
 
                 {/* Depth labels */}
-                <text x="22" y="45" fontSize="7" fill="#64748b" textAnchor="middle">0m</text>
-                <text x="22" y={40 + (5 / 60) * totalH + 5} fontSize="7" fill="#64748b" textAnchor="middle">5m</text>
-                <text x="22" y={40 + (20 / 60) * totalH + 5} fontSize="7" fill="#64748b" textAnchor="middle">20m</text>
-                <text x="22" y={40 + (42 / 60) * totalH + 5} fontSize="7" fill="#64748b" textAnchor="middle">42m</text>
+                <text x="22" y="45" fontSize="7" fill="#64748b" textAnchor="middle">
+                  0m
+                </text>
+                <text
+                  x="22"
+                  y={40 + (5 / 60) * totalH + 5}
+                  fontSize="7"
+                  fill="#64748b"
+                  textAnchor="middle"
+                >
+                  5m
+                </text>
+                <text
+                  x="22"
+                  y={40 + (20 / 60) * totalH + 5}
+                  fontSize="7"
+                  fill="#64748b"
+                  textAnchor="middle"
+                >
+                  20m
+                </text>
+                <text
+                  x="22"
+                  y={40 + (42 / 60) * totalH + 5}
+                  fontSize="7"
+                  fill="#64748b"
+                  textAnchor="middle"
+                >
+                  42m
+                </text>
 
                 {/* Mystery text */}
-                <text x="100" y={40 + (50 / 60) * totalH} textAnchor="middle" fontSize="14" fill="white" opacity={0.6} fontWeight="bold">????</text>
+                <text
+                  x="100"
+                  y={40 + (50 / 60) * totalH}
+                  textAnchor="middle"
+                  fontSize="14"
+                  fill="white"
+                  opacity={0.6}
+                  fontWeight="bold"
+                >
+                  ????
+                </text>
 
                 {/* Ground label */}
-                <text x="100" y="28" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">{t("buloling.profil.groundLabel")}</text>
+                <text
+                  x="100"
+                  y="28"
+                  textAnchor="middle"
+                  fontSize="8"
+                  fill="white"
+                  fontWeight="bold"
+                >
+                  {t("buloling.profil.groundLabel")}
+                </text>
 
                 {/* Current depth indicator */}
-                <rect x="55" y={32 + sliderY} width="90" height="14" rx="3" fill="#f59e0b" opacity="0.9" />
-                <text x="100" y={41 + sliderY} textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">
+                <rect
+                  x="55"
+                  y={32 + sliderY}
+                  width="90"
+                  height="14"
+                  rx="3"
+                  fill="#f59e0b"
+                  opacity="0.9"
+                />
+                <text
+                  x="100"
+                  y={41 + sliderY}
+                  textAnchor="middle"
+                  fontSize="8"
+                  fill="white"
+                  fontWeight="bold"
+                >
                   {depth}m
                 </text>
               </svg>
@@ -232,7 +290,9 @@ export function ProfilKedalaman() {
 
             {/* Legend */}
             <div className="space-y-2">
-              <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-3">{t("buloling.profil.legend")}</p>
+              <p className="text-xs text-zinc-500 font-semibold uppercase tracking-wider mb-3">
+                {t("buloling.profil.legend")}
+              </p>
               {depthZones.map((z) => (
                 <div
                   key={z.label}
@@ -240,7 +300,10 @@ export function ProfilKedalaman() {
                     activeZone.label === z.label ? "bg-white shadow-sm" : "opacity-60"
                   }`}
                 >
-                  <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: z.color }} />
+                  <div
+                    className="w-3 h-3 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: z.color }}
+                  />
                   <p className="text-zinc-700 text-sm font-medium">{z.label}</p>
                   <p className="text-zinc-400 text-xs ml-auto">
                     {z.range[0]}–{z.range[1] === 60 ? "60+" : z.range[1]}m
@@ -252,7 +315,8 @@ export function ProfilKedalaman() {
             {/* Scientific note */}
             <div className="rounded-xl bg-amber-50 border border-amber-200 p-4">
               <p className="text-amber-800 text-sm leading-relaxed">
-                <strong className="text-amber-900">{t("buloling.profil.scientificNote")}</strong> {t("buloling.profil.scientificNoteText")}
+                <strong className="text-amber-900">{t("buloling.profil.scientificNote")}</strong>{" "}
+                {t("buloling.profil.scientificNoteText")}
               </p>
             </div>
           </motion.div>

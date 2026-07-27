@@ -3,7 +3,13 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { PdfPreview } from "../atoms/PdfPreview";
 
-export function PeluncuranDokumenDescription({ dictKey, defaultText }: { dictKey: string, defaultText: string }) {
+export function PeluncuranDokumenDescription({
+  dictKey,
+  defaultText,
+}: {
+  dictKey: string;
+  defaultText: string;
+}) {
   const { t, language } = useLanguage();
   const text = t(dictKey) !== dictKey ? t(dictKey) : defaultText;
 

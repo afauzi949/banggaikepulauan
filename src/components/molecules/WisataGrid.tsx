@@ -30,7 +30,11 @@ export function WisataGrid({
       {items.map((wisata, index) => (
         <li key={wisata.slug} className="flex">
           <Reveal delay={index * 0.25} className="w-full h-full flex">
-            <WisataCard wisata={wisata} imagePriority={prioritizeFirst && index === 0} className="w-full" />
+            <WisataCard
+              wisata={wisata}
+              imagePriority={prioritizeFirst && index === 0}
+              className="w-full"
+            />
           </Reveal>
         </li>
       ))}
