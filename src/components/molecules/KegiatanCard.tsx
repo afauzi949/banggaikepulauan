@@ -48,7 +48,7 @@ export function KegiatanCard({
       <div className="relative aspect-[316/270] w-full overflow-hidden shrink-0">
         <Image
           src={cover}
-          alt={title}
+          alt={`Dokumentasi kegiatan dan acara ${title} di Kabupaten Banggai Kepulauan`}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"

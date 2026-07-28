@@ -70,7 +70,7 @@ export function JelajahTeaserSection({
         <div className="relative aspect-[582/192] w-full bg-zinc-200">
           <Image
             src={mapSrc}
-            alt="Pratinjau peta direktori usaha lokal Bangkep"
+            alt="Pratinjau peta sebaran direktori usaha lokal, fasilitas warga, dan UMKM di Kabupaten Banggai Kepulauan"
             fill
             sizes="(min-width: 1024px) 584px, 100vw"
             className="object-cover"

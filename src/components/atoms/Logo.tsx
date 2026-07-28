@@ -18,7 +18,7 @@ export function Logo({ href = "/", withWordmark = true, className }: LogoProps) 
     >
       <Image
         src="/brand/logo-bangkep.svg"
-        alt="Banggai Kepulauan"
+        alt="Logo resmi wisata dan budaya Kabupaten Banggai Kepulauan"
         width={25}
         height={31}
         priority

@@ -30,7 +30,7 @@ export function DwbCard({ title, cover, href, slug, className }: DwbCardProps) {
       {/* Background image */}
       <Image
         src={cover}
-        alt={title}
+        alt={`Ilustrasi dan dokumentasi warisan budaya ${title} di Kabupaten Banggai Kepulauan`}
         fill
         sizes="(min-width: 1024px) 1313px, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"

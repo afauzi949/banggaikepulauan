@@ -26,7 +26,7 @@ export function VideoSection() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://img.youtube.com/vi/V0sy8D4PoD4/maxresdefault.jpg"
-              alt="Dokumenter Banggai Kepulauan 2025 Thumbnail"
+              alt="Cuplikan video dokumenter keindahan alam bahari, kekayaan budaya adat, dan potensi wisata Kabupaten Banggai Kepulauan 2025"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-300" />

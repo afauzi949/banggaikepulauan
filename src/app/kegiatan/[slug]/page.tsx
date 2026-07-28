@@ -58,7 +58,7 @@ export default function KegiatanDetailPage({ params }: Props) {
               <div key={idx} className="break-inside-avoid rounded-xl overflow-hidden shadow-sm">
                 <Image
                   src={img}
-                  alt={`${data.title} - ${idx + 1}`}
+                  alt={`Dokumentasi suasana kegiatan dan acara ${data.title} di Banggai Kepulauan - foto ${idx + 1}`}
                   width={800}
                   height={600}
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
@@ -71,7 +71,7 @@ export default function KegiatanDetailPage({ params }: Props) {
           <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-xl md:h-[60vh] md:aspect-auto">
             <Image
               src={data.cover}
-              alt={data.title}
+              alt={`Foto utama dokumentasi kegiatan ${data.title} di Kabupaten Banggai Kepulauan`}
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
               priority

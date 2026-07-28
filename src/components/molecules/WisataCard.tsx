@@ -46,7 +46,7 @@ export function WisataCard({ wisata, href, imagePriority = false, className }: W
     >
       <Image
         src={cover}
-        alt={title}
+        alt={`Pemandangan alam dan keindahan wisata ${title} di ${location.village}, Kabupaten Banggai Kepulauan`}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         quality={95}

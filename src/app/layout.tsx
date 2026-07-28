@@ -27,11 +27,18 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Banggai Kepulauan",
-    template: "%s — Banggai Kepulauan",
+    default: "Wisata & Budaya Banggai Kepulauan | Pengabdi Kebanggaan",
+    template: "%s | Pengabdi Kebanggaan",
   },
   description:
     "Portal wisata, budaya, kegiatan, dan UMKM Kabupaten Banggai Kepulauan, Sulawesi Tengah.",
+  icons: {
+    icon: [
+      { url: "/brand/logo-bangkep.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/brand/logo-bangkep.svg",
+    apple: "/brand/logo-bangkep.svg",
+  },
 };
 
 export default function RootLayout({

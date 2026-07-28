@@ -16,7 +16,7 @@ export function HeroBuloling({ onScrollToContent }: HeroBulolingProps) {
       {/* Background image */}
       <Image
         src="/images/wisata/buloling.webp"
-        alt="Goa Buloling, Cenote di Hutan Mangrove Sambulangan"
+        alt="Pemandangan jernih kolam alami Goa Buloling, fenomena cenote unik di dalam hutan mangrove Desa Sambulangan, Banggai Kepulauan"
         fill
         className="object-cover"
         priority

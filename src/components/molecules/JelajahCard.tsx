@@ -33,7 +33,7 @@ export function JelajahCard({ umkm, className }: JelajahCardProps) {
       <div className="relative aspect-[397/239] w-full overflow-hidden rounded-t-[32px]">
         <Image
           src={cover}
-          alt={name}
+          alt={`Foto usaha lokal dan layanan UMKM ${name} di ${location}, Banggai Kepulauan`}
           fill
           sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
           className="object-cover"

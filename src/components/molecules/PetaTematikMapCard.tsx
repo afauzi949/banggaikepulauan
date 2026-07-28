@@ -25,7 +25,7 @@ export function PetaTematikMapCard({ document, className }: PetaTematikMapCardPr
       <div className="relative aspect-[16/7] w-full bg-zinc-200 sm:aspect-[16/6]">
         <Image
           src={preview}
-          alt={`Pratinjau ${title}`}
+          alt={`Pratinjau peta tematik geospasial ${title} Kabupaten Banggai Kepulauan`}
           fill
           sizes="(min-width: 1024px) 900px, 100vw"
           className="object-cover"

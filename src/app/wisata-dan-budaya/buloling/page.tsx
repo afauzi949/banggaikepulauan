@@ -71,7 +71,7 @@ export default async function GoaBulolingPage() {
           <div className="h-full w-full rounded-xl overflow-hidden aspect-video relative">
             <Image
               src={data.cover}
-              alt={`${data.title} preview`}
+              alt={`Foto utama pemandangan keindahan alam cenote ${data.title} di Desa Sambulangan, Kabupaten Banggai Kepulauan`}
               fill
               className="w-full h-full object-cover"
             />
@@ -113,6 +113,9 @@ export default async function GoaBulolingPage() {
             </p>
             <p className="mt-4">
               <TranslatableHTML dictKey="buloling.page.desc2" />
+            </p>
+            <p className="mt-4">
+              <TranslatableHTML dictKey="buloling.page.desc3" />
             </p>
           </div>
         </div>

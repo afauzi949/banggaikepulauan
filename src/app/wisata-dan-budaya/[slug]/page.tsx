@@ -9,6 +9,7 @@ import { Container } from "@/components/atoms/Container";
 import { Footer } from "@/components/organisms/Footer";
 import { Navbar } from "@/components/organisms/Navbar";
 import { getWisataBySlug } from "@/lib/wisata";
+import { GaleriDokumentasiTambalang } from "@/components/organisms/tambalang/GaleriDokumentasiTambalang";
 import dynamic from "next/dynamic";
 
 const Map = dynamic(() => import("@/components/organisms/maps/DetailMap"), {
@@ -64,7 +65,7 @@ export default async function WisataDetailPage({ params }: Props) {
             >
               <Image
                 src={img}
-                alt={`${data.title} preview ${idx + 1}`}
+                alt={`Pemandangan alam dan keindahan destinasi wisata ${data.title} di ${data.location.village}, Kabupaten Banggai Kepulauan - foto ${idx + 1}`}
                 fill
                 className="w-full h-full object-cover"
               />
@@ -168,6 +169,9 @@ export default async function WisataDetailPage({ params }: Props) {
           )}
         </div>
       </Container>
+
+      {/* Galeri Dokumentasi Tambalang */}
+      {data.slug === "pantai-pasir-putih-pulau-tambalang" && <GaleriDokumentasiTambalang />}
 
       {/* Map */}
       {data.location.coordinates && (

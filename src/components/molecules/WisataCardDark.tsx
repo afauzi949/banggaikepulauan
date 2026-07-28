@@ -49,7 +49,7 @@ export function WisataCardDark({
       <div className="relative aspect-[316/220] w-full overflow-hidden shrink-0">
         <Image
           src={cover}
-          alt={title}
+          alt={`Pemandangan alam dan keindahan wisata ${title} di ${location.village}, Kabupaten Banggai Kepulauan`}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"

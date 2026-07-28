@@ -7,7 +7,7 @@ import { Navbar } from "@/components/organisms/Navbar";
 import { getWisataList } from "@/lib/wisata";
 
 export const metadata: Metadata = {
-  title: "Wisata & Budaya",
+  title: "Wisata & Budaya Banggai Kepulauan",
   description:
     "Jelajahi destinasi wisata alam, budaya, dan sejarah di Kabupaten Banggai Kepulauan.",
 };

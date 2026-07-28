@@ -31,7 +31,7 @@ function TypingIndicator() {
     <div className="flex items-end gap-3 mb-4">
       <Image
         src="/brand/logo-bangkep.svg"
-        alt="Bot"
+        alt="Avatar Asisten Wisata AI Banggai Kepulauan"
         width={32}
         height={32}
         className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white"
@@ -60,7 +60,7 @@ function ChatMessage({ message }: { message: Message }) {
       {!isUser ? (
         <Image
           src="/brand/logo-bangkep.svg"
-          alt="Bot"
+          alt="Avatar Asisten Wisata AI Banggai Kepulauan"
           width={32}
           height={32}
           className="flex-shrink-0 w-8 h-8 rounded-full object-cover border border-gray-200 bg-white"
@@ -318,7 +318,7 @@ export default function ChatWidget() {
           >
             <Image
               src="/brand/logo-bangkep.svg"
-              alt="Bangkep Logo"
+              alt="Logo AI Asisten Wisata dan Budaya Kabupaten Banggai Kepulauan"
               width={32}
               height={32}
               className="w-8 h-8 object-contain"
@@ -352,7 +352,7 @@ export default function ChatWidget() {
             <div className="flex items-center gap-3 px-4 py-4 bg-white border-b border-gray-200 flex-shrink-0">
               <Image
                 src="/brand/logo-bangkep.svg"
-                alt="Bot"
+                alt="Avatar Asisten Wisata AI Banggai Kepulauan"
                 width={40}
                 height={40}
                 className="w-10 h-10 rounded-full object-cover border border-gray-100"

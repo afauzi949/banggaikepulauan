@@ -41,7 +41,7 @@ export function MapDocumentCard({
       <div className="relative aspect-[384/152] w-full bg-zinc-200">
         <Image
           src={preview}
-          alt={`Pratinjau ${title}`}
+          alt={`Pratinjau peta tematik geospasial ${title} Kabupaten Banggai Kepulauan`}
           fill
           sizes="(min-width: 1024px) 384px, 90vw"
           className="object-cover"

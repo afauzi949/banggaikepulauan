@@ -27,7 +27,7 @@ export default function DwbPage() {
         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl lg:aspect-[1440/810]">
           <Image
             src={HERO_IMAGE}
-            alt="Dokumentasi Warisan Banggai Kepulauan"
+            alt="Rekam jejak dan dokumentasi warisan budaya, sejarah, pesona alam, dan kuliner lokal desa-desa di Kabupaten Banggai Kepulauan"
             fill
             className="object-cover object-center"
             priority
@@ -48,16 +48,29 @@ export default function DwbPage() {
         <h1 className="font-[family-name:var(--font-dm-sans)] text-2xl font-bold leading-tight text-[#0a0a0a] md:text-[30px] md:leading-[36px]">
           <TranslatableText dictKey="dwb.pageTitle" idText="Dokumen Warisan Banggai Kepulauan" />
         </h1>
-        <p className="mt-4 max-w-5xl text-justify font-[family-name:var(--font-dm-sans)] text-base leading-7 text-[#0a0a0a] md:mt-6 md:text-lg md:leading-[28px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum
-          est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin
-          lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-          feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante
-          pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel
-          bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum
-          tellus.
-        </p>
+        <div className="mt-4 flex w-full flex-col gap-4 text-justify font-[family-name:var(--font-dm-sans)] text-base leading-7 text-[#0a0a0a] md:mt-6 md:gap-6 md:text-lg md:leading-[28px]">
+          <p>
+            <TranslatableText
+              dictKey="dwb.pageDesc1"
+              idText="Dokumen warisan ini merupakan rekam jejak pengabdian kami selama turun langsung ke berbagai desa di Banggai Kepulauan. Melalui pendokumentasian lapangan, kami memetakan berbagai kekayaan daerah yang patut menjadi kebanggaan, mulai dari pesona potensi wisata, ragam cita rasa kuliner lokal hingga kearifan masyarakat dalam memanfaatkan tanaman obat tradisional."
+              enText="This heritage document is a record of our dedication while engaging directly with various villages across Banggai Kepulauan. Through field documentation, we mapped out various regional treasures to be proud of, ranging from the charm of tourism potential, the diverse flavors of local culinary traditions, to the community's wisdom in utilizing traditional medicinal plants."
+            />
+          </p>
+          <p>
+            <TranslatableText
+              dictKey="dwb.pageDesc2"
+              idText="Setiap desa yang kami singgahi memancarkan karakter dan keunikannya tersendiri. Nilai-nilai kehidupan tersebut tergambar jelas melalui keindahan lanskap alam, kehangatan aktivitas harian warga, serta denyut nadi budaya dan tradisi yang terus dipertahankan. Arsip ini hadir agar seluruh kekayaan warisan lokal tersebut dapat terus dikenal dan tak lekang oleh waktu."
+              enText="Each village we visited radiates its own distinct character and uniqueness. These values of life are clearly reflected in the beauty of the natural landscapes, the warmth of the residents' daily activities, and the vibrant pulse of culture and traditions that continue to be preserved. This archive is presented so that all this rich local heritage remains recognized and timeless."
+            />
+          </p>
+          <p>
+            <TranslatableText
+              dictKey="dwb.pageDesc3"
+              idText="Kami telah menyusun seluruh jejak kearifan lokal dan cerita dari lapangan ini ke dalam satu catatan utuh yakni Dokumen Warisan Banggai Kepulauan. Mari telusuri dan jelajahi kekayaan budaya desa-desa ini selengkapnya di sini."
+              enText="We have compiled all these traces of local wisdom and stories from the field into a comprehensive record, namely the Banggai Kepulauan Heritage Document. Let's explore and discover the rich cultural heritage of these villages in full here."
+            />
+          </p>
+        </div>
       </Container>
 
       {/* DWB Card List */}

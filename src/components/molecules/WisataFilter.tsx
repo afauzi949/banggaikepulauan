@@ -18,10 +18,19 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
   const [selectedCategory, setSelectedCategory] = useState("");
   const { t } = useLanguage();
 
-  const locations = useMemo(() => {
-    const set = new Set(items.map((w) => w.location.subdistrict));
-    return Array.from(set).sort();
-  }, [items]);
+  const locations = useMemo(
+    () => [
+      "Desa Sambulangan",
+      "Desa Lukpanenteng",
+      "Desa Bungin",
+      "Desa Bakalan",
+      "Desa Lumbi-lumbia",
+      "Desa Buko",
+      "Desa Lolantang",
+      "Desa Leme-leme",
+    ],
+    [],
+  );
 
   const categories = useMemo(() => {
     const set = new Set(items.flatMap((w) => w.tags ?? []));
@@ -36,7 +45,12 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
         result = result.filter((w) => w.title.toLowerCase().includes(lower));
       }
       if (loc) {
-        result = result.filter((w) => w.location.subdistrict === loc);
+        const normLoc = loc.toLowerCase().replace(/[^a-z0-9]/g, "");
+        result = result.filter((w) => {
+          const normVillage = w.location.village.toLowerCase().replace(/[^a-z0-9]/g, "");
+          const normSub = w.location.subdistrict.toLowerCase().replace(/[^a-z0-9]/g, "");
+          return normVillage.includes(normLoc) || normSub.includes(normLoc);
+        });
       }
       if (cat) {
         result = result.filter((w) => w.tags?.includes(cat));
@@ -88,11 +102,15 @@ export function WisataFilter({ items, onFilter, className }: WisataFilterProps) 
               ? t("filter.selectLocation")
               : "Pilih lokasi"}
           </option>
-          {locations.map((loc) => (
-            <option key={loc} value={loc}>
-              {loc}
-            </option>
-          ))}
+          {locations.map((loc) => {
+            const locKey = `location.${loc.toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+            const finalLoc = t(locKey) !== locKey ? t(locKey) : loc;
+            return (
+              <option key={loc} value={loc}>
+                {finalLoc}
+              </option>
+            );
+          })}
         </select>
       </label>
 

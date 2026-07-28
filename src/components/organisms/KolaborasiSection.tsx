@@ -23,7 +23,7 @@ export function KolaborasiSection({
   title = "Rahasia Geologis di Balik 'Perahu Melayang' Danau Paisu Pok",
   description = "Pernah ngelihat perahu kayu yang seolah-olah melayang bebas di udara? Di pedalaman Banggai Kepulauan, ilusi optik ini nyata terjadi. Airnya yang berwarna biru kehitaman punya tingkat kejernihan yang nggak masuk akal, sampai dasar danau terlihat jelas. Sebenarnya, fenomena alam apa yang bikin air di danau karst ini bisa terus sebening kaca?",
   imageSrc = "/images/wisata/paisu-batango.jpg",
-  imageAlt = "Pemandangan udara Danau Paisu Pok",
+  imageAlt = "Pemandangan air sebening kristal dan perahu melayang di Danau Paisu Pok, keajaiban geologis di Kabupaten Banggai Kepulauan",
   linkLabel = "Baca penelusuran lengkap di Sainreka",
   linkHref = "https://sainreka.com/banggai-kepulauan/paisu-pok",
   className,

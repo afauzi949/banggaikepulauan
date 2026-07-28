@@ -18,7 +18,7 @@ interface HeroSectionProps {
 
 export function HeroSection({
   imageSrc = HERO_IMAGE_SRC,
-  imageAlt = "Pemandangan udara Banggai Kepulauan",
+  imageAlt = "Pemandangan udara gugusan pulau, lautan biru jernih, dan keindahan pesona alam Kabupaten Banggai Kepulauan",
   ctaHref = "#",
   eyebrow,
   title,
