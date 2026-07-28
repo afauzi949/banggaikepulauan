@@ -25,14 +25,7 @@ export function ProfilKedalaman() {
       desc: t("buloling.profil.zone.dangkal.desc"),
     },
     {
-      range: [5, 20],
-      label: t("buloling.profil.zone.dropoff.label"),
-      color: "#0097a7",
-      highlight: "bg-cyan-700",
-      desc: t("buloling.profil.zone.dropoff.desc"),
-    },
-    {
-      range: [20, 42],
+      range: [5, 42],
       label: t("buloling.profil.zone.cenote.label"),
       color: "#01579b",
       highlight: "bg-blue-800",
@@ -60,9 +53,8 @@ export function ProfilKedalaman() {
   const totalH = 280; // total SVG height for water column
   const zoneHeights = [
     { zone: depthZones[0], h: (5 / 60) * totalH, y: 0 },
-    { zone: depthZones[1], h: (15 / 60) * totalH, y: (5 / 60) * totalH },
-    { zone: depthZones[2], h: (22 / 60) * totalH, y: (20 / 60) * totalH },
-    { zone: depthZones[3], h: (18 / 60) * totalH, y: (42 / 60) * totalH },
+    { zone: depthZones[1], h: (37 / 60) * totalH, y: (5 / 60) * totalH },
+    { zone: depthZones[2], h: (18 / 60) * totalH, y: (42 / 60) * totalH },
   ];
 
   const sliderY = (depth / 60) * totalH;
@@ -164,15 +156,6 @@ export function ProfilKedalaman() {
                   textAnchor="middle"
                 >
                   5m
-                </text>
-                <text
-                  x="22"
-                  y={40 + (20 / 60) * totalH + 5}
-                  fontSize="7"
-                  fill="#64748b"
-                  textAnchor="middle"
-                >
-                  20m
                 </text>
                 <text
                   x="22"

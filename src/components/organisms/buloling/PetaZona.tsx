@@ -35,14 +35,6 @@ export function PetaZona() {
       detail: t("buloling.peta.zone.dangkal.detail"),
     },
     {
-      id: "dropoff",
-      label: t("buloling.peta.zone.dropoff.label"),
-      color: "bg-cyan-700",
-      textColor: "text-cyan-700",
-      desc: t("buloling.peta.zone.dropoff.desc"),
-      detail: t("buloling.peta.zone.dropoff.detail"),
-    },
-    {
       id: "cenote",
       label: t("buloling.peta.zone.cenote.label"),
       color: "bg-[#0d3b4f]",
@@ -127,22 +119,13 @@ export function PetaZona() {
                 onClick={() => setActiveZone(activeZone?.id === "dangkal" ? null : zones[1])}
               />
 
-              {/* Transition zone drop-off */}
-              <path
-                d="M165 200 Q160 220 155 250 Q240 248 325 250 Q320 220 315 200 Q240 195 165 200 Z"
-                fill="#0097a7"
-                opacity="0.85"
-                className={`cursor-pointer transition-opacity ${activeZone?.id === "dropoff" ? "opacity-100" : "opacity-75"}`}
-                onClick={() => setActiveZone(activeZone?.id === "dropoff" ? null : zones[2])}
-              />
-
               {/* Deep zone / cenote */}
               <path
-                d="M155 250 Q148 285 145 330 Q240 340 335 330 Q332 285 325 250 Q240 248 155 250 Z"
+                d="M165 200 Q160 220 155 250 Q148 285 145 330 Q240 340 335 330 Q332 285 325 250 Q320 220 315 200 Q240 195 165 200 Z"
                 fill="#01579b"
                 opacity="0.9"
                 className={`cursor-pointer transition-opacity ${activeZone?.id === "cenote" ? "opacity-100" : "opacity-80"}`}
-                onClick={() => setActiveZone(activeZone?.id === "cenote" ? null : zones[3])}
+                onClick={() => setActiveZone(activeZone?.id === "cenote" ? null : zones[2])}
               />
 
               {/* Mystery depth indicator */}
@@ -166,7 +149,7 @@ export function PetaZona() {
                 fill="none"
                 strokeDasharray="8,4"
                 className={`cursor-pointer ${activeZone?.id === "jalur" ? "opacity-100" : "opacity-80"}`}
-                onClick={() => setActiveZone(activeZone?.id === "jalur" ? null : zones[4])}
+                onClick={() => setActiveZone(activeZone?.id === "jalur" ? null : zones[3])}
               />
               <path
                 d="M325 155 Q400 130 470 140"
@@ -175,7 +158,7 @@ export function PetaZona() {
                 fill="none"
                 strokeDasharray="8,4"
                 className={`cursor-pointer ${activeZone?.id === "jalur" ? "opacity-100" : "opacity-80"}`}
-                onClick={() => setActiveZone(activeZone?.id === "jalur" ? null : zones[4])}
+                onClick={() => setActiveZone(activeZone?.id === "jalur" ? null : zones[3])}
               />
 
               {/* Labels */}
@@ -188,16 +171,6 @@ export function PetaZona() {
                 fontWeight="bold"
               >
                 {t("buloling.peta.zone.dangkal.label")}
-              </text>
-              <text
-                x="240"
-                y="232"
-                textAnchor="middle"
-                fontSize="10"
-                fill="white"
-                fontWeight="bold"
-              >
-                Drop-Off
               </text>
               <text
                 x="240"
@@ -225,9 +198,6 @@ export function PetaZona() {
               </text>
               <text x="115" y="207" textAnchor="end" fontSize="8" fill="#475569">
                 5m
-              </text>
-              <text x="115" y="253" textAnchor="end" fontSize="8" fill="#475569">
-                20m
               </text>
               <text x="115" y="333" textAnchor="end" fontSize="8" fill="#475569">
                 42m+
