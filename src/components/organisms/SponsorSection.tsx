@@ -21,10 +21,17 @@ export function SponsorSection() {
 
       <div className="w-full max-w-6xl flex flex-col items-center gap-12 md:gap-16 pt-8">
         {/* Top Level Sponsor */}
-        <div className="flex justify-center w-full">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 w-full">
           <Image
             src="/images/sponsor/Paragon.svg"
             alt="ParagonCorp"
+            width={400}
+            height={120}
+            className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+          />
+          <Image
+            src="/images/sponsor/bank-sulteng.svg"
+            alt="Bank Sulteng"
             width={400}
             height={120}
             className="h-16 md:h-20 lg:h-24 w-auto object-contain"
@@ -101,13 +108,6 @@ export function SponsorSection() {
             className="h-10 md:h-12 w-auto object-contain"
           />
           <Image
-            src="/images/sponsor/bank-sulteng.svg"
-            alt="Bank Sulteng"
-            width={120}
-            height={50}
-            className="h-7 md:h-8 w-auto object-contain"
-          />
-          <Image
             src="/images/sponsor/wiar-sinergi-prima.svg"
             alt="Wiar Sinergi Prima"
             width={80}
@@ -133,6 +133,13 @@ export function SponsorSection() {
             alt="SS"
             width={60}
             height={60}
+            className="h-7 md:h-8 w-auto object-contain"
+          />
+          <Image
+            src="/images/sponsor/Fortuna.svg"
+            alt="Fortuna"
+            width={100}
+            height={50}
             className="h-7 md:h-8 w-auto object-contain"
           />
         </div>
