@@ -140,7 +140,7 @@ export function SponsorSection() {
             alt="FORTUNA27"
             width={100}
             height={50}
-            className="h-4 md:h-5 w-auto object-contain"
+            className="h-2.5 md:h-3.5 w-auto object-contain"
           />
         </div>
 
