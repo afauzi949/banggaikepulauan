@@ -136,8 +136,8 @@ export function SponsorSection() {
             className="h-7 md:h-8 w-auto object-contain"
           />
           <Image
-            src="/images/sponsor/Fortuna.svg"
-            alt="Fortuna"
+            src="/images/sponsor/fortuna27.png"
+            alt="FORTUNA27"
             width={100}
             height={50}
             className="h-7 md:h-8 w-auto object-contain"
@@ -168,6 +168,20 @@ export function SponsorSection() {
             <Image
               src="/images/sponsor/bangkep-news.png"
               alt="Bangkep News"
+              width={200}
+              height={80}
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <Image
+              src="/images/sponsor/info-sulteng.png"
+              alt="Info Sulteng"
+              width={200}
+              height={80}
+              className="h-10 md:h-12 w-auto object-contain"
+            />
+            <Image
+              src="/images/sponsor/banggai-tour-travel.png"
+              alt="Banggai Tour & Travel"
               width={200}
               height={80}
               className="h-10 md:h-12 w-auto object-contain"
