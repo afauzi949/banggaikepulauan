@@ -6,7 +6,6 @@ import { DwbCard } from "@/components/molecules/DwbCard";
 import { Footer } from "@/components/organisms/Footer";
 import { Navbar } from "@/components/organisms/Navbar";
 import { TranslatableText } from "@/components/atoms/TranslatableText";
-import { getAllDwb } from "@/lib/dwb";
 
 export const metadata: Metadata = {
   title: "Dokumen Warisan Bangkep",
@@ -16,8 +15,6 @@ export const metadata: Metadata = {
 const HERO_IMAGE = "/images/dwb/DWB.webp";
 
 export default function DwbPage() {
-  const items = getAllDwb();
-
   return (
     <main>
       <Navbar activeHref="/dwb" />
