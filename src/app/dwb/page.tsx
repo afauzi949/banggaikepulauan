@@ -37,7 +37,7 @@ export default function DwbPage() {
             <div className="font-[family-name:var(--font-dm-sans)] text-3xl font-bold leading-tight text-white drop-shadow-md sm:text-4xl md:text-5xl lg:text-6xl">
               Dokumen Warisan
               <br />
-              Banggai Kepulauan 2026
+              Banggai Kepulauan
             </div>
           </div>
         </div>
@@ -76,15 +76,18 @@ export default function DwbPage() {
       {/* DWB Card List */}
       <Container as="section" className="pb-16 md:pb-20">
         <div className="mx-auto flex max-w-[1313px] flex-col gap-4">
-          {items.map((item) => (
-            <DwbCard
-              key={item.slug}
-              slug={item.slug}
-              title={item.title}
-              cover={item.cover}
-              href={`/dwb/${item.slug}`}
-            />
-          ))}
+          <DwbCard
+            slug="dwb-2025"
+            title="DWB 2025"
+            cover="/images/dwb/dwb25.webp"
+            href="#"
+          />
+          <DwbCard
+            slug="dwb-2026"
+            title="DWB 2026"
+            cover="/images/dwb/DWB.webp"
+            href="#"
+          />
         </div>
       </Container>
 
