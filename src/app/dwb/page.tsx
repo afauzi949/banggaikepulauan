@@ -80,7 +80,7 @@ export default function DwbPage() {
             slug="dwb-2025"
             title="DWB 2025"
             cover="/images/dwb/dwb25.webp"
-            href="#"
+            href="/dwb25"
           />
           <DwbCard
             slug="dwb-2026"
