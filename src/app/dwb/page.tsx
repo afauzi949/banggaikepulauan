@@ -83,7 +83,7 @@ export default function DwbPage() {
             slug="dwb-2026"
             title="DWB 2026"
             cover="/images/dwb/DWB.webp"
-            href="#"
+            href="/dwb26"
           />
         </div>
       </Container>
