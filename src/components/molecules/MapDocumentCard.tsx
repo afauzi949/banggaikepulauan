@@ -30,9 +30,11 @@ export function MapDocumentCard({
   return (
     <Link
       href={downloadUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={`${title}, unduh ${formatLabel(format)} ${formatFileSize(sizeBytes)}`}
       className={cn(
-        "group flex w-full max-w-[384px] flex-col overflow-hidden rounded-2xl bg-white pb-6",
+        "group flex h-full w-full max-w-[384px] flex-col overflow-hidden rounded-2xl bg-white pb-6",
         cardElevation,
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004d71] focus-visible:ring-offset-2",
         className,
@@ -48,7 +50,7 @@ export function MapDocumentCard({
         />
       </div>
 
-      <div className="flex flex-col gap-4 px-6 pt-4">
+      <div className="flex flex-1 flex-col gap-4 px-6 pt-4">
         <div className="flex flex-col gap-1">
           <h3 className="font-[family-name:var(--font-dm-sans)] text-[20px] font-bold leading-[28px] text-[#111827]">
             {finalTitle}
@@ -65,7 +67,7 @@ export function MapDocumentCard({
 
         <span
           className={cn(
-            "inline-flex w-full items-center justify-center rounded-[7px] bg-[#004d71] px-6 py-[11px]",
+            "mt-auto inline-flex w-full items-center justify-center rounded-[7px] bg-[#004d71] px-6 py-[11px]",
             "font-[family-name:var(--font-dm-sans)] text-base font-bold text-white",
             "drop-shadow-[0px_10px_10px_rgba(0,0,0,0.25)]",
             "transition-colors group-hover:bg-[#003d5a]",

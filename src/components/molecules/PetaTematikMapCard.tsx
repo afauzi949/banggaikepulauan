@@ -55,7 +55,8 @@ export function PetaTematikMapCard({ document, className }: PetaTematikMapCardPr
           </button>
           <a
             href={downloadUrl}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={`Unduh ${title}`}
             className="rounded-full p-2 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
           >

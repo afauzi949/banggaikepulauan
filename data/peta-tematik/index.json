@@ -1,12 +1,12 @@
 [
   {
     "slug": "kemiringan-lereng",
-    "title": "Peta Kemiringan Lereng",
+    "title": "Peta Kemiringan Lereng Lumbi-Lumbia",
     "year": 2024,
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 12109932,
-    "downloadUrl": "/geodata/PETA FIX KEMIRINGAN LERENGG.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1MbDTEdRsOwXNd_ImImfavnS1qtNBUXfZ",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -17,7 +17,7 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 62358800,
-    "downloadUrl": "/geodata/PETA WISATA LUMBI-LUMBIA.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1sS4tl2e1wLQnNUuEqvQxsL4j-Yq-mpX-",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -28,7 +28,7 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 3086698,
-    "downloadUrl": "/geodata/Peta Batas Administrasi Desa.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=17-NTqHzKqk4LarOqrVGbqBMeVHneH6cU",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -39,7 +39,7 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 1627215,
-    "downloadUrl": "/geodata/Peta Evakuasi Bencana.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1cX6H-1N_W1mgd5-g6s-mlgZ2SyaKU24a",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -50,7 +50,7 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 1971067,
-    "downloadUrl": "/geodata/Peta Jaringan Jalan.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1-ymq4OtGprqPrKQ5OIjLSOlaQxJpSOLA",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -61,7 +61,7 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 59407186,
-    "downloadUrl": "/geodata/Peta Profile Spot Diving Lumbi- Lumbia.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1eJ3U11PiJlOSv9BNHtWdZ1Oz7CmKtghO",
     "featured": true,
     "publishedAt": "2024-08-10"
   },
@@ -72,7 +72,18 @@
     "preview": "/images/peta-tematik/tematik.webp",
     "format": "PDF",
     "sizeBytes": 2836044,
-    "downloadUrl": "/geodata/Peta Topografi.pdf",
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=1ZZo4xQUfZHBIm6quQqifyEJrLC5Te4rL",
+    "featured": true,
+    "publishedAt": "2024-08-10"
+  },
+  {
+    "slug": "risiko-kekeringan-bulagi-utara",
+    "title": "Peta Risiko Kekeringan Bulagi Utara",
+    "year": 2024,
+    "preview": "/images/peta-tematik/tematik.webp",
+    "format": "PDF",
+    "sizeBytes": 524288,
+    "downloadUrl": "https://drive.google.com/uc?export=download&id=18tpL-6SKZ7Fk_P_5fGhkorh3wmmiI9nL",
     "featured": true,
     "publishedAt": "2024-08-10"
   }
