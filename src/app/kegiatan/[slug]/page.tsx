@@ -48,14 +48,19 @@ export default function KegiatanDetailPage({ params }: Props) {
         </Link>
       </Container>
 
-      {/* Hero Image */}
-      <Container>
+      {/* Content */}
+      <Container className="mb-20 max-w-4xl space-y-6">
+        <h1 className="text-2xl font-bold text-zinc-900 sm:text-3xl md:text-4xl">
+          <TranslatableText dictKey={`kegiatan.title.${data.slug}`} idText={data.title} />
+        </h1>
+
+        {/* Hero Image */}
         {data.images &&
         data.images.length > 0 &&
         data.slug !== "peluncuran-dokumen-warisan-2025" ? (
-          <div className="columns-1 md:columns-2 gap-6 space-y-6 mb-12">
+          <div className="flex flex-wrap justify-center gap-6 mb-12 mt-6">
             {data.images.map((img, idx) => (
-              <div key={idx} className="break-inside-avoid rounded-xl overflow-hidden shadow-sm">
+              <div key={idx} className="w-full md:w-[calc(50%-0.75rem)] rounded-xl overflow-hidden shadow-sm">
                 <Image
                   src={img}
                   alt={`Dokumentasi suasana kegiatan dan acara ${data.title} di Banggai Kepulauan - foto ${idx + 1}`}
@@ -68,7 +73,7 @@ export default function KegiatanDetailPage({ params }: Props) {
             ))}
           </div>
         ) : (
-          <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-xl md:h-[60vh] md:aspect-auto">
+          <div className="relative mb-12 mt-6 aspect-video w-full overflow-hidden rounded-xl md:h-[60vh] md:aspect-auto">
             <Image
               src={data.cover}
               alt={`Foto utama dokumentasi kegiatan ${data.title} di Kabupaten Banggai Kepulauan`}
@@ -78,13 +83,6 @@ export default function KegiatanDetailPage({ params }: Props) {
             />
           </div>
         )}
-      </Container>
-
-      {/* Content */}
-      <Container className="mb-20 max-w-4xl space-y-6">
-        <h1 className="text-2xl font-bold text-zinc-900 sm:text-3xl md:text-4xl">
-          <TranslatableText dictKey={`kegiatan.title.${data.slug}`} idText={data.title} />
-        </h1>
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-zinc-600">
           <div className="flex items-center gap-1">
@@ -101,7 +99,7 @@ export default function KegiatanDetailPage({ params }: Props) {
         )}
 
         {/* Paragraphs */}
-        <div className="space-y-4 pt-4 text-base leading-relaxed text-zinc-700 whitespace-pre-wrap">
+        <div className="space-y-4 pt-4 text-base leading-relaxed text-zinc-700 whitespace-pre-wrap text-justify">
           {data.slug === "peluncuran-dokumen-warisan-2025" ? (
             <PeluncuranDokumenDescription
               dictKey={`kegiatan.description.${data.slug}`}
