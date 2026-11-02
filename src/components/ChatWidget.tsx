@@ -428,7 +428,9 @@ export default function ChatWidget() {
 
             {/* Messages */}
             <div
-              className="flex-1 overflow-y-auto px-4 py-5 scroll-smooth bg-slate-50"
+              className="flex-1 overflow-y-auto overscroll-contain px-4 py-5 scroll-smooth bg-slate-50"
+              // Lenis (SmoothScroll) hijacks wheel/touch globally; opt this list out so it scrolls.
+              data-lenis-prevent
               aria-live="polite"
               aria-atomic="false"
             >
@@ -453,6 +455,7 @@ export default function ChatWidget() {
                   placeholder={isLoading ? "Mengetik..." : "Type a new message here"}
                   rows={1}
                   maxLength={2000}
+                  data-lenis-prevent
                   aria-label="Ketik pesan"
                   className="flex-1 resize-none bg-transparent px-2 py-1.5 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed max-h-24 overflow-y-auto leading-relaxed"
                   style={{ scrollbarWidth: "thin" }}
