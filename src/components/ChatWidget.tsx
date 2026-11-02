@@ -121,6 +121,9 @@ function ChatMessage({ message }: { message: Message }) {
   );
 }
 
+// Avoid re-rendering finished messages while the latest one streams in.
+const MemoChatMessage = React.memo(ChatMessage);
+
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
 function UserIcon({ className }: { className?: string }) {
@@ -256,27 +259,60 @@ export default function ChatWidget() {
         body: JSON.stringify({ message: text, sessionId: sessionIdRef.current }),
       });
 
-      const data: unknown = await res.json();
-
-      let replyText = "Maaf, saya tidak dapat memproses permintaan Anda saat ini.";
-      if (typeof data === "object" && data !== null) {
-        const d = data as Record<string, unknown>;
-        if (typeof d.output === "string" && d.output.trim()) {
-          replyText = d.output.trim();
-        } else if (typeof d.reply === "string" && d.reply.trim()) {
-          replyText = d.reply.trim();
-        } else if (typeof d.text === "string" && d.text.trim()) {
-          replyText = d.text.trim();
-        } else if (typeof d.message === "string" && d.message.trim()) {
-          replyText = d.message.trim();
-        } else if (typeof d.error === "string") {
-          replyText = "Terjadi kesalahan. Silakan coba lagi.";
-          console.error("[ChatWidget] API error:", d.error);
-        }
+      if (!res.ok || !res.body) {
+        console.error("[ChatWidget] API error:", res.status);
+        setMessages((prev) => [
+          ...prev,
+          { id: uid(), role: "bot", text: "Terjadi kesalahan. Silakan coba lagi." },
+        ]);
+        return;
       }
 
-      const botMessage: Message = { id: uid(), role: "bot", text: replyText };
-      setMessages((prev) => [...prev, botMessage]);
+      // The answer arrives as a plain text stream; show it while it is written.
+      const botId = uid();
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let reply = "";
+      let started = false;
+      let frame = 0;
+
+      const render = () => {
+        frame = 0;
+        const current = reply;
+        if (!started) {
+          started = true;
+          setMessages((prev) => [...prev, { id: botId, role: "bot", text: current }]);
+        } else {
+          setMessages((prev) => prev.map((m) => (m.id === botId ? { ...m, text: current } : m)));
+        }
+      };
+
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          reply += decoder.decode(value, { stream: true });
+          // Batch updates to one per animation frame.
+          if (reply.trim() && !frame) frame = requestAnimationFrame(render);
+        }
+        reply += decoder.decode();
+      } finally {
+        if (frame) cancelAnimationFrame(frame);
+      }
+
+      reply = reply.trim();
+      if (reply) {
+        render();
+      } else if (!started) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: botId,
+            role: "bot",
+            text: "Maaf, saya tidak dapat memproses permintaan Anda saat ini.",
+          },
+        ]);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -397,9 +433,10 @@ export default function ChatWidget() {
               aria-atomic="false"
             >
               {messages.map((msg) => (
-                <ChatMessage key={msg.id} message={msg} />
+                <MemoChatMessage key={msg.id} message={msg} />
               ))}
-              {isLoading && <TypingIndicator />}
+              {/* Only until the first streamed text arrives */}
+              {isLoading && messages[messages.length - 1]?.role === "user" && <TypingIndicator />}
               <div ref={messagesEndRef} />
             </div>
 

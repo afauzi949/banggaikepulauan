@@ -4,12 +4,89 @@ import { NextRequest, NextResponse } from "next/server";
 // Consider adding a rate-limiter (e.g., upstash/ratelimit) to prevent
 // abuse of the n8n webhook endpoint.
 
+// Streamed answers can outlast the default serverless timeout.
+export const maxDuration = 60;
+
+interface N8nStreamEvent {
+  type?: string;
+  content?: unknown;
+  output?: unknown;
+}
+
+/**
+ * Converts the n8n streaming response (one JSON event per line, e.g.
+ * `{"type":"item","content":"Halo"}`) into a plain text stream.
+ *
+ * Falls back to the `output` field when n8n replies with a single
+ * non-streaming JSON object, so the endpoint also works with streaming off.
+ */
+function toTextStream(source: ReadableStream<Uint8Array>): ReadableStream<Uint8Array> {
+  const reader = source.getReader();
+  const decoder = new TextDecoder();
+  const encoder = new TextEncoder();
+  let buffer = "";
+  let emitted = false;
+
+  const handleLine = (line: string, controller: ReadableStreamDefaultController<Uint8Array>) => {
+    if (!line.trim()) return;
+    let event: N8nStreamEvent;
+    try {
+      event = JSON.parse(line) as N8nStreamEvent;
+    } catch {
+      return;
+    }
+    let text: string | undefined;
+    if (event.type === "item" && typeof event.content === "string") {
+      text = event.content;
+    } else if (!event.type && typeof event.output === "string") {
+      text = event.output;
+    }
+    if (text) {
+      emitted = true;
+      controller.enqueue(encoder.encode(text));
+    }
+  };
+
+  return new ReadableStream<Uint8Array>({
+    async pull(controller) {
+      try {
+        // Keep reading until some text is enqueued: n8n starts with events that
+        // carry no text, and a pull() that enqueues nothing is not called again.
+        while (controller.desiredSize !== null && controller.desiredSize > 0) {
+          const { done, value } = await reader.read();
+          if (done) {
+            buffer += decoder.decode();
+            handleLine(buffer, controller);
+            if (!emitted) {
+              console.error("[api/chat] n8n stream ended without any content.");
+            }
+            controller.close();
+            return;
+          }
+          buffer += decoder.decode(value, { stream: true });
+          let newline: number;
+          while ((newline = buffer.indexOf("\n")) >= 0) {
+            handleLine(buffer.slice(0, newline), controller);
+            buffer = buffer.slice(newline + 1);
+          }
+        }
+      } catch (err) {
+        controller.error(err);
+      }
+    },
+    cancel(reason) {
+      return reader.cancel(reason);
+    },
+  });
+}
+
 /**
  * POST /api/chat
  *
  * Secure BFF (Backend-for-Frontend) proxy that forwards chat messages
- * to the n8n RAG webhook. The N8N_WEBHOOK_URL is kept server-side only
- * and is never exposed to the client.
+ * to the n8n RAG webhook and streams the answer back as plain text.
+ * The N8N_WEBHOOK_URL is kept server-side only and is never exposed
+ * to the client.
  */
 export async function POST(req: NextRequest) {
   // --- Input Validation ---
@@ -74,9 +151,11 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ message, ...(sessionId ? { sessionId } : {}) }),
+      // Stop the upstream request when the client disconnects.
+      signal: req.signal,
     });
 
-    if (!n8nResponse.ok) {
+    if (!n8nResponse.ok || !n8nResponse.body) {
       console.error(`[api/chat] n8n responded with status: ${n8nResponse.status}`);
       return NextResponse.json(
         { error: "The chat backend returned an error. Please try again." },
@@ -84,14 +163,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const data = await n8nResponse.json();
-
-    // Return the n8n response to the client with security headers.
-    return NextResponse.json(data, {
+    // Relay the answer to the client as it is generated (plain text stream).
+    return new Response(toTextStream(n8nResponse.body), {
       status: 200,
       headers: {
-        // Prevent this API response from being cached.
-        "Cache-Control": "no-store",
+        "Content-Type": "text/plain; charset=utf-8",
+        // Prevent caching and proxy buffering so chunks arrive immediately.
+        "Cache-Control": "no-store, no-transform",
+        "X-Accel-Buffering": "no",
       },
     });
   } catch (err) {
